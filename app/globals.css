@@ -270,16 +270,47 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .process { max-width: 1240px; margin: auto; padding: 140px 5vw; }
 .process > .section-intro { margin-left: 0; }
-.process-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5vw; margin-top: 80px; }
-.process-flow article { position: relative; }
+.process-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 72px 5vw; margin-top: 80px; }
+.process-flow article { position: relative; display: flex; min-width: 0; flex-direction: column; }
 .process-flow article::before { display: none; }
-.process-flow span { display: grid; width: 56px; height: 56px; place-items: center; color: #49463f; font: 14px ui-monospace, monospace; border-radius: 50%; background: var(--blue); }
+.process-flow > article > span { display: grid; width: 56px; height: 56px; place-items: center; color: #49463f; font: 14px ui-monospace, monospace; border-radius: 50%; background: var(--blue); }
 .process-flow article:nth-child(2) span, .process-flow article:nth-child(5) span { background: var(--wheat); }
 .process-flow article:nth-child(3) span, .process-flow article:nth-child(6) span { background: var(--sage); }
 .process-flow h3 { margin: 40px 0 15px; font-size: 20px; font-weight: 520; }
-.process-flow p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.9; }
-.process-moodboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 22px; }
-.process-moodboard img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; filter: saturate(.8); }
+.process-flow p { margin: 0 0 26px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.process-visual {
+  min-height: 132px;
+  margin-top: auto;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--paper-light) 72%, var(--blue));
+  border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+}
+.process-visual small { color: #7a746c; font: 9px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.process-observations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; align-content: start; }
+.process-observations small { padding: 9px 6px; background: rgba(255,255,255,.58); text-align: center; }
+.process-observations b { grid-column: 1 / -1; margin-top: 17px; font-size: 13px; font-weight: 520; }
+.process-question { display: grid; grid-template-columns: 1fr 20px 1.15fr 20px 1.3fr; gap: 5px; align-items: center; }
+.process-question i { color: #9a9389; font-style: normal; text-align: center; transform: rotate(-90deg); }
+.process-question strong, .process-question b { font-size: 11px; line-height: 1.55; font-weight: 520; }
+.process-question b { padding: 11px; background: var(--wheat); }
+.process-research { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; align-content: start; }
+.process-research b { display: grid; min-height: 56px; place-items: center; padding: 7px; background: var(--ink); color: var(--paper-light); font-size: 10px; font-weight: 500; text-align: center; }
+.process-research small { grid-column: 1 / -1; margin-top: 10px; letter-spacing: .05em; }
+.process-moodboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; }
+.process-moodboard img { width: 100%; height: 118px; object-fit: cover; display: block; filter: saturate(.78); }
+.process-build { padding: 0; }
+.process-build > img { width: 72%; height: 132px; object-fit: cover; object-position: top; display: block; opacity: .88; }
+.process-build > div { position: absolute; top: 17px; right: 14px; display: grid; gap: 7px; }
+.process-build b { padding: 7px 9px; background: var(--ink); color: white; font: 9px ui-monospace, monospace; font-weight: 500; }
+.process-build small { position: absolute; right: 14px; bottom: 14px; }
+.process-progress { display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; gap: 4px; }
+.process-progress > div { display: flex; align-items: center; gap: 4px; }
+.process-progress b { white-space: nowrap; font-size: 10px; font-weight: 520; }
+.process-progress i { width: 100%; height: 1px; background: #a9a196; }
+.process-progress small { grid-column: span 1; align-self: end; }
+.process-progress small:last-child { grid-column: span 3; text-align: right; }
 .process-note {
   width: 68%;
   margin: 100px 0 0 auto;
