@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <span>{project.status}</span>
         </div>
 
-        {project.image && <figure className="detail-image"><img src={project.image} alt={`${project.name} 产品界面`} /></figure>}
+        {project.images ? <figure className="detail-image detail-gallery">{project.images.map((image, index) => <img key={image} src={image} alt={`${project.name} 产品界面 ${index + 1}`} />)}</figure> : project.image && <figure className="detail-image"><img src={project.image} alt={`${project.name} 产品界面`} /></figure>}
 
         <div className="detail-grid">
           <section>
