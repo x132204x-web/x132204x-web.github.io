@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #1d1d1a;
-  --muted: #6f6c65;
-  --line: #d9d5ca;
-  --paper: #f5f2ea;
-  --paper-light: #fbfaf6;
-  --blue: #dce7ea;
-  --sage: #dce5d8;
-  --wheat: #eee1b8;
-  --clay: #ead7cb;
+  --ink: #20323a;
+  --muted: #667278;
+  --line: #d7d9d1;
+  --paper: #f4f2eb;
+  --paper-light: #fcfbf7;
+  --blue: #d7e6ec;
+  --sage: #d8e1d3;
+  --wheat: #eee4c9;
+  --clay: #ded5ca;
 }
 
 * { box-sizing: border-box; }
@@ -434,6 +434,9 @@ footer {
 .more-hero h1 { max-width: 900px; margin: 0; font-size: clamp(58px, 8vw, 112px); line-height: 1.02; letter-spacing: -.065em; font-weight: 520; }
 .more-hero > p:last-child { max-width: 650px; margin: 48px 0 0; color: var(--muted); font-size: 16px; line-height: 1.9; }
 .more-home-link { display: inline-block; margin-top: 32px; padding-bottom: 7px; border-bottom: 1px solid currentColor; font-size: 13px; }
+.more-hero-photo { max-width: 1180px; margin: 92px auto 0; }
+.more-hero-photo img { width: 100%; height: min(54vw, 560px); object-fit: cover; object-position: center 58%; display: block; }
+.more-hero-photo figcaption { margin-top: 9px; color: #777168; font: 9px ui-monospace, monospace; }
 .travel-notes { padding: 130px 5vw; background: var(--paper-light); }
 .more-heading { max-width: 1040px; margin: 0 auto 70px; }
 .more-heading h2 { max-width: 850px; margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.15; letter-spacing: -.05em; font-weight: 520; }
@@ -443,6 +446,9 @@ footer {
 .travel-grid .murmansk-photo { grid-row: span 2; }
 .travel-grid img { width: 100%; height: 320px; object-fit: cover; display: block; }
 .travel-grid .murmansk-photo img { height: 680px; }
+.travel-grid figure:nth-child(4) { grid-row: span 2; }
+.travel-grid figure:nth-child(4) img { height: 680px; object-position: center; }
+.travel-grid figure:nth-child(5), .travel-grid figure:nth-child(6) { grid-column: span 1; }
 .travel-grid figcaption { margin-top: 8px; color: #777168; font: 9px ui-monospace, monospace; }
 .reading-notes { max-width: 1180px; margin: auto; padding: 150px 5vw; display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; }
 .reading-notes .more-heading { margin: 0; }
@@ -522,6 +528,11 @@ footer {
   .learning-card blockquote { font-size: 20px; }
   .more-hero { padding: 95px 5vw 110px; }
   .more-hero h1 { font-size: 54px; }
+  .more-hero-photo { margin-top: 60px; }
+  .more-hero-photo img { height: 310px; }
+  .travel-grid { grid-template-columns: 1fr; }
+  .travel-grid .murmansk-photo, .travel-grid figure:nth-child(4) { grid-row: auto; }
+  .travel-grid img, .travel-grid .murmansk-photo img, .travel-grid figure:nth-child(4) img { height: auto; }
   .travel-notes { padding: 95px 5vw; }
   .travel-grid { grid-template-columns: 1fr; }
   .travel-grid .murmansk-photo { grid-row: auto; }
