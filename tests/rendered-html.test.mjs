@@ -29,6 +29,7 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /旅行与读书/);
   assert.match(html, /AI 探索记录/);
   assert.match(html, /我的思考/);
+  assert.match(html, /阅读文章与思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
@@ -49,4 +50,12 @@ test("server-renders a project detail page", async () => {
   assert.match(html, /发现知识缺口/);
   assert.match(html, /解释 GitHub 项目/);
   assert.match(html, /我负责的部分/);
+});
+
+test("server-renders a writing detail page", async () => {
+  const response = await render("/articles/waic-observation");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /参加 WAIC 后，我开始更关心使用场景/);
+  assert.match(html, /Pebble/);
 });

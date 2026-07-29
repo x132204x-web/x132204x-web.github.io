@@ -1,27 +1,7 @@
 import Link from "next/link";
 import { projects } from "./project-data";
 import { updateEntries } from "./update-data";
-
-const articles = [
-  {
-    category: "AI 观察",
-    date: "2026.07",
-    title: "参加 WAIC 后，我开始更关心使用场景",
-    excerpt: "看过 Agent、个人服务器和 AI 硬件后，我开始思考：这些技术最后会怎样进入普通人的工作和生活。",
-  },
-  {
-    category: "成长思考",
-    date: "2025.07",
-    title: "AI 不能创造人与人之间的相遇",
-    excerpt: "AI 可以记住很多信息，但它无法替代面对面交流时的语气、表情，以及两个人真正共同经历的时间。",
-  },
-  {
-    category: "产品复盘",
-    date: "2026.06",
-    title: "为什么我想做一个大学生学习助手",
-    excerpt: "FinalAce 并不是一个提前规划好的方向。它来自一次有些混乱的期末复习，也随着我的学习不断改变。",
-  },
-];
+import { articles } from "./article-data";
 
 const growth = [
   ["2025.09 - 至今", "中国农业大学就业创新办公室 · 学生助管", "负责企业信息审核、招聘会策划执行与数据整理，并对接企业、师生和校内部门。"],
@@ -43,10 +23,7 @@ export default function Home() {
           <a href="#about">关于我</a>
           <a href="#projects">做过的事</a>
           <a href="#process">如何工作</a>
-          <a href="#exploration">探索记录</a>
-          <a href="#writing">我的思考</a>
-          <a href="#contact">联系</a>
-          <a href="/more">更多</a>
+          <a className="nav-more" href="/more">了解更多</a>
         </nav>
       </header>
 
@@ -55,31 +32,24 @@ export default function Home() {
           <p className="kicker">GIS × AI × PRODUCT</p>
           <h1>我喜欢发现问题，<br />然后做点什么。</h1>
           <p className="hero-intro">
-            你好，我是夏诗淇，中国农业大学地理信息科学专业学生。
-            最开始选择 GIS 时，我还不知道自己未来真正想做什么。后来接触 AI，我第一次感受到：
-            许多原本只存在于脑中的想法，可以通过工具很快变成现实。
+            你好，我是夏诗淇。我喜欢观察人怎样学习、工作和做选择，也喜欢把一个模糊的想法做成可以试用的产品。
+            接触 AI 后，我第一次感受到，许多原本只存在于脑中的想法，可以通过工具很快变成现实。
           </p>
           <div className="hero-links">
             <a className="primary-link" href="#projects">看我做过的项目 <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
-            <a href="/more">旅行与读书 <Arrow /></a>
+            <a href="/more">了解更多 <Arrow /></a>
           </div>
-          <p className="project-line">2024 - 2028 · GPA 3.56 / 4.0 · GIS · AI · 产品</p>
+          <p className="project-line">2024 - 2028 · 中国农业大学</p>
         </div>
 
-        <div className="hero-collage" aria-label="项目与生活片段">
-          <figure className="hero-product">
-            <img src="/finalace-desktop.png" alt="FinalAce 产品界面" />
-            <figcaption>FinalAce / 从一次期末复习开始</figcaption>
-          </figure>
-          <div className="field-note">
-            <span>最近在想</span>
-            <p>比起很快找到答案，我更想知道自己能不能把问题看清楚，再真正做点什么。</p>
-          </div>
-          <figure className="hero-life">
-            <img src="/travel-sea.jpg" alt="在日本伊豆旅行" />
-            <figcaption>日本伊豆 / 2025</figcaption>
-          </figure>
+        <div className="hero-profile" aria-label="教育经历">
+          <p className="kicker">EDUCATION</p>
+          <strong>中国农业大学</strong>
+          <h2>地理信息科学</h2>
+          <p>2024 — 2028</p>
+          <div className="hero-profile-line" />
+          <span>从空间数据出发，继续探索 AI 与产品。</span>
         </div>
       </section>
 
@@ -101,7 +71,7 @@ export default function Home() {
             观察一个问题，试着解决它，再把不成熟的想法一点点改得更完整。
           </p>
           <div className="about-facts">
-            <div><span>教育背景</span><strong>中国农业大学 · 地理信息科学<br />2024 - 2028 · GPA 3.56 / 4.0</strong></div>
+            <div><span>教育背景</span><strong>中国农业大学<br />地理信息科学 · 2024 - 2028<br />GPA 3.56 / 4.0</strong></div>
             <div><span>工具与技术</span><strong>Python · SQL · Excel · Notion<br />Cursor · Codex · Prompt Engineering</strong></div>
             <div><span>其他能力</span><strong>网站与小程序开发<br />IELTS 6.5 · CET-4/6 高分</strong></div>
           </div>
@@ -135,7 +105,11 @@ export default function Home() {
                 </div>
                 <Link href={`/projects/${project.slug}`}>查看项目过程 <Arrow /></Link>
               </div>
-              {project.image ? (
+              {project.images ? (
+                <figure className="project-media project-gallery">
+                  {project.images.map((image, imageIndex) => <img key={image} src={image} alt={`${project.name} 产品界面 ${imageIndex + 1}`} />)}
+                </figure>
+              ) : project.image ? (
                 <figure className="project-media">
                   <img src={project.image} alt={`${project.name} 产品界面`} />
                 </figure>
@@ -155,21 +129,10 @@ export default function Home() {
             <h3>网站与小程序开发经验</h3>
           </div>
           <div className="build-experience-list">
-            <article>
-              <span>Web</span>
-              <strong>从需求到上线</strong>
-              <p>可以独立完成产品定位、需求分析、PRD、信息架构、交互设计、前端实现、测试与发布。</p>
-            </article>
-            <article>
-              <span>Mini Program</span>
-              <strong>校园 3D 打印平台</strong>
-              <p>参与需求分析、产品设计、开发协同和测试，梳理上传对象、系统处理与打印机连接流程。</p>
-            </article>
-            <article>
-              <span>AI Workflow</span>
-              <strong>快速验证 MVP</strong>
-              <p>熟悉用 Prompt Engineering、Cursor 和 Codex 生成原型，并通过真实任务持续调整。</p>
-            </article>
+            <article><span>01 / AI 网站</span><strong>FinalAce 学习平台</strong><p>从期末复习中的资料混乱出发，完成学习流程、AI 功能和网站开发，持续优化到可以使用。</p></article>
+            <article><span>02 / 浏览器扩展</span><strong>Narziss 学习工具</strong><p>围绕 AI 对话中的知识缺口，设计浏览器扩展、学习引导和后续记忆检索方向。</p></article>
+            <article><span>03 / 校园小程序</span><strong>3D 打印服务平台</strong><p>参与需求分析、产品设计、开发协同和测试，梳理上传文件、系统处理和打印机连接流程。</p></article>
+            <article><span>04 / 个人网站</span><strong>个人作品与成长记录</strong><p>完成信息架构、页面设计、前端实现、响应式适配和发布，持续整理自己的项目与经历。</p></article>
           </div>
         </div>
       </section>
@@ -194,12 +157,12 @@ export default function Home() {
           <article>
             <span>03</span>
             <h3>寻找已有方案</h3>
-            <p>我会看看市场上是否已有类似产品，了解它们解决了什么、哪里做得很好，以及还有哪些体验没有被照顾到。</p>
+            <p>我会看看市场上是否已有类似产品，了解它们解决了什么、哪里做得很好，以及还有哪些体验没有被照顾到。也会留意生活中遇到的产品方案，想想它为什么让人愿意使用，再把值得借鉴的部分带回自己的项目。</p>
           </article>
           <article>
             <span>04</span>
             <h3>寻找视觉方向</h3>
-            <p>我会在 Pinterest、Mobbin、Behance 等网站整理参考，关注信息层级、排版和交互；再从图片、品牌或使用场景里提取配色，形成简单的视觉规范。</p>
+            <p>我会在 Pinterest、Mobbin、Behance 等网站整理参考，也会留意旅行、展览、街道和日常生活里让我停下来的颜色与排版，再把这些感受变成可使用的配色和视觉规范。</p>
           </article>
           <article>
             <span>05</span>
@@ -209,7 +172,7 @@ export default function Home() {
           <article>
             <span>06</span>
             <h3>持续完善</h3>
-            <p>我会用真实任务走完整流程，记录卡住、误解或重复操作的地方，再调整文案、交互和功能。第一次完成的版本通常只是下一轮判断的开始。</p>
+            <p>从零做到一个能用的版本，往往只需要几小时；但从“能用”走到上线、稳定使用并被更多人看见，通常需要几个月。后半段更考验细节、反馈、推广和持续投入。</p>
           </article>
         </div>
         <aside className="process-note">
@@ -237,24 +200,9 @@ export default function Home() {
             <img src="/teaching-class.jpg" alt="支教课堂" />
             <figcaption>支教 / 在课堂里理解学习</figcaption>
           </figure>
-          <figure>
-            <img src="/travel-window.jpg" alt="参观俄罗斯冬宫" />
-            <figcaption>俄罗斯冬宫 / 看见日常之外</figcaption>
-          </figure>
+          <figure className="teaching-workshop-photo"><img src="/teaching-workshop.jpg" alt="支教活动中的团队协作" /><figcaption>支教 / 和伙伴们一起做点什么</figcaption></figure>
+          <figure className="teaching-night-photo"><img src="/teaching-night.jpg" alt="支教活动中的团队生活" /><figcaption>支教 / 和伙伴们一起生活</figcaption></figure>
         </div>
-      </section>
-
-      <section className="more-teaser">
-        <div>
-          <p className="kicker">BEYOND WORK</p>
-          <h2>如果还想了解更多</h2>
-          <p>工作和项目之外，我也喜欢旅行、读书，以及记录那些偶然发生的相遇。</p>
-          <Link href="/more">看看我的另一面 <Arrow /></Link>
-        </div>
-        <figure>
-          <img src="/travel-murmansk.jpg" alt="在俄罗斯摩尔曼斯克旅行" />
-          <figcaption>俄罗斯摩尔曼斯克 / 冬天</figcaption>
-        </figure>
       </section>
 
       <section className="updates" id="updates">
@@ -279,13 +227,14 @@ export default function Home() {
         <div className="section-intro">
           <p className="kicker">WRITING</p>
           <h2>我的思考</h2>
-          <p>写下一些阶段性的理解。它们可能还不成熟，也会随着新的经历继续改变。</p>
+          <p>我把 AI、产品和成长中的一些想法写下来，方便别人了解我，也方便自己回头看。</p>
+          <Link className="writing-entry" href="/articles/waic-observation">阅读文章与思考 <Arrow /></Link>
         </div>
         <div className="article-list">
           {articles.map((article) => (
             <article key={article.title}>
               <div><span>{article.category}</span><time>{article.date}</time></div>
-              <h3>{article.title}</h3>
+              <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
               <p>{article.excerpt}</p>
             </article>
           ))}
@@ -302,6 +251,16 @@ export default function Home() {
           <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub / x132204x-web <Arrow /></a>
           <a href="/resume-xia-shiqi.pdf" target="_blank" rel="noreferrer">个人简历 PDF <Arrow /></a>
         </div>
+      </section>
+
+      <section className="more-teaser">
+        <div>
+          <p className="kicker">BEYOND WORK</p>
+          <h2>如果还想了解更多</h2>
+          <p>工作和项目之外，我也喜欢旅行、读书，以及记录那些偶然发生的相遇。</p>
+          <Link href="/more">进入旅行与读书页面 <Arrow /></Link>
+        </div>
+        <figure><img src="/travel-murmansk.jpg" alt="在俄罗斯摩尔曼斯克旅行" /><figcaption>俄罗斯摩尔曼斯克 / 冬天</figcaption></figure>
       </section>
 
       <footer><span>© 2026 夏诗淇</span><span>还没有找到所有答案，但会继续观察、学习和动手。</span><a href="#top">回到顶部 ↑</a></footer>
