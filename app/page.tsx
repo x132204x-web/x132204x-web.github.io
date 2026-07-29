@@ -46,6 +46,7 @@ export default function Home() {
           <a href="#exploration">探索记录</a>
           <a href="#writing">我的思考</a>
           <a href="#contact">联系</a>
+          <a href="/more">更多</a>
         </nav>
       </header>
 
@@ -61,6 +62,7 @@ export default function Home() {
           <div className="hero-links">
             <a className="primary-link" href="#projects">看我做过的项目 <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+            <a href="/more">旅行与读书 <Arrow /></a>
           </div>
           <p className="project-line">2024 - 2028 · GPA 3.56 / 4.0 · GIS · AI · 产品</p>
         </div>
