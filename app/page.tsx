@@ -148,37 +148,68 @@ export default function Home() {
             <span>01</span>
             <h3>发现问题</h3>
             <p>很多项目都来自生活中的小问题。可能是一次学习困难、一次 AI 使用体验，或者一个长期存在的不方便。</p>
+            <div className="process-visual process-observations" aria-label="我记录问题的三个来源">
+              <small>期末复习</small>
+              <small>AI 对话</small>
+              <small>日常体验</small>
+              <b>先把不方便记下来</b>
+            </div>
           </article>
           <article>
             <span>02</span>
             <h3>分析问题</h3>
             <p>我会先问自己：问题为什么存在？真正需要被解决的是什么？有时最先想到的功能，并不是问题的答案。</p>
+            <div className="process-visual process-question" aria-label="从表面现象追问到真实需求">
+              <small>表面现象</small>
+              <i>↓</i>
+              <strong>为什么会这样？</strong>
+              <i>↓</i>
+              <b>真正需要解决的事</b>
+            </div>
           </article>
           <article>
             <span>03</span>
             <h3>寻找已有方案</h3>
             <p>我会看看市场上是否已有类似产品，了解它们解决了什么、哪里做得很好，以及还有哪些体验没有被照顾到。也会留意生活中遇到的产品方案，想想它为什么让人愿意使用，再把值得借鉴的部分带回自己的项目。</p>
+            <div className="process-visual process-research" aria-label="我寻找产品方案的常用渠道">
+              <b>GitHub</b>
+              <b>Product Hunt</b>
+              <b>App Store</b>
+              <small>功能 · 体验 · 用户反馈</small>
+            </div>
           </article>
           <article>
             <span>04</span>
             <h3>寻找视觉方向</h3>
             <p>我会在 Pinterest、Mobbin、Behance 等网站整理参考，也会留意旅行、展览、街道和日常生活里让我停下来的颜色与排版，再把这些感受变成可使用的配色和视觉规范。</p>
-            <div className="process-moodboard" aria-label="我的视觉参考照片">
+            <div className="process-visual process-moodboard" aria-label="我的视觉参考照片">
               <img src="/travel-lake-mountain.jpg" alt="湖水与雪山的蓝绿色参考" />
               <img src="/travel-evergreen.jpg" alt="松针深绿色参考" />
               <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
-              <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
+              <img src="/palette-stones.jpg" alt="石头的灰紫、米白和褐色配色参考" />
             </div>
           </article>
           <article>
             <span>05</span>
             <h3>设计和开发</h3>
             <p>先画用户流程和页面结构，再完成低保真原型。方向明确后，我会借助 Cursor、Codex 等工具实现功能，并保持组件、状态和数据结构清楚。</p>
+            <div className="process-visual process-build" aria-label="从页面结构到真实产品">
+              <img src="/finalace-upload.png" alt="FinalAce 产品界面" />
+              <div><b>Cursor</b><b>Codex</b></div>
+              <small>流程 → 原型 → 开发</small>
+            </div>
           </article>
           <article>
             <span>06</span>
             <h3>持续完善</h3>
             <p>从零做到一个能用的版本，往往只需要几小时；但从“能用”走到上线、稳定使用并被更多人看见，通常需要几个月。后半段更考验细节、反馈、推广和持续投入。</p>
+            <div className="process-visual process-progress" aria-label="产品从能用到被看见的过程">
+              <div><b>能用</b><i /></div>
+              <div><b>上线</b><i /></div>
+              <div><b>稳定</b><i /></div>
+              <div><b>被看见</b></div>
+              <small>几小时</small><small>几个月的持续投入</small>
+            </div>
           </article>
         </div>
         <aside className="process-note">
