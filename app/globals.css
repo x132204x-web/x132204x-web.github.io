@@ -505,17 +505,49 @@ footer {
 .more-heading { max-width: 1040px; margin: 0 auto 70px; }
 .more-heading h2 { max-width: 850px; margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.15; letter-spacing: -.05em; font-weight: 520; }
 .more-heading > p:last-child { max-width: 620px; margin: 28px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
-.travel-grid { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr .8fr; gap: 24px; align-items: start; }
-.travel-grid figure { margin: 0; }
-.travel-grid .murmansk-photo { grid-row: span 2; }
-.travel-grid img { width: 100%; height: 320px; object-fit: cover; display: block; }
-.travel-grid .murmansk-photo img { height: 680px; }
-.travel-grid figcaption { margin-top: 8px; color: #777168; font: 9px ui-monospace, monospace; }
+.travel-gallery { max-width: 1180px; margin: auto; }
+.travel-stage { position: relative; background: var(--ink); }
+.travel-stage > img { width: 100%; height: min(68vw, 680px); object-fit: cover; display: block; }
+.travel-stage-meta { position: absolute; right: 0; bottom: 0; left: 0; padding: 70px 28px 24px; display: flex; justify-content: space-between; align-items: flex-end; color: white; background: linear-gradient(transparent, rgba(22,21,19,.72)); }
+.travel-stage-meta strong, .travel-stage-meta span { display: block; }
+.travel-stage-meta strong { font-size: 18px; font-weight: 520; }
+.travel-stage-meta span { margin-top: 6px; color: #d7d2c9; font-size: 11px; }
+.travel-stage-meta small { font: 10px ui-monospace, monospace; }
+.travel-controls { position: absolute; top: 22px; right: 22px; display: flex; gap: 6px; }
+.travel-controls button, .media-arrows button { width: 42px; height: 42px; border: 0; background: rgba(250,248,243,.9); color: var(--ink); cursor: pointer; font-size: 18px; }
+.travel-controls button:hover, .media-arrows button:hover { background: white; }
+.travel-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+.travel-thumbs button { min-width: 0; padding: 0; border: 0; background: transparent; color: inherit; cursor: pointer; text-align: left; opacity: .58; transition: opacity .2s; }
+.travel-thumbs button:hover, .travel-thumbs button.active { opacity: 1; }
+.travel-thumbs button.active img { outline: 2px solid var(--ink); outline-offset: -2px; }
+.travel-thumbs img { width: 100%; height: 110px; object-fit: cover; display: block; }
+.travel-thumbs span { display: block; margin-top: 8px; color: var(--muted); font-size: 10px; }
 .reading-notes { max-width: 1180px; margin: auto; padding: 150px 5vw; display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; }
 .reading-notes .more-heading { margin: 0; }
 .reading-copy > p { margin: 0 0 26px; color: #5f5b54; font-size: 15px; line-height: 2; }
 .reading-topics { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 10px; }
 .reading-topics span { padding: 8px 12px; border: 1px solid var(--line); color: #6f6a62; font-size: 11px; }
+.media-shelf { grid-column: 1 / -1; margin-top: 36px; padding-top: 60px; border-top: 1px solid var(--line); }
+.media-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.media-tabs { display: flex; gap: 8px; }
+.media-tabs button { padding: 10px 14px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; font: inherit; font-size: 12px; }
+.media-tabs button.active { background: var(--ink); border-color: var(--ink); color: white; }
+.media-arrows { display: flex; gap: 6px; }
+.media-arrows button { background: var(--paper-light); border: 1px solid var(--line); }
+.media-rail { display: flex; gap: 12px; padding: 3px 0 18px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.media-card { flex: 0 0 245px; min-height: 175px; padding: 22px; display: flex; flex-direction: column; align-items: flex-start; scroll-snap-align: start; border: 1px solid var(--line); background: var(--paper-light); color: var(--ink); cursor: pointer; text-align: left; transition: transform .2s, background .2s; }
+.media-card:hover { transform: translateY(-4px); }
+.media-card.active { background: var(--wheat); border-color: #c8bba6; }
+.media-card > span { font-size: 23px; }
+.media-card small { margin-top: 23px; color: #847e75; font: 9px ui-monospace, monospace; }
+.media-card strong { margin-top: 8px; font-size: 16px; line-height: 1.45; font-weight: 520; }
+.media-card i { margin-top: auto; color: #918a80; font-size: 9px; font-style: normal; }
+.media-note { min-height: 170px; margin-top: 24px; padding: 32px; display: grid; grid-template-columns: 52px 1fr; gap: 18px; background: var(--ink); color: white; }
+.media-note > span { font-size: 30px; }
+.media-note small, .media-note strong { display: block; }
+.media-note small { color: #a9a59d; font: 9px ui-monospace, monospace; }
+.media-note strong { margin-top: 8px; font-size: 22px; font-weight: 520; }
+.media-note p { max-width: 650px; margin: 18px 0 0; color: #c8c4bb; font-size: 13px; line-height: 1.85; }
 .more-ending { padding: 110px 5vw; background: var(--ink); color: var(--paper-light); text-align: center; }
 .more-ending p { max-width: 720px; margin: auto; color: #c7c3ba; font-size: 18px; line-height: 1.9; }
 .more-ending a { display: inline-block; margin-top: 40px; padding-bottom: 6px; border-bottom: 1px solid currentColor; font-size: 13px; }
@@ -603,14 +635,19 @@ footer {
   .learning-card blockquote { font-size: 20px; }
   .more-hero { padding: 95px 5vw 110px; }
   .more-hero h1 { font-size: 54px; }
-  .travel-grid { grid-template-columns: 1fr; }
-  .travel-grid .murmansk-photo { grid-row: auto; }
-  .travel-grid img, .travel-grid .murmansk-photo img { height: auto; }
   .travel-notes { padding: 95px 5vw; }
-  .travel-grid { grid-template-columns: 1fr; }
-  .travel-grid .murmansk-photo { grid-row: auto; }
-  .travel-grid img, .travel-grid .murmansk-photo img { height: 280px; }
+  .travel-stage > img { height: 360px; }
+  .travel-stage-meta { padding: 60px 18px 18px; }
+  .travel-controls { top: 14px; right: 14px; }
+  .travel-controls button, .media-arrows button { width: 38px; height: 38px; }
+  .travel-thumbs { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .travel-thumbs button { flex: 0 0 145px; scroll-snap-align: start; }
+  .travel-thumbs img { height: 92px; }
   .reading-notes { padding: 105px 5vw; }
+  .media-shelf { margin-top: 20px; padding-top: 45px; }
+  .media-card { flex-basis: 78vw; }
+  .media-note { grid-template-columns: 38px 1fr; padding: 25px 20px; }
+  .media-note > span { font-size: 24px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
