@@ -26,6 +26,7 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /Pinterest/);
   assert.match(html, /校园 3D 打印平台/);
   assert.match(html, /如果还想了解更多/);
+  assert.match(html, /旅行与读书/);
   assert.match(html, /AI 探索记录/);
   assert.match(html, /我的思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
