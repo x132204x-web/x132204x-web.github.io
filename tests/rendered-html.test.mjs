@@ -37,6 +37,7 @@ test("server-renders the personal interests page", async () => {
   const html = await response.text();
   assert.match(html, /俄罗斯摩尔曼斯克/);
   assert.match(html, /读书是另一种认识世界的方式/);
+  assert.match(html, /回到夏诗淇的主页/);
   assert.match(html, /返回首页/);
 });
 

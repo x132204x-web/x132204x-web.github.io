@@ -14,6 +14,7 @@ export default function MorePage() {
         <p>
           旅行和读书不是简历上的项目，却一直影响我怎样观察问题、理解别人，也影响我想做怎样的产品。
         </p>
+        <Link className="more-home-link" href="/">← 回到夏诗淇的主页</Link>
       </section>
 
       <section className="travel-notes">
