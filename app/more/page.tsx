@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MediaShelf, TravelGallery } from "./interactive-sections";
 
 export default function MorePage() {
   return (
@@ -26,24 +27,7 @@ export default function MorePage() {
             它们让我保持好奇，也提醒我不要只从自己的经验出发理解世界。
           </p>
         </div>
-        <div className="travel-grid">
-          <figure className="murmansk-photo">
-            <img src="/travel-murmansk.jpg" alt="在俄罗斯摩尔曼斯克旅行" />
-            <figcaption>俄罗斯摩尔曼斯克 / 冬天与极夜</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-sea.jpg" alt="在日本伊豆旅行" />
-            <figcaption>日本伊豆 / 海边</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-window.jpg" alt="参观俄罗斯冬宫" />
-            <figcaption>俄罗斯冬宫 / 在展厅里慢慢看</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-sunset.jpg" alt="旅行中望向远处的晚霞" />
-            <figcaption>旅行 / 等一场傍晚</figcaption>
-          </figure>
-        </div>
+        <TravelGallery />
       </section>
 
       <section className="reading-notes">
@@ -67,6 +51,7 @@ export default function MorePage() {
             <span>成长与生活</span>
           </div>
         </div>
+        <MediaShelf />
       </section>
 
       <section className="more-ending">
