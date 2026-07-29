@@ -121,7 +121,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .field-note p { margin: 32px 0 0; font-size: 17px; line-height: 1.65; letter-spacing: -.02em; }
 
 .section-intro { max-width: 1160px; margin: 0 auto 72px; }
-.section-intro h2, .process h2, .growth h2, .contact h2 {
+.section-intro h2, .about h2, .process h2, .growth h2, .contact h2 {
   margin: 0;
   font-size: clamp(42px, 5.4vw, 76px);
   line-height: 1.08;
@@ -135,6 +135,44 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-size: 14px;
   line-height: 1.8;
 }
+
+.about {
+  max-width: 1240px;
+  margin: auto;
+  padding: 130px 5vw 150px;
+  display: grid;
+  grid-template-columns: minmax(180px, .45fr) minmax(0, 1.25fr);
+  gap: 8vw;
+  border-top: 1px solid var(--line);
+}
+.about-label span {
+  color: #8a857b;
+  font: 10px ui-monospace, monospace;
+  letter-spacing: .08em;
+}
+.about-copy { max-width: 800px; }
+.about-copy h2 { max-width: 760px; }
+.about-copy > p {
+  max-width: 690px;
+  margin: 34px 0 0;
+  color: #5f5b54;
+  font-size: 15px;
+  line-height: 2;
+}
+.about-facts {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.about-facts > div { padding-top: 16px; border-top: 1px solid var(--line); }
+.about-facts span {
+  display: block;
+  margin-bottom: 13px;
+  color: #8a857b;
+  font-size: 10px;
+}
+.about-facts strong { font-size: 13px; line-height: 1.7; font-weight: 520; }
 
 .projects { padding: 130px 5vw; background: var(--paper-light); }
 .project-stack { max-width: 1240px; margin: auto; display: grid; gap: 42px; }
@@ -351,6 +389,7 @@ footer {
   .site-header nav { gap: 16px; }
   .hero { grid-template-columns: 1fr; padding-top: 82px; }
   .hero-collage { min-height: 500px; max-width: 650px; width: 100%; }
+  .about { grid-template-columns: 1fr; gap: 50px; }
   .project-story, .project-story:nth-child(even) { grid-template-columns: 28px 1fr; padding: 30px 24px; }
   .project-story .project-main, .project-story:nth-child(even) .project-main { grid-column: 2; }
   .project-story .project-media, .project-story .feature-paper,
@@ -370,9 +409,10 @@ footer {
 
 @media (max-width: 600px) {
   .site-header { height: 62px; }
-  .site-header nav a:nth-child(2),
+  .site-header nav a:nth-child(1),
   .site-header nav a:nth-child(3),
-  .site-header nav a:nth-child(4) { display: none; }
+  .site-header nav a:nth-child(4),
+  .site-header nav a:nth-child(5) { display: none; }
   .hero { min-height: auto; padding: 78px 5vw 100px; gap: 70px; }
   .hero-copy h1 { font-size: 49px; }
   .hero-intro { font-size: 15px; line-height: 1.8; }
@@ -382,7 +422,8 @@ footer {
   .hero-life { width: 39%; height: 175px; }
   .field-note { width: 59%; min-height: 150px; padding: 20px; }
   .field-note p { margin-top: 22px; font-size: 13px; }
-  .projects, .process, .growth, .updates, .writing { padding-top: 95px; padding-bottom: 95px; }
+  .about, .projects, .process, .growth, .updates, .writing { padding-top: 95px; padding-bottom: 95px; }
+  .about-facts { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
   .section-intro { margin-bottom: 50px; }
   .project-story { min-height: 0; }
   .project-index { display: none; }

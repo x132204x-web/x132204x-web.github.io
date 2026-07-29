@@ -20,7 +20,11 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /我从真实问题开始/);
   assert.match(html, /Narziss/);
   assert.match(html, /PathFinder/);
-  assert.match(html, /我怎样把问题做成产品/);
+  assert.match(html, /我是夏诗淇/);
+  assert.match(html, /我做过的事/);
+  assert.match(html, /我如何工作/);
+  assert.match(html, /我的探索记录/);
+  assert.match(html, /我的思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
 
