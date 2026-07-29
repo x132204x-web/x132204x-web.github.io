@@ -30,7 +30,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="kicker">GIS × AI × PRODUCT</p>
-          <h1>我喜欢发现问题，<br />然后做点什么。</h1>
+          <h1>Ashley<br />正在把想法做成产品。</h1>
           <p className="hero-intro">
             你好，我是夏诗淇。我喜欢观察人怎样学习、工作和做选择，也喜欢把一个模糊的想法做成可以试用的产品。
             接触 AI 后，我第一次感受到，许多原本只存在于脑中的想法，可以通过工具很快变成现实。
@@ -166,7 +166,7 @@ export default function Home() {
             <div className="process-moodboard" aria-label="我的视觉参考照片">
               <img src="/travel-lake-mountain.jpg" alt="湖水与雪山的蓝绿色参考" />
               <img src="/travel-evergreen.jpg" alt="松针深绿色参考" />
-              <img src="/travel-sunset.jpg" alt="傍晚天空的暖色参考" />
+              <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
               <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
             </div>
           </article>
@@ -182,8 +182,8 @@ export default function Home() {
           </article>
         </div>
         <aside className="process-note">
-          <strong>我通常不是从答案开始，而是从一个还没想明白的问题开始。</strong>
-          <p>先观察，先学习，再动手做出一点东西。很多时候，方向是在这个过程中才慢慢清楚的。</p>
+          <strong>我习惯边做边学，在实践里把问题想清楚。</strong>
+          <p>先做出一个能运行的版本，再在使用、反馈和一次次修改里学习。对我来说，真正的理解通常不是开始之前想出来的，而是做过之后慢慢长出来的。</p>
         </aside>
       </section>
 
@@ -264,9 +264,8 @@ export default function Home() {
           <p className="kicker">BEYOND WORK</p>
           <h2>如果还想了解更多</h2>
           <p>工作和项目之外，我也喜欢旅行、读书，以及记录那些偶然发生的相遇。</p>
-          <Link href="/more">进入旅行与读书页面 <Arrow /></Link>
+          <Link href="/more">进入详情 <Arrow /></Link>
         </div>
-        <figure><img src="/travel-murmansk.jpg" alt="在俄罗斯摩尔曼斯克旅行" /><figcaption>俄罗斯摩尔曼斯克 / 冬天</figcaption></figure>
       </section>
 
       <footer><span>© 2026 夏诗淇</span><span>还没有找到所有答案，但会继续观察、学习和动手。</span><a href="#top">回到顶部 ↑</a></footer>

@@ -17,7 +17,7 @@ test("server-renders the personal lab homepage", async () => {
   const html = await response.text();
   assert.match(html, /夏诗淇/);
   assert.match(html, /FinalAce/);
-  assert.match(html, /我喜欢发现问题/);
+  assert.match(html, /Ashley/);
   assert.match(html, /Narziss/);
   assert.doesNotMatch(html, /云品册|PathFinder/);
   assert.match(html, /我还在寻找方向/);
@@ -26,7 +26,8 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /Pinterest/);
   assert.match(html, /校园 3D 打印平台/);
   assert.match(html, /如果还想了解更多/);
-  assert.match(html, /旅行与读书/);
+  assert.match(html, /进入详情/);
+  assert.match(html, /进入详情/);
   assert.match(html, /AI 探索记录/);
   assert.match(html, /我的思考/);
   assert.match(html, /阅读文章与思考/);

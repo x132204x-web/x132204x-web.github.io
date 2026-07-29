@@ -39,6 +39,10 @@ export default function MorePage() {
             <img src="/travel-window.jpg" alt="参观俄罗斯冬宫" />
             <figcaption>俄罗斯冬宫 / 在展厅里慢慢看</figcaption>
           </figure>
+          <figure>
+            <img src="/travel-sunset.jpg" alt="旅行中望向远处的晚霞" />
+            <figcaption>旅行 / 等一场傍晚</figcaption>
+          </figure>
         </div>
       </section>
 
