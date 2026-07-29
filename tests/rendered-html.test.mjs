@@ -17,13 +17,13 @@ test("server-renders the personal lab homepage", async () => {
   const html = await response.text();
   assert.match(html, /夏诗淇/);
   assert.match(html, /FinalAce/);
-  assert.match(html, /我从真实问题开始/);
+  assert.match(html, /我喜欢发现问题/);
   assert.match(html, /Narziss/);
   assert.match(html, /PathFinder/);
-  assert.match(html, /我是夏诗淇/);
-  assert.match(html, /我做过的事/);
-  assert.match(html, /我如何工作/);
-  assert.match(html, /我的探索记录/);
+  assert.match(html, /我还在寻找方向/);
+  assert.match(html, /我做过的一些尝试/);
+  assert.match(html, /我是如何做一个产品的/);
+  assert.match(html, /AI 探索记录/);
   assert.match(html, /我的思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
@@ -32,7 +32,7 @@ test("server-renders a project detail page", async () => {
   const response = await render("/projects/narziss");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /学习缺口提示/);
-  assert.match(html, /GitHub 项目讲解/);
+  assert.match(html, /发现知识缺口/);
+  assert.match(html, /解释 GitHub 项目/);
   assert.match(html, /我负责的部分/);
 });
