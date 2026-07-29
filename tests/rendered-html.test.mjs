@@ -19,13 +19,25 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /FinalAce/);
   assert.match(html, /我喜欢发现问题/);
   assert.match(html, /Narziss/);
-  assert.match(html, /PathFinder/);
+  assert.doesNotMatch(html, /云品册|PathFinder/);
   assert.match(html, /我还在寻找方向/);
   assert.match(html, /我做过的一些尝试/);
   assert.match(html, /我是如何做一个产品的/);
+  assert.match(html, /Pinterest/);
+  assert.match(html, /校园 3D 打印平台/);
+  assert.match(html, /如果还想了解更多/);
   assert.match(html, /AI 探索记录/);
   assert.match(html, /我的思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+});
+
+test("server-renders the personal interests page", async () => {
+  const response = await render("/more");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /俄罗斯摩尔曼斯克/);
+  assert.match(html, /读书是另一种认识世界的方式/);
+  assert.match(html, /返回首页/);
 });
 
 test("server-renders a project detail page", async () => {
