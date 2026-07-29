@@ -15,10 +15,6 @@ export default function MorePage() {
           旅行和读书不是简历上的项目，却一直影响我怎样观察问题、理解别人，也影响我想做怎样的产品。
         </p>
         <Link className="more-home-link" href="/">← 回到夏诗淇的主页</Link>
-        <figure className="more-hero-photo">
-          <img src="/travel-lake-mountain.jpg" alt="旅行中看见雪山与湖泊" />
-          <figcaption>旅行 / 山、湖与很远的天空</figcaption>
-        </figure>
       </section>
 
       <section className="travel-notes">
@@ -42,18 +38,6 @@ export default function MorePage() {
           <figure>
             <img src="/travel-window.jpg" alt="参观俄罗斯冬宫" />
             <figcaption>俄罗斯冬宫 / 在展厅里慢慢看</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-sunset.jpg" alt="旅行中望向远处的晚霞" />
-            <figcaption>旅行 / 等一场傍晚</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-evergreen.jpg" alt="旅行中观察松针" />
-            <figcaption>旅行 / 走近一点看</figcaption>
-          </figure>
-          <figure>
-            <img src="/travel-lakeside.jpg" alt="旅行途中看到湖边的树" />
-            <figcaption>旅行 / 湖边的两棵树</figcaption>
           </figure>
         </div>
       </section>
