@@ -40,10 +40,11 @@ export default function Home() {
       <header className="site-header">
         <a className="brand" href="#top">夏诗淇</a>
         <nav aria-label="主要导航">
-          <a href="#projects">项目</a>
-          <a href="#process">方法</a>
-          <a href="#growth">经历</a>
-          <a href="#writing">博客</a>
+          <a href="#about">关于我</a>
+          <a href="#projects">做过的事</a>
+          <a href="#process">如何工作</a>
+          <a href="#exploration">探索记录</a>
+          <a href="#writing">我的思考</a>
           <a href="#contact">联系</a>
         </nav>
       </header>
@@ -79,10 +80,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="about" id="about">
+        <div className="about-label">
+          <p className="kicker">ABOUT ME</p>
+          <span>01 / 我是谁</span>
+        </div>
+        <div className="about-copy">
+          <h2>我是夏诗淇，<br />一个还在不断尝试的大学生。</h2>
+          <p>
+            我在中国农业大学学习地理信息科学。最初，我关心地图、空间数据和城市如何运转；
+            后来，我开始接触 AI、产品设计和软件开发，也越来越喜欢把一个模糊的问题慢慢做成可以使用的东西。
+          </p>
+          <p>
+            我做过的项目大多来自自己的真实经历：期末复习时的混乱、和 AI 聊完却不知道下一步学什么、
+            面对职业选择时的不确定。它们不一定一开始就很完整，但我愿意先动手，再在使用和反馈中继续修改。
+          </p>
+          <div className="about-facts">
+            <div><span>正在学习</span><strong>GIS · AI · 产品设计</strong></div>
+            <div><span>关心的问题</span><strong>学习 · 职业选择 · 空间智能</strong></div>
+            <div><span>目前在做</span><strong>把想法做成真实产品</strong></div>
+          </div>
+        </div>
+      </section>
+
       <section className="projects" id="projects">
         <div className="section-intro">
           <p className="kicker">SELECTED WORK</p>
-          <h2>我做过的产品</h2>
+          <h2>我做过的事</h2>
           <p>不只展示结果，也说明问题从哪里来、我具体做了什么，以及它现在走到了哪里。</p>
         </div>
 
@@ -125,7 +149,8 @@ export default function Home() {
       <section className="process" id="process">
         <div className="section-intro">
           <p className="kicker">HOW I WORK</p>
-          <h2>我怎样把问题做成产品</h2>
+          <h2>我如何工作</h2>
+          <p>我没有固定的方法论，更习惯从具体问题开始，一边做，一边把问题看得更清楚。</p>
         </div>
         <div className="process-flow">
           <article>
@@ -150,13 +175,13 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="growth" id="growth">
+      <section className="growth" id="exploration">
         <div className="growth-copy">
-          <p className="kicker">GROWING IN PUBLIC</p>
-          <h2>技术之外，<br />我也在学习怎样理解人。</h2>
+          <p className="kicker">EXPLORATION NOTES</p>
+          <h2>我的探索记录</h2>
           <p>
-            支教让我重新看见教育发生在具体的人和关系里；旅行让我愿意走出熟悉的环境。
-            这些经历也影响我怎样理解学习产品：工具可以提高效率，但不能替代人的感受和选择。
+            这里不只有 AI 和产品。支教、旅行、参加展会，以及那些暂时没有答案的尝试，
+            都在慢慢改变我理解技术和人的方式。
           </p>
           <div className="growth-timeline">
             {growth.map(([year, title, body]) => (
@@ -179,7 +204,7 @@ export default function Home() {
       <section className="updates" id="updates">
         <div className="section-intro">
           <p className="kicker">RECENT NOTES</p>
-          <h2>最近的记录</h2>
+          <h2>最近在做什么</h2>
         </div>
         <div className="update-strip">
           {updateEntries.map((entry) => (
@@ -196,8 +221,8 @@ export default function Home() {
       <section className="writing" id="writing">
         <div className="section-intro">
           <p className="kicker">WRITING</p>
-          <h2>个人博客</h2>
-          <p>记录产品之外，我如何理解 AI、学习和成长。</p>
+          <h2>我的思考</h2>
+          <p>一些还没有变成结论的观察：关于 AI、产品、学习，也关于我自己。</p>
         </div>
         <div className="article-list">
           {articles.map((article) => (
@@ -221,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><span>© 2026 夏诗淇</span><span>从真实问题开始，持续做出东西。</span><a href="#top">回到顶部 ↑</a></footer>
+      <footer><span>© 2026 夏诗淇</span><span>还在学习，也还在做。</span><a href="#top">回到顶部 ↑</a></footer>
     </main>
   );
 }
