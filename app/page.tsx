@@ -24,10 +24,10 @@ const articles = [
 ];
 
 const growth = [
-  ["校内", "在创新创业部门参与工作", "整理企业信息、组织活动、沟通协调和执行流程。我慢慢认识到，一个项目落地依靠的不只是想法，也依靠人与人之间的配合与信任。"],
-  ["支教", "在课堂里重新理解学习", "学习不只是把知识讲清楚，也和环境、耐心以及人与人之间的连接有关。"],
-  ["2026", "参加世界人工智能大会 WAIC", "近距离看过不同的 AI 软件和硬件后，我开始更关心技术最终会怎样进入真实场景，帮助普通人解决具体问题。"],
-  ["旅行", "在陌生的地方保持观察", "我喜欢认识新朋友，也喜欢旅途中那些没有提前安排的相遇。不同地方的生活方式，让我学着从更多角度理解人和世界。"],
+  ["2025.09 - 至今", "中国农业大学就业创新办公室 · 学生助管", "负责企业信息审核、招聘会策划执行与数据整理，并对接企业、师生和校内部门。"],
+  ["2025.04 - 2025.08", "种太阳公益夏令营 · 队记总负责人", "统筹全程活动记录、数据整理和结项报告；每日组织团队复盘，参与问题处理与团队协作。"],
+  ["2026.06 - 至今", "校园 3D 打印平台 · 小程序开发负责人", "参与需求分析、产品设计、开发协同与测试，完成“上传打印对象—系统处理—连接 3D 打印机”的流程。"],
+  ["2026.07", "世界人工智能大会 WAIC", "近距离体验 AI 软件、Agent、个人服务器与硬件产品，并记录它们如何进入真实使用场景。"],
 ];
 
 function Arrow() {
@@ -62,7 +62,7 @@ export default function Home() {
             <a className="primary-link" href="#projects">看我做过的项目 <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
           </div>
-          <p className="project-line">GIS · AI · 产品探索 · 持续创造</p>
+          <p className="project-line">2024 - 2028 · GPA 3.56 / 4.0 · GIS · AI · 产品</p>
         </div>
 
         <div className="hero-collage" aria-label="项目与生活片段">
@@ -99,9 +99,9 @@ export default function Home() {
             观察一个问题，试着解决它，再把不成熟的想法一点点改得更完整。
           </p>
           <div className="about-facts">
-            <div><span>正在学习</span><strong>GIS · AI · 产品设计</strong></div>
-            <div><span>关心的问题</span><strong>学习 · 职业选择 · 空间智能</strong></div>
-            <div><span>目前在做</span><strong>把想法做成真实产品</strong></div>
+            <div><span>教育背景</span><strong>中国农业大学 · 地理信息科学<br />2024 - 2028 · GPA 3.56 / 4.0</strong></div>
+            <div><span>工具与技术</span><strong>Python · SQL · Excel · Notion<br />Cursor · Codex · Prompt Engineering</strong></div>
+            <div><span>其他能力</span><strong>网站与小程序开发<br />IELTS 6.5 · CET-4/6 高分</strong></div>
           </div>
         </div>
       </section>
@@ -147,6 +147,29 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <div className="build-experience">
+          <div>
+            <p className="kicker">BUILD EXPERIENCE</p>
+            <h3>网站与小程序开发经验</h3>
+          </div>
+          <div className="build-experience-list">
+            <article>
+              <span>Web</span>
+              <strong>从需求到上线</strong>
+              <p>可以独立完成产品定位、需求分析、PRD、信息架构、交互设计、前端实现、测试与发布。</p>
+            </article>
+            <article>
+              <span>Mini Program</span>
+              <strong>校园 3D 打印平台</strong>
+              <p>参与需求分析、产品设计、开发协同和测试，梳理上传对象、系统处理与打印机连接流程。</p>
+            </article>
+            <article>
+              <span>AI Workflow</span>
+              <strong>快速验证 MVP</strong>
+              <p>熟悉用 Prompt Engineering、Cursor 和 Codex 生成原型，并通过真实任务持续调整。</p>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section className="process" id="process">
@@ -173,13 +196,18 @@ export default function Home() {
           </article>
           <article>
             <span>04</span>
-            <h3>设计和开发</h3>
-            <p>根据问题梳理流程、界面和功能，再借助 AI 工具尽快做出一个可以点击、可以试用的原型。</p>
+            <h3>寻找视觉方向</h3>
+            <p>我会在 Pinterest、Mobbin、Behance 等网站整理参考，关注信息层级、排版和交互；再从图片、品牌或使用场景里提取配色，形成简单的视觉规范。</p>
           </article>
           <article>
             <span>05</span>
+            <h3>设计和开发</h3>
+            <p>先画用户流程和页面结构，再完成低保真原型。方向明确后，我会借助 Cursor、Codex 等工具实现功能，并保持组件、状态和数据结构清楚。</p>
+          </article>
+          <article>
+            <span>06</span>
             <h3>持续完善</h3>
-            <p>第一次做出来的版本通常不是最终答案。我会在真实使用和反馈中继续修改，也接受有些判断需要推翻重来。</p>
+            <p>我会用真实任务走完整流程，记录卡住、误解或重复操作的地方，再调整文案、交互和功能。第一次完成的版本通常只是下一轮判断的开始。</p>
           </article>
         </div>
         <aside className="process-note">
@@ -191,10 +219,10 @@ export default function Home() {
       <section className="growth" id="exploration">
         <div className="growth-copy">
           <p className="kicker">EXPLORATION NOTES</p>
-          <h2>技术之外，<br />我也在理解真实的人</h2>
+          <h2>校园与实践经历</h2>
           <p>
-            校园工作、支教、展会和旅行，让我看到一个想法真正落地时需要的沟通、协作与信任，
-            也提醒我：技术面对的始终是具体的人。
+            除了独立开发产品，我也在校园工作和团队项目中学习沟通、执行与协作。
+            这些经历让我更理解：一个项目真正落地，不只需要想法和技术。
           </p>
           <div className="growth-timeline">
             {growth.map(([year, title, body]) => (
@@ -212,6 +240,19 @@ export default function Home() {
             <figcaption>俄罗斯冬宫 / 看见日常之外</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="more-teaser">
+        <div>
+          <p className="kicker">BEYOND WORK</p>
+          <h2>如果还想了解更多</h2>
+          <p>工作和项目之外，我也喜欢旅行、读书，以及记录那些偶然发生的相遇。</p>
+          <Link href="/more">看看我的另一面 <Arrow /></Link>
+        </div>
+        <figure>
+          <img src="/travel-murmansk.jpg" alt="在俄罗斯摩尔曼斯克旅行" />
+          <figcaption>俄罗斯摩尔曼斯克 / 冬天</figcaption>
+        </figure>
       </section>
 
       <section className="updates" id="updates">
@@ -257,6 +298,7 @@ export default function Home() {
           <a href="mailto:x132204x@163.com">x132204x@163.com <Arrow /></a>
           <a href="tel:13725293628">13725293628 / 微信同号 <Arrow /></a>
           <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub / x132204x-web <Arrow /></a>
+          <a href="/resume-xia-shiqi.pdf" target="_blank" rel="noreferrer">个人简历 PDF <Arrow /></a>
         </div>
       </section>
 

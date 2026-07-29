@@ -242,6 +242,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .feature-paper div:last-child { border-bottom: 0; }
 .feature-paper span { color: #8b867d; font: 9px ui-monospace, monospace; }
 
+.build-experience {
+  max-width: 1240px;
+  margin: 96px auto 0;
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 7vw;
+  border-top: 1px solid var(--line);
+}
+.build-experience h3 { margin: 0; font-size: clamp(28px, 3vw, 42px); font-weight: 520; letter-spacing: -.04em; }
+.build-experience-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.build-experience-list article { min-height: 190px; padding: 22px; background: rgba(255,255,255,.55); }
+.build-experience-list span { color: #858076; font: 9px ui-monospace, monospace; text-transform: uppercase; }
+.build-experience-list strong { display: block; margin-top: 34px; font-size: 15px; font-weight: 560; }
+.build-experience-list p { margin: 13px 0 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
+
 .process { max-width: 1240px; margin: auto; padding: 140px 5vw; }
 .process > .section-intro { margin-left: 0; }
 .process-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5vw; margin-top: 80px; }
@@ -285,7 +301,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .growth-timeline { margin-top: 70px; }
 .growth-timeline > div {
   display: grid;
-  grid-template-columns: 62px 190px 1fr;
+  grid-template-columns: 100px 190px 1fr;
   gap: 18px;
   padding: 22px 0;
   border-top: 1px solid #cac4b8;
@@ -299,6 +315,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .growth-photos figcaption { margin-top: 8px; color: #777168; font: 9px ui-monospace, monospace; }
 .growth-photos .teaching-photo { width: 86%; height: 390px; top: 0; left: 0; transform: rotate(-1.5deg); z-index: 2; }
 .growth-photos figure:last-child { width: 58%; height: 380px; right: 0; bottom: 0; transform: rotate(2deg); }
+
+.more-teaser {
+  max-width: 1240px;
+  margin: auto;
+  padding: 130px 5vw;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 9vw;
+  align-items: center;
+}
+.more-teaser h2 { margin: 0; font-size: clamp(42px, 5.4vw, 76px); line-height: 1.08; letter-spacing: -.055em; font-weight: 520; }
+.more-teaser p:not(.kicker) { max-width: 520px; margin: 28px 0 34px; color: var(--muted); font-size: 14px; line-height: 1.9; }
+.more-teaser a { display: inline-block; padding-bottom: 6px; border-bottom: 1px solid currentColor; font-size: 13px; }
+.more-teaser a span { margin-left: 14px; }
+.more-teaser figure { margin: 0; }
+.more-teaser img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+.more-teaser figcaption { margin-top: 9px; color: #777168; font: 9px ui-monospace, monospace; }
 
 .updates { padding: 120px 5vw; overflow: hidden; }
 .updates .section-intro { margin-bottom: 45px; }
@@ -385,6 +418,33 @@ footer {
 .detail-actions { max-width: 1080px; margin: 70px auto 0; display: flex; gap: 24px; }
 .detail-actions a { padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 12px; }
 
+.more-page { background: var(--paper); }
+.more-hero {
+  max-width: 1240px;
+  margin: auto;
+  padding: 130px 5vw 150px;
+}
+.more-hero h1 { max-width: 900px; margin: 0; font-size: clamp(58px, 8vw, 112px); line-height: 1.02; letter-spacing: -.065em; font-weight: 520; }
+.more-hero > p:last-child { max-width: 650px; margin: 48px 0 0; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.travel-notes { padding: 130px 5vw; background: var(--paper-light); }
+.more-heading { max-width: 1040px; margin: 0 auto 70px; }
+.more-heading h2 { max-width: 850px; margin: 0; font-size: clamp(38px, 5vw, 68px); line-height: 1.15; letter-spacing: -.05em; font-weight: 520; }
+.more-heading > p:last-child { max-width: 620px; margin: 28px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+.travel-grid { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.4fr .8fr; gap: 24px; align-items: start; }
+.travel-grid figure { margin: 0; }
+.travel-grid .murmansk-photo { grid-row: span 2; }
+.travel-grid img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.travel-grid .murmansk-photo img { height: 680px; }
+.travel-grid figcaption { margin-top: 8px; color: #777168; font: 9px ui-monospace, monospace; }
+.reading-notes { max-width: 1180px; margin: auto; padding: 150px 5vw; display: grid; grid-template-columns: .9fr 1.1fr; gap: 9vw; }
+.reading-notes .more-heading { margin: 0; }
+.reading-copy > p { margin: 0 0 26px; color: #5f5b54; font-size: 15px; line-height: 2; }
+.reading-topics { margin-top: 50px; display: flex; flex-wrap: wrap; gap: 10px; }
+.reading-topics span { padding: 8px 12px; border: 1px solid var(--line); color: #6f6a62; font-size: 11px; }
+.more-ending { padding: 110px 5vw; background: var(--ink); color: var(--paper-light); text-align: center; }
+.more-ending p { max-width: 720px; margin: auto; color: #c7c3ba; font-size: 18px; line-height: 1.9; }
+.more-ending a { display: inline-block; margin-top: 40px; padding-bottom: 6px; border-bottom: 1px solid currentColor; font-size: 13px; }
+
 @media (max-width: 900px) {
   .site-header nav { gap: 16px; }
   .hero { grid-template-columns: 1fr; padding-top: 82px; }
@@ -398,13 +458,17 @@ footer {
     grid-row: auto;
   }
   .project-media, .feature-paper { margin-top: 30px; width: 100%; }
+  .build-experience { grid-template-columns: 1fr; }
+  .build-experience-list { grid-template-columns: 1fr 1fr; }
   .process-flow { grid-template-columns: 1fr; gap: 64px; }
   .process-note { width: 88%; }
   .growth { grid-template-columns: 1fr; }
   .growth-copy { margin-left: 0; }
   .growth-photos { min-height: 620px; }
+  .more-teaser { grid-template-columns: 1fr; }
   .writing { grid-template-columns: 1fr; }
   .writing .section-intro { margin: 0; }
+  .reading-notes { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -413,6 +477,7 @@ footer {
   .site-header nav a:nth-child(3),
   .site-header nav a:nth-child(4),
   .site-header nav a:nth-child(5) { display: none; }
+  .more-page .site-header nav a { display: inline; }
   .hero { min-height: auto; padding: 78px 5vw 100px; gap: 70px; }
   .hero-copy h1 { font-size: 49px; }
   .hero-intro { font-size: 15px; line-height: 1.8; }
@@ -422,7 +487,7 @@ footer {
   .hero-life { width: 39%; height: 175px; }
   .field-note { width: 59%; min-height: 150px; padding: 20px; }
   .field-note p { margin-top: 22px; font-size: 13px; }
-  .about, .projects, .process, .growth, .updates, .writing { padding-top: 95px; padding-bottom: 95px; }
+  .about, .projects, .process, .growth, .more-teaser, .updates, .writing { padding-top: 95px; padding-bottom: 95px; }
   .about-facts { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
   .section-intro { margin-bottom: 50px; }
   .project-story { min-height: 0; }
@@ -433,12 +498,15 @@ footer {
   .project-main blockquote { margin-top: 38px; font-size: 19px; }
   .project-facts { grid-template-columns: 1fr; }
   .feature-paper { min-height: 290px; }
+  .build-experience-list { grid-template-columns: 1fr; }
+  .build-experience-list article { min-height: 160px; }
   .process-note { width: 100%; margin-top: 70px; padding: 28px; }
   .growth-timeline > div { grid-template-columns: 48px 1fr; }
   .growth-timeline p { grid-column: 2; }
   .growth-photos { min-height: 500px; }
   .growth-photos .teaching-photo { height: 280px; }
   .growth-photos figure:last-child { height: 270px; }
+  .more-teaser { gap: 50px; }
   .contact { padding: 95px 5vw; }
   footer { flex-wrap: wrap; }
   .detail-hero h1 { font-size: 68px; }
@@ -448,6 +516,13 @@ footer {
   .feature-section h3 { margin-top: 50px; }
   .learning-card { padding: 30px; }
   .learning-card blockquote { font-size: 20px; }
+  .more-hero { padding: 95px 5vw 110px; }
+  .more-hero h1 { font-size: 54px; }
+  .travel-notes { padding: 95px 5vw; }
+  .travel-grid { grid-template-columns: 1fr; }
+  .travel-grid .murmansk-photo { grid-row: auto; }
+  .travel-grid img, .travel-grid .murmansk-photo img { height: 280px; }
+  .reading-notes { padding: 105px 5vw; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
