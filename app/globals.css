@@ -322,8 +322,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   margin: auto;
   padding: 130px 5vw;
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 9vw;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: center;
 }
 .more-teaser h2 { margin: 0; font-size: clamp(42px, 5.4vw, 76px); line-height: 1.08; letter-spacing: -.055em; font-weight: 520; }
