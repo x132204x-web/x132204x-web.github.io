@@ -3,11 +3,10 @@
 import { useRef, useState } from "react";
 
 const travelItems = [
-  { image: "/portrait-xinjiang.jpg", alt: "在新疆旅行的夏诗淇", place: "新疆", note: "在山里走一走" },
-  { image: "/portrait-st-petersburg.jpg", alt: "在圣彼得堡参观博物馆", place: "圣彼得堡", note: "在展厅里慢慢看" },
+  { image: "/portrait-xinjiang-stage.jpg", alt: "在新疆旅行的夏诗淇", place: "新疆", note: "在山里走一走" },
+  { image: "/portrait-st-petersburg.jpg", alt: "在圣彼得堡冬宫参观的夏诗淇", place: "圣彼得堡 · 冬宫", note: "在展厅里慢慢看" },
   { image: "/travel-murmansk.jpg", alt: "在俄罗斯摩尔曼斯克旅行", place: "俄罗斯摩尔曼斯克", note: "冬天与极夜" },
   { image: "/travel-sea.jpg", alt: "在日本伊豆旅行", place: "日本伊豆", note: "沿着海边慢慢走" },
-  { image: "/travel-window.jpg", alt: "参观俄罗斯冬宫", place: "俄罗斯冬宫", note: "在展厅里慢慢看" },
   { image: "/travel-sunset.jpg", alt: "旅行中望向远处的晚霞", place: "旅行途中", note: "等一场傍晚" },
 ];
 
