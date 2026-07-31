@@ -33,8 +33,8 @@ export default function Home() {
           <p className="kicker">ASHLEY XIA · PERSONAL ARCHIVE</p>
           <h1>关于我做过的事，<br />以及我正在成为的人。</h1>
           <p className="hero-intro">
-            你好，我是夏诗淇（Ashley），现就读于中国农业大学地理信息科学专业。
-            这里收录我的学习经历、项目实践、工作记录和个人博客。
+            你好，我是夏诗淇（Ashley）。这是我的 Personal Archive，
+            收录实习经历、项目实践和个人博客。
           </p>
           <div className="hero-links">
             <a className="primary-link" href="#exploration">查看经历 <Arrow /></a>
@@ -48,16 +48,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-portraits" aria-label="夏诗淇的旅行照片">
+        <div className="hero-portraits" aria-label="夏诗淇的个人照片">
           <figure className="hero-portrait-main">
             <img src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
-            <figcaption><span>新疆，2026</span><strong>摄于旅途中</strong></figcaption>
           </figure>
           <figure className="hero-portrait-secondary">
             <img src="/portrait-st-petersburg-crop.jpg" alt="夏诗淇在圣彼得堡参观博物馆" />
-            <figcaption>圣彼得堡 · 在展厅里慢慢看</figcaption>
           </figure>
-          <p>我在项目中学习如何创造，也在旅行和人与人的相遇里练习观察。</p>
         </div>
       </section>
 
@@ -81,7 +78,7 @@ export default function Home() {
           <div className="about-facts">
             <div><span>教育背景</span><strong>中国农业大学<br />地理信息科学 · 2024 - 2028<br />GPA 3.56 / 4.0</strong></div>
             <div><span>工具与技术</span><strong>Python · SQL · Excel · Notion<br />Cursor · Codex · Prompt Engineering</strong></div>
-            <div><span>其他能力</span><strong>网站与小程序开发<br />IELTS 6.5 · CET-4/6 高分</strong></div>
+            <div><span>其他能力</span><strong>网站与小程序开发<br />IELTS 6.5 · CET-4/6 600+</strong></div>
           </div>
         </div>
       </section>
@@ -201,11 +198,6 @@ export default function Home() {
             <span>05</span>
             <h3>设计和开发</h3>
             <p>先画用户流程和页面结构，再完成低保真原型。方向明确后，我会借助 Cursor、Codex 等工具实现功能，并保持组件、状态和数据结构清楚。</p>
-            <div className="process-visual process-build" aria-label="从页面结构到真实产品">
-              <img src="/finalace-upload.png" alt="FinalAce 产品界面" />
-              <div><b>Cursor</b><b>Codex</b></div>
-              <small>流程 → 原型 → 开发</small>
-            </div>
           </article>
           <article>
             <span>06</span>
@@ -220,10 +212,6 @@ export default function Home() {
             </div>
           </article>
         </div>
-        <aside className="process-note">
-          <strong>我习惯边做边学，在实践里把问题想清楚。</strong>
-          <p>先做出一个能运行的版本，再在使用、反馈和一次次修改里学习。对我来说，真正的理解通常不是开始之前想出来的，而是做过之后慢慢长出来的。</p>
-        </aside>
       </section>
 
       <section className="growth" id="exploration">
@@ -242,8 +230,8 @@ export default function Home() {
         </div>
         <div className="growth-photos">
           <figure className="teaching-photo">
-            <img src="/teaching-class.jpg" alt="支教课堂" />
-            <figcaption>支教 / 在课堂里理解学习</figcaption>
+            <img src="/campus-career-fair.jpg" alt="中国农业大学春季校园招聘会工作人员合照" />
+            <figcaption>校园经历 / 春季招聘会组织与执行</figcaption>
           </figure>
           <figure className="teaching-workshop-photo"><img src="/teaching-workshop.jpg" alt="支教活动中的团队协作" /><figcaption>支教 / 和伙伴们一起做点什么</figcaption></figure>
           <figure className="teaching-night-photo"><img src="/teaching-night.jpg" alt="支教活动中的团队生活" /><figcaption>支教 / 和伙伴们一起生活</figcaption></figure>
@@ -302,12 +290,11 @@ export default function Home() {
         <div>
           <p className="kicker">BEYOND WORK</p>
           <h2>如果还想了解更多</h2>
-          <p>工作和项目之外，我也喜欢旅行、读书，以及记录那些偶然发生的相遇。</p>
           <Link href="/more">进入详情 <Arrow /></Link>
         </div>
       </section>
 
-      <footer><span>© 2026 夏诗淇</span><span>还没有找到所有答案，但会继续观察、学习和动手。</span><a href="#top">回到顶部 ↑</a></footer>
+      <footer><span>© 2026 夏诗淇</span><span>Exploring…</span><a href="#top">回到顶部 ↑</a></footer>
     </main>
   );
 }
