@@ -30,16 +30,16 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="kicker">ASHLEY XIA · PRODUCT BUILDER</p>
-          <h1>边做边学，<br />把想法做成产品。</h1>
+          <p className="kicker">ASHLEY XIA · PERSONAL ARCHIVE</p>
+          <h1>关于我做过的事，<br />以及我正在成为的人。</h1>
           <p className="hero-intro">
-            你好，我是夏诗淇（Ashley）。我喜欢观察人怎样学习、工作和做选择，也喜欢把一个模糊的想法做成可以试用的产品。
-            我没有一开始就找到答案，但会在真实项目里学习新的工具、验证判断，再把不成熟的版本一点点改好。
+            你好，我是夏诗淇（Ashley），现就读于中国农业大学地理信息科学专业。
+            这里收录我的学习经历、项目实践、工作记录和个人博客。
           </p>
           <div className="hero-links">
-            <a className="primary-link" href="#projects">看我做过的项目 <Arrow /></a>
-            <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
-            <a href="/more">了解更多 <Arrow /></a>
+            <a className="primary-link" href="#exploration">查看经历 <Arrow /></a>
+            <a href="#projects">浏览项目 <Arrow /></a>
+            <a href="#about">关于我 <Arrow /></a>
           </div>
           <div className="hero-education">
             <span>EDUCATION</span>
@@ -51,7 +51,7 @@ export default function Home() {
         <div className="hero-portraits" aria-label="夏诗淇的旅行照片">
           <figure className="hero-portrait-main">
             <img src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
-            <figcaption><span>新疆 · 2026</span><strong>ASHLEY XIA</strong></figcaption>
+            <figcaption><span>新疆，2026</span><strong>摄于旅途中</strong></figcaption>
           </figure>
           <figure className="hero-portrait-secondary">
             <img src="/portrait-st-petersburg-crop.jpg" alt="夏诗淇在圣彼得堡参观博物馆" />
