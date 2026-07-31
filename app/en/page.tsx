@@ -1,0 +1,255 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { projects } from "../project-data";
+
+export const metadata: Metadata = {
+  title: "Ashley Xia | Product, AI & GIS",
+  description:
+    "Ashley Xia's personal site — selected product work, AI experiments, and the experiences shaping how she learns and builds.",
+  alternates: {
+    canonical: "/en/",
+    languages: {
+      "zh-CN": "/",
+      en: "/en/",
+    },
+  },
+};
+
+const recentNotes = [
+  {
+    date: "Jul 2026",
+    title: "Visited WAIC",
+    body: "Explored AI agents, personal servers, and hardware products in real-world settings.",
+  },
+  {
+    date: "Jul 2026",
+    title: "Started building more seriously",
+    body: "Began moving personal projects into a more structured environment for testing and iteration.",
+  },
+  {
+    date: "Jun 2026",
+    title: "AI-assisted development",
+    body: "Used Cursor and Codex across product research, prototyping, coding, and testing.",
+  },
+  {
+    date: "May 2026",
+    title: "Built FinalAce",
+    body: "Turned a difficult exam-prep experience into a working AI learning product.",
+  },
+];
+
+const experiences = [
+  {
+    period: "2025 — Present",
+    title: "Student Assistant · Career & Innovation Office",
+    body: "Company information review, recruitment-event operations, data organization, and coordination across companies, students, and campus teams.",
+  },
+  {
+    period: "2026 — Present",
+    title: "Product & Development · Campus 3D Printing Mini Program",
+    body: "Worked on requirements, product flow, development coordination, and testing for a campus printing service.",
+  },
+  {
+    period: "Summer 2025",
+    title: "Documentation Lead · Education Volunteer Program",
+    body: "Led daily documentation and reflection, and learned how environment, trust, and human connection shape learning.",
+  },
+];
+
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
+
+export default function EnglishHome() {
+  return (
+    <main className="en-page" id="top" lang="en">
+      <header className="en-header">
+        <Link className="en-brand" href="/en">Ashley Xia</Link>
+        <nav aria-label="English navigation">
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <Link className="en-language" href="/">中文</Link>
+        </nav>
+      </header>
+
+      <div className="en-shell">
+        <aside className="en-profile" aria-label="Profile">
+          <figure className="en-profile-photo">
+            <img src="/portrait-xinjiang.jpg" alt="Ashley Xia in Xinjiang" />
+            <figcaption>Xinjiang · 2026</figcaption>
+          </figure>
+          <div className="en-profile-copy">
+            <p className="en-eyebrow">HELLO, I&apos;M</p>
+            <h1>Ashley Xia</h1>
+            <p className="en-chinese-name">夏诗淇</p>
+            <p className="en-role">Product explorer building with AI, code, and curiosity.</p>
+          </div>
+          <dl className="en-profile-facts">
+            <div>
+              <dt>Based in</dt>
+              <dd>Beijing, China</dd>
+            </div>
+            <div>
+              <dt>Education</dt>
+              <dd>China Agricultural University<br />GIS · 2024–2028</dd>
+            </div>
+            <div>
+              <dt>Interested in</dt>
+              <dd>AI products · Learning tools<br />Spatial intelligence</dd>
+            </div>
+          </dl>
+          <div className="en-profile-links">
+            <a href="mailto:x132204x@163.com">Email <Arrow /></a>
+            <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+            <a href="/resume-xia-shiqi.pdf" target="_blank">Résumé <Arrow /></a>
+          </div>
+        </aside>
+
+        <div className="en-main-column">
+          <section className="en-panel en-about" id="about">
+            <p className="en-eyebrow">ABOUT ME</p>
+            <h2>I learn by building things I wish existed.</h2>
+            <p>
+              I am interested in how people learn, work, and make choices. When I notice a
+              problem in my own life, I like to understand it, make a rough version of a
+              solution, and learn from what happens next.
+            </p>
+            <p>
+              AI shortened the distance between an idea and something I could actually test.
+              Since then, I have been learning product design and development through practice:
+              talking to users, mapping flows, writing code, and repeatedly improving what I build.
+            </p>
+            <div className="en-now">
+              <span>Currently</span>
+              <strong>Building learning products and exploring AI agents.</strong>
+            </div>
+          </section>
+
+          <section className="en-section" id="work">
+            <div className="en-section-heading">
+              <div>
+                <p className="en-eyebrow">SELECTED WORK</p>
+                <h2>Products shaped by real problems</h2>
+              </div>
+              <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">
+                All repositories <Arrow />
+              </a>
+            </div>
+            <div className="en-project-list">
+              {projects.map((project, index) => (
+                <article className="en-project" key={project.slug}>
+                  <Link className="en-project-media" href={`/projects/${project.slug}`}>
+                    <img
+                      src={project.images?.[0] ?? project.image}
+                      alt={`${project.name} product interface`}
+                    />
+                    <span>0{index + 1}</span>
+                  </Link>
+                  <div className="en-project-copy">
+                    <div className="en-project-title">
+                      <div>
+                        <p>{index === 0 ? "AI LEARNING PRODUCT" : "BROWSER EXTENSION"}</p>
+                        <h3>{project.name}</h3>
+                      </div>
+                      <span>{index === 0 ? "Live · Iterating" : "Built · Expanding"}</span>
+                    </div>
+                    <p>
+                      {index === 0
+                        ? "An AI study workspace that turns scattered course materials into a clearer review process — from organizing knowledge to practice and reflection."
+                        : "A browser extension that turns isolated AI conversations into a longer learning process by identifying knowledge gaps, suggesting next steps, and building memory over time."}
+                    </p>
+                    <ul>
+                      {(index === 0
+                        ? ["Product strategy", "Learning flow", "AI workflow", "Frontend"]
+                        : ["Product structure", "AI interaction", "Extension development", "Memory design"]
+                      ).map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                    <a
+                      href={project.publicUrl ?? "https://github.com/x132204x-web?tab=repositories"}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {project.publicUrl ? "View repository" : "See more on GitHub"} <Arrow />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="en-section en-process">
+            <div className="en-section-heading">
+              <div>
+                <p className="en-eyebrow">HOW I WORK</p>
+                <h2>Learning in practice</h2>
+              </div>
+            </div>
+            <div className="en-process-grid">
+              <article><span>01</span><h3>Notice</h3><p>Start with a specific difficulty I have experienced or observed.</p></article>
+              <article><span>02</span><h3>Understand</h3><p>Look at the real task, existing tools, and what is still missing.</p></article>
+              <article><span>03</span><h3>Make</h3><p>Turn the idea into a flow, interface, and working prototype quickly.</p></article>
+              <article><span>04</span><h3>Improve</h3><p>Use it in real situations. Getting from usable to reliable is the longer part.</p></article>
+            </div>
+          </section>
+
+          <section className="en-section" id="experience">
+            <div className="en-section-heading">
+              <div>
+                <p className="en-eyebrow">EXPERIENCE</p>
+                <h2>Work beyond independent projects</h2>
+              </div>
+            </div>
+            <div className="en-experience-list">
+              {experiences.map((item) => (
+                <article key={item.title}>
+                  <span>{item.period}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <aside className="en-side-column">
+          <section className="en-news">
+            <p className="en-eyebrow">RECENT NOTES</p>
+            <div>
+              {recentNotes.map((note) => (
+                <article key={`${note.date}-${note.title}`}>
+                  <time>{note.date}</time>
+                  <h3>{note.title}</h3>
+                  <p>{note.body}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <Link className="en-beyond" href="/more">
+            <img src="/travel-lake-mountain.jpg" alt="A blue lake and mountains" />
+            <div>
+              <p className="en-eyebrow">BEYOND WORK</p>
+              <h2>Travel, books, and things I keep noticing.</h2>
+              <span>Explore more <Arrow /></span>
+            </div>
+          </Link>
+
+          <section className="en-contact">
+            <p className="en-eyebrow">CONTACT</p>
+            <h2>Want to know more about my work?</h2>
+            <a href="mailto:x132204x@163.com">x132204x@163.com <Arrow /></a>
+          </section>
+        </aside>
+      </div>
+
+      <footer className="en-footer">
+        <span>© 2026 Ashley Xia</span>
+        <span>Learning, building, and keeping notes.</span>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </main>
+  );
+}
