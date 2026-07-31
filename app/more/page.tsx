@@ -11,7 +11,7 @@ export default function MorePage() {
 
       <section className="more-hero">
         <p className="kicker">BEYOND WORK</p>
-        <h1>项目之外，<br />我也在认真生活。</h1>
+        <h1><span>项目之外，</span><br />我也在认真生活。</h1>
         <p>
           旅行和读书不是简历上的项目，却一直影响我怎样观察问题、理解别人，也影响我想做怎样的产品。
         </p>

@@ -109,16 +109,11 @@ export default function EnglishHome() {
         <div className="en-main-column">
           <section className="en-panel en-about" id="about">
             <p className="en-eyebrow">ABOUT ME</p>
-            <h2>I learn by building things I wish existed.</h2>
+            <h2>What I have done, and who I am becoming.</h2>
             <p>
-              I am interested in how people learn, work, and make choices. When I notice a
-              problem in my own life, I like to understand it, make a rough version of a
-              solution, and learn from what happens next.
-            </p>
-            <p>
-              AI shortened the distance between an idea and something I could actually test.
-              Since then, I have been learning product design and development through practice:
-              talking to users, mapping flows, writing code, and repeatedly improving what I build.
+              I am Ashley Xia, a Geographic Information Science student at China Agricultural
+              University. This archive brings together my education, product projects, work
+              experience, and personal writing.
             </p>
             <div className="en-now">
               <span>Currently</span>

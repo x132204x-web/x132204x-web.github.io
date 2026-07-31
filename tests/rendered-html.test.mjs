@@ -49,7 +49,7 @@ test("server-renders the English profile page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /Ashley Xia/);
-  assert.match(html, /I learn by building things I wish existed/);
+  assert.match(html, /What I have done, and who I am becoming/);
   assert.match(html, /FinalAce/);
   assert.match(html, /Narziss/);
   assert.match(html, /Recent Notes/i);
