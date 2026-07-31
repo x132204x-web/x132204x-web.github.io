@@ -23,33 +23,41 @@ export default function Home() {
           <a href="#about">关于我</a>
           <a href="#projects">做过的事</a>
           <a href="#process">如何工作</a>
+          <a className="lang-link" href="/en">EN</a>
           <a className="nav-more" href="/more">了解更多</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="kicker">GIS × AI × PRODUCT</p>
-          <h1>Ashley<br />正在把想法做成产品。</h1>
+          <p className="kicker">ASHLEY XIA · PRODUCT BUILDER</p>
+          <h1>边做边学，<br />把想法做成产品。</h1>
           <p className="hero-intro">
-            你好，我是夏诗淇。我喜欢观察人怎样学习、工作和做选择，也喜欢把一个模糊的想法做成可以试用的产品。
-            接触 AI 后，我第一次感受到，许多原本只存在于脑中的想法，可以通过工具很快变成现实。
+            你好，我是夏诗淇（Ashley）。我喜欢观察人怎样学习、工作和做选择，也喜欢把一个模糊的想法做成可以试用的产品。
+            我没有一开始就找到答案，但会在真实项目里学习新的工具、验证判断，再把不成熟的版本一点点改好。
           </p>
           <div className="hero-links">
             <a className="primary-link" href="#projects">看我做过的项目 <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
             <a href="/more">了解更多 <Arrow /></a>
           </div>
-          <p className="project-line">2024 - 2028 · 中国农业大学</p>
+          <div className="hero-education">
+            <span>EDUCATION</span>
+            <strong>中国农业大学 · 地理信息科学</strong>
+            <small>2024 — 2028</small>
+          </div>
         </div>
 
-        <div className="hero-profile" aria-label="教育经历">
-          <p className="kicker">EDUCATION</p>
-          <strong>中国农业大学</strong>
-          <h2>地理信息科学</h2>
-          <p>2024 — 2028</p>
-          <div className="hero-profile-line" />
-          <span>从空间数据出发，继续探索 AI 与产品。</span>
+        <div className="hero-portraits" aria-label="夏诗淇的旅行照片">
+          <figure className="hero-portrait-main">
+            <img src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
+            <figcaption><span>新疆 · 2026</span><strong>ASHLEY XIA</strong></figcaption>
+          </figure>
+          <figure className="hero-portrait-secondary">
+            <img src="/portrait-st-petersburg-crop.jpg" alt="夏诗淇在圣彼得堡参观博物馆" />
+            <figcaption>圣彼得堡 · 在展厅里慢慢看</figcaption>
+          </figure>
+          <p>我在项目中学习如何创造，也在旅行和人与人的相遇里练习观察。</p>
         </div>
       </section>
 

@@ -17,7 +17,7 @@ test("server-renders the personal lab homepage", async () => {
   const html = await response.text();
   assert.match(html, /夏诗淇/);
   assert.match(html, /FinalAce/);
-  assert.match(html, /Ashley/);
+  assert.match(html, /ASHLEY XIA|Ashley/);
   assert.match(html, /Narziss/);
   assert.doesNotMatch(html, /云品册|PathFinder/);
   assert.match(html, /我还在寻找方向/);
@@ -42,6 +42,18 @@ test("server-renders the personal interests page", async () => {
   assert.match(html, /读书是另一种认识世界的方式/);
   assert.match(html, /回到夏诗淇的主页/);
   assert.match(html, /返回首页/);
+});
+
+test("server-renders the English profile page", async () => {
+  const response = await render("/en");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Ashley Xia/);
+  assert.match(html, /I learn by building things I wish existed/);
+  assert.match(html, /FinalAce/);
+  assert.match(html, /Narziss/);
+  assert.match(html, /Recent Notes/i);
+  assert.match(html, /href="\/"/);
 });
 
 test("server-renders a project detail page", async () => {
