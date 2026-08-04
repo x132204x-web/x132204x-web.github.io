@@ -23,7 +23,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <p className="kicker">{project.type}</p>
           <h1>{project.name}</h1>
           <blockquote>{project.question}</blockquote>
-          <p>{project.summary}</p>
+          {project.summary ? <p>{project.summary}</p> : null}
           <span>{project.status}</span>
         </div>
 

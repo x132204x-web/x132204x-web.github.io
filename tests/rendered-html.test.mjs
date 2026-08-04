@@ -20,7 +20,6 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /ASHLEY XIA|Ashley/);
   assert.match(html, /Narziss/);
   assert.doesNotMatch(html, /云品册|PathFinder/);
-  assert.match(html, /我还在寻找方向/);
   assert.match(html, /我做过的一些尝试/);
   assert.match(html, /我是如何做一个产品的/);
   assert.match(html, /Pinterest/);
@@ -28,10 +27,23 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /如果还想了解更多/);
   assert.match(html, /进入详情/);
   assert.match(html, /进入详情/);
-  assert.match(html, /AI 探索记录/);
-  assert.match(html, /我的思考/);
-  assert.match(html, /阅读文章与思考/);
+  assert.match(html, /探索日记/);
+  assert.match(html, /每日信息搜集/);
+  assert.match(html, /OPC 大会/);
+  assert.match(html, /博客/);
+  assert.doesNotMatch(html, /阅读文章与思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+});
+
+test("server-renders the education and capabilities page", async () => {
+  const response = await render("/profile");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /教育背景/);
+  assert.match(html, /GPA 3.56 \/ 4.0/);
+  assert.match(html, /IELTS 6.5/);
+  assert.match(html, /我能做什么/);
+  assert.match(html, /网站与小程序/);
 });
 
 test("server-renders the personal interests page", async () => {
