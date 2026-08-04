@@ -67,7 +67,7 @@ export default function Home() {
 
         <div className="hero-portraits" aria-label="夏诗淇的个人照片">
           <figure className="hero-portrait-main">
-            <img src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
+            <img className="portrait-scan-image" src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
           </figure>
           <figure className="hero-portrait-secondary">
             <img src="/portrait-st-petersburg-crop.jpg" alt="夏诗淇在圣彼得堡参观博物馆" />
