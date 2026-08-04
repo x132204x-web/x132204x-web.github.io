@@ -18,6 +18,7 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /夏诗淇/);
   assert.match(html, /FinalAce/);
   assert.match(html, /ASHLEY XIA|Ashley/);
+  assert.match(html, /portrait-scan-image/);
   assert.match(html, /Narziss/);
   assert.doesNotMatch(html, /云品册|PathFinder/);
   assert.match(html, /我做过的一些尝试/);
