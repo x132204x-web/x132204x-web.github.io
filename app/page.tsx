@@ -1,13 +1,38 @@
 import Link from "next/link";
 import { projects } from "./project-data";
-import { updateEntries } from "./update-data";
 import { articles } from "./article-data";
 
 const growth = [
   ["2025.09 - 至今", "中国农业大学就业创新办公室 · 学生助管", "负责企业信息审核、招聘会策划执行与数据整理，并对接企业、师生和校内部门。"],
   ["2025.04 - 2025.08", "种太阳公益夏令营 · 队记总负责人", "统筹全程活动记录、数据整理和结项报告；每日组织团队复盘，参与问题处理与团队协作。"],
-  ["2026.06 - 至今", "校园 3D 打印平台 · 小程序开发负责人", "参与需求分析、产品设计、开发协同与测试，完成“上传打印对象—系统处理—连接 3D 打印机”的流程。"],
-  ["2026.07", "世界人工智能大会 WAIC", "近距离体验 AI 软件、Agent、个人服务器与硬件产品，并记录它们如何进入真实使用场景。"],
+  ["2026.06 - 至今", "校园 3D 打印平台 · 开发设计者", "参与需求分析、产品设计、开发协同与测试，完成“上传打印对象—系统处理—连接 3D 打印机”的流程。"],
+];
+
+const explorationNotes = [
+  {
+    date: "DAILY",
+    icon: "⌁",
+    title: "每日信息搜集",
+    summary: "浏览 AI 产品、开源项目和行业动态，把值得继续追踪的问题记进 Notion。",
+  },
+  {
+    date: "WEEKLY",
+    icon: "↺",
+    title: "每周整理与复盘",
+    summary: "把零散链接按主题归档，补充试用感受，并记录自己的判断发生了什么变化。",
+  },
+  {
+    date: "2026.07",
+    icon: "◉",
+    title: "世界人工智能大会 WAIC",
+    summary: "现场体验 AI 软件、Agent、个人服务器与硬件产品，观察它们如何进入真实场景。",
+  },
+  {
+    date: "EVENT",
+    icon: "◇",
+    title: "OPC 大会",
+    summary: "从现场分享和产品展示中了解新的工具、开发方式与应用方向。",
+  },
 ];
 
 function Arrow() {
@@ -31,20 +56,12 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="kicker">ASHLEY XIA · PERSONAL ARCHIVE</p>
-          <h1>关于我做过的事，<br />以及我正在成为的人。</h1>
-          <p className="hero-intro">
-            你好，我是夏诗淇（Ashley）。这是我的 Personal Archive，
-            收录实习经历、项目实践和个人博客。
-          </p>
+          <h1>你好👋，我是夏诗淇</h1>
+          <p className="hero-intro">Ashley 的 Personal Archive，收录实习经历、项目实践和个人博客。</p>
           <div className="hero-links">
             <a className="primary-link" href="#exploration">查看经历 <Arrow /></a>
             <a href="#projects">浏览项目 <Arrow /></a>
-            <a href="#about">关于我 <Arrow /></a>
-          </div>
-          <div className="hero-education">
-            <span>EDUCATION</span>
-            <strong>中国农业大学 · 地理信息科学</strong>
-            <small>2024 — 2028</small>
+            <Link href="/profile">教育与能力 <Arrow /></Link>
           </div>
         </div>
 
@@ -64,7 +81,6 @@ export default function Home() {
           <span>01 / 我是谁</span>
         </div>
         <div className="about-copy">
-          <h2>我还在寻找方向，<br />也在一次次尝试中认识自己。</h2>
           <p>
             进入大学时，我并不知道自己真正喜欢什么。选专业的过程更像一次排除：
             GIS 是当时那个我不讨厌、也愿意继续了解的方向。学习过程中，我接触到数据、空间和系统思维，
@@ -75,11 +91,7 @@ export default function Home() {
             我开始学习新的工具、做产品原型，也逐渐体会到 Build 的快乐：
             观察一个问题，试着解决它，再把不成熟的想法一点点改得更完整。
           </p>
-          <div className="about-facts">
-            <div><span>教育背景</span><strong>中国农业大学<br />地理信息科学 · 2024 - 2028<br />GPA 3.56 / 4.0</strong></div>
-            <div><span>工具与技术</span><strong>Python · SQL · Excel · Notion<br />Cursor · Codex · Prompt Engineering</strong></div>
-            <div><span>其他能力</span><strong>网站与小程序开发<br />IELTS 6.5 · CET-4/6 600+</strong></div>
-          </div>
+          <Link className="profile-entry" href="/profile">查看教育背景与能力 <Arrow /></Link>
         </div>
       </section>
 
@@ -87,7 +99,6 @@ export default function Home() {
         <div className="section-intro">
           <p className="kicker">SELECTED WORK</p>
           <h2>我做过的一些尝试</h2>
-          <p>这些项目并不是一开始就规划好的方向。它们来自学习、生活和观察中的一些问题，我试着用技术寻找答案。</p>
         </div>
 
         <div className="project-stack">
@@ -103,7 +114,7 @@ export default function Home() {
                   <span>{project.status}</span>
                 </div>
                 <blockquote>{project.question}</blockquote>
-                <p className="project-summary">{project.summary}</p>
+                {project.summary ? <p className="project-summary">{project.summary}</p> : null}
                 <div className="project-facts">
                   <div><span>我做了什么</span><p>{project.role.join("、")}</p></div>
                   <div><span>现在的进展</span><p>{project.progress}</p></div>
@@ -146,24 +157,16 @@ export default function Home() {
         <div className="section-intro">
           <p className="kicker">HOW I WORK</p>
           <h2>我是如何做一个产品的</h2>
-          <p>这不是一套固定的方法论，只是我在几次实践中慢慢形成的个人习惯。</p>
         </div>
         <div className="process-flow">
           <article>
             <span>01</span>
             <h3>发现问题</h3>
             <p>很多项目都来自生活中的小问题。可能是一次学习困难、一次 AI 使用体验，或者一个长期存在的不方便。</p>
-            <div className="process-visual process-observations" aria-label="我记录问题的三个来源">
-              <small>期末复习</small>
-              <small>AI 对话</small>
-              <small>日常体验</small>
-              <b>先把不方便记下来</b>
-            </div>
           </article>
           <article>
             <span>02</span>
             <h3>分析问题</h3>
-            <p>我会先问自己：问题为什么存在？真正需要被解决的是什么？有时最先想到的功能，并不是问题的答案。</p>
             <div className="process-visual process-question" aria-label="从表面现象追问到真实需求">
               <small>表面现象</small>
               <i>↓</i>
@@ -176,12 +179,6 @@ export default function Home() {
             <span>03</span>
             <h3>寻找已有方案</h3>
             <p>我会看看市场上是否已有类似产品，了解它们解决了什么、哪里做得很好，以及还有哪些体验没有被照顾到。也会留意生活中遇到的产品方案，想想它为什么让人愿意使用，再把值得借鉴的部分带回自己的项目。</p>
-            <div className="process-visual process-research" aria-label="我寻找产品方案的常用渠道">
-              <b>GitHub</b>
-              <b>Product Hunt</b>
-              <b>App Store</b>
-              <small>功能 · 体验 · 用户反馈</small>
-            </div>
           </article>
           <article>
             <span>04</span>
@@ -203,13 +200,6 @@ export default function Home() {
             <span>06</span>
             <h3>持续完善</h3>
             <p>从零做到一个能用的版本，往往只需要几小时；但从“能用”走到上线、稳定使用并被更多人看见，通常需要几个月。后半段更考验细节、反馈、推广和持续投入。</p>
-            <div className="process-visual process-progress" aria-label="产品从能用到被看见的过程">
-              <div><b>能用</b><i /></div>
-              <div><b>上线</b><i /></div>
-              <div><b>稳定</b><i /></div>
-              <div><b>被看见</b></div>
-              <small>几小时</small><small>几个月的持续投入</small>
-            </div>
           </article>
         </div>
       </section>
@@ -241,17 +231,17 @@ export default function Home() {
       <section className="updates" id="updates">
         <div className="section-intro">
           <p className="kicker">RECENT NOTES</p>
-          <h2>AI 探索记录</h2>
-          <p>记录我体验过的 AI 工具、GitHub 项目，以及一些还没有形成结论的技术探索。</p>
+          <h2>探索日记</h2>
+          <p>每日的信息搜集工作流，以及我在活动现场留下的观察。</p>
         </div>
-        <div className="update-strip">
-          {updateEntries.map((entry) => (
-            <Link href={`/updates/${entry.slug}`} key={entry.slug}>
+        <div className="update-strip" aria-label="可横向滑动的探索日记">
+          {explorationNotes.map((entry) => (
+            <article key={`${entry.date}-${entry.title}`} tabIndex={0}>
               <time>{entry.date}</time>
-              <span>{entry.icon}</span>
+              <span aria-hidden="true">{entry.icon}</span>
               <h3>{entry.title}</h3>
               <p>{entry.summary}</p>
-            </Link>
+            </article>
           ))}
         </div>
       </section>
@@ -259,9 +249,7 @@ export default function Home() {
       <section className="writing" id="writing">
         <div className="section-intro">
           <p className="kicker">WRITING</p>
-          <h2>我的思考</h2>
-          <p>我把 AI、产品和成长中的一些想法写下来，方便别人了解我，也方便自己回头看。</p>
-          <Link className="writing-entry" href="/articles/waic-observation">阅读文章与思考 <Arrow /></Link>
+          <h2>博客</h2>
         </div>
         <div className="article-list">
           {articles.map((article) => (
