@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const travelItems = [
-  { image: "/portrait-xinjiang-stage.jpg", alt: "在新疆旅行的夏诗淇", place: "新疆", note: "在山里走一走" },
+  { image: "/portrait-xinjiang-stage.jpg", alt: "在新疆伊犁旅行的夏诗淇", place: "新疆伊犁", note: "在山里走一走" },
   { image: "/portrait-st-petersburg.jpg", alt: "在圣彼得堡冬宫参观的夏诗淇", place: "圣彼得堡 · 冬宫", note: "在展厅里慢慢看" },
   { image: "/travel-murmansk.jpg", alt: "在俄罗斯摩尔曼斯克旅行", place: "俄罗斯摩尔曼斯克", note: "冬天与极夜" },
   { image: "/travel-sea.jpg", alt: "在日本伊豆旅行", place: "日本伊豆", note: "沿着海边慢慢走" },
@@ -62,14 +62,11 @@ export function TravelGallery() {
 export function MediaShelf() {
   const [kind, setKind] = useState<keyof typeof shelves>("books");
   const [selected, setSelected] = useState(0);
-  const railRef = useRef<HTMLDivElement>(null);
   const items = shelves[kind];
   const chooseKind = (next: keyof typeof shelves) => {
     setKind(next);
     setSelected(0);
-    railRef.current?.scrollTo({ left: 0, behavior: "smooth" });
   };
-  const scroll = (direction: number) => railRef.current?.scrollBy({ left: direction * 310, behavior: "smooth" });
 
   return (
     <div className="media-shelf">
@@ -78,18 +75,13 @@ export function MediaShelf() {
           <button className={kind === "books" ? "active" : ""} type="button" role="tab" aria-selected={kind === "books"} onClick={() => chooseKind("books")}>读过的书</button>
           <button className={kind === "films" ? "active" : ""} type="button" role="tab" aria-selected={kind === "films"} onClick={() => chooseKind("films")}>喜欢的电影</button>
         </div>
-        <div className="media-arrows" aria-label="滑动书影音卡片">
-          <button type="button" onClick={() => scroll(-1)} aria-label="向左滑动">←</button>
-          <button type="button" onClick={() => scroll(1)} aria-label="向右滑动">→</button>
-        </div>
       </div>
-      <div className="media-rail" ref={railRef}>
+      <div className="media-rail">
         {items.map((entry, index) => (
           <button className={`media-card ${entry.theme} ${selected === index ? "active" : ""}`} type="button" key={entry.title} onClick={() => setSelected(index)} aria-pressed={selected === index}>
             <span className="media-card-icon">{entry.icon}</span>
-            <small>{entry.meta}</small>
-            <strong>{entry.title}</strong>
-            <i>点击查看短注</i>
+            <span className="media-card-copy"><strong>{entry.title}</strong><small>{entry.meta}</small></span>
+            <i>查看短注 →</i>
           </button>
         ))}
       </div>
