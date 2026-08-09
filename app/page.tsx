@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { projects } from "./project-data";
-import { articles } from "./article-data";
 
 const growth = [
   ["2025.09 - 至今", "中国农业大学就业创新办公室 · 学生助管", "负责企业信息审核、招聘会策划执行与数据整理，并对接企业、师生和校内部门。"],
@@ -81,10 +80,17 @@ export default function Home() {
           <span>01 / 我是谁</span>
         </div>
         <div className="about-copy">
-          <div className="about-identity" aria-label="教育背景与家乡">
-            <span>来自广东广州</span>
-            <strong>中国农业大学 · 地理信息科学</strong>
-            <small>2024 — 2028</small>
+          <div className="about-identity" aria-label="教育背景">
+            <div className="about-identity-row">
+              <span>广东广州</span>
+              <strong>广州市执信中学</strong>
+              <small>2021 — 2024</small>
+            </div>
+            <div className="about-identity-row">
+              <span>北京</span>
+              <strong>中国农业大学 · 地理信息科学</strong>
+              <small>2024 — 2028</small>
+            </div>
           </div>
           <p>
             进入大学时，我并不知道自己真正喜欢什么。选专业的过程更像一次排除：
@@ -96,7 +102,6 @@ export default function Home() {
             我开始学习新的工具、做产品原型，也逐渐体会到 Build 的快乐：
             观察一个问题，试着解决它，再把不成熟的想法一点点改得更完整。
           </p>
-          <Link className="profile-entry" href="/profile">查看教育背景与能力 <Arrow /></Link>
         </div>
       </section>
 
@@ -240,8 +245,8 @@ export default function Home() {
 
       <section className="updates" id="updates">
         <div className="section-intro">
-          <p className="kicker">RECENT NOTES</p>
-          <h2>AI 探索日记</h2>
+          <p className="kicker">AI WORKFLOW</p>
+          <h2>AI 工作流</h2>
         </div>
         <div className="update-strip" aria-label="可横向滑动的探索日记">
           {explorationNotes.map((entry) => (
@@ -250,22 +255,6 @@ export default function Home() {
               <span aria-hidden="true">{entry.icon}</span>
               <h3>{entry.title}</h3>
               <p>{entry.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="writing" id="writing">
-        <div className="section-intro">
-          <p className="kicker">WRITING</p>
-          <h2>博客</h2>
-        </div>
-        <div className="article-list">
-          {articles.map((article) => (
-            <article key={article.title}>
-              <div><span>{article.category}</span><time>{article.date}</time></div>
-              <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
-              <p>{article.excerpt}</p>
             </article>
           ))}
         </div>
