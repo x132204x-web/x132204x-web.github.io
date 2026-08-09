@@ -56,7 +56,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="kicker">ASHLEY XIA · PERSONAL ARCHIVE</p>
-          <h1>你好👋，我是夏诗淇</h1>
+          <h1><span>你好👋</span><span>我是夏诗淇</span></h1>
           <p className="hero-intro">Ashley 的 Personal Archive，收录实习经历、项目实践和个人博客。</p>
           <div className="hero-links">
             <a className="primary-link" href="#exploration">查看经历 <Arrow /></a>
@@ -67,7 +67,7 @@ export default function Home() {
 
         <div className="hero-portraits" aria-label="夏诗淇的个人照片">
           <figure className="hero-portrait-main">
-            <img className="portrait-scan-image" src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
+            <img src="/portrait-xinjiang-crop.jpg" alt="夏诗淇在新疆旅行" />
           </figure>
           <figure className="hero-portrait-secondary">
             <img src="/portrait-st-petersburg-crop.jpg" alt="夏诗淇在圣彼得堡参观博物馆" />
@@ -81,6 +81,11 @@ export default function Home() {
           <span>01 / 我是谁</span>
         </div>
         <div className="about-copy">
+          <div className="about-identity" aria-label="教育背景与家乡">
+            <span>来自广东广州</span>
+            <strong>中国农业大学 · 地理信息科学</strong>
+            <small>2024 — 2028</small>
+          </div>
           <p>
             进入大学时，我并不知道自己真正喜欢什么。选专业的过程更像一次排除：
             GIS 是当时那个我不讨厌、也愿意继续了解的方向。学习过程中，我接触到数据、空间和系统思维，
@@ -119,7 +124,12 @@ export default function Home() {
                   <div><span>我做了什么</span><p>{project.role.join("、")}</p></div>
                   <div><span>现在的进展</span><p>{project.progress}</p></div>
                 </div>
-                <Link href={`/projects/${project.slug}`}>查看项目过程 <Arrow /></Link>
+                {project.slug === "finalace" ? (
+                  <div className="project-links">
+                    <Link href={`/projects/${project.slug}`}>查看 FinalAce 从需求、流程到上线的完整过程 <Arrow /></Link>
+                    {project.publicUrl ? <a href={project.publicUrl} target="_blank" rel="noreferrer">访问 finalace.online <Arrow /></a> : null}
+                  </div>
+                ) : null}
               </div>
               {project.images ? (
                 <figure className="project-media project-gallery">
@@ -156,7 +166,7 @@ export default function Home() {
       <section className="process" id="process">
         <div className="section-intro">
           <p className="kicker">HOW I WORK</p>
-          <h2>我是如何做一个产品的</h2>
+          <h2>我是如何思考与工作的</h2>
         </div>
         <div className="process-flow">
           <article>
@@ -231,8 +241,7 @@ export default function Home() {
       <section className="updates" id="updates">
         <div className="section-intro">
           <p className="kicker">RECENT NOTES</p>
-          <h2>探索日记</h2>
-          <p>每日的信息搜集工作流，以及我在活动现场留下的观察。</p>
+          <h2>AI 探索日记</h2>
         </div>
         <div className="update-strip" aria-label="可横向滑动的探索日记">
           {explorationNotes.map((entry) => (
