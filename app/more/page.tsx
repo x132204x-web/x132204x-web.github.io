@@ -56,6 +56,10 @@ export default function MorePage() {
             <span>成长与生活</span>
           </div>
         </div>
+        <figure className="reading-photo">
+          <img src="/reading-photo.jpg" alt="读书时拍下的一页文字" />
+          <figcaption>读书时留下的一页</figcaption>
+        </figure>
         <MediaShelf />
       </section>
 

@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 const travelItems = [
+  { image: "/travel-georgia-mestia.jpg", alt: "在格鲁吉亚梅斯蒂亚徒步的夏诗淇", place: "格鲁吉亚 · 梅斯蒂亚", note: "徒步" },
+  { image: "/travel-georgia-batumi.jpg", alt: "在格鲁吉亚巴统黑海边的夏诗淇", place: "格鲁吉亚 · 巴统", note: "黑海边" },
   { image: "/portrait-xinjiang-stage.jpg", alt: "在新疆伊犁旅行的夏诗淇", place: "新疆伊犁", note: "在山里走一走" },
   { image: "/portrait-st-petersburg.jpg", alt: "在圣彼得堡冬宫参观的夏诗淇", place: "圣彼得堡 · 冬宫", note: "在展厅里慢慢看" },
   { image: "/travel-murmansk.jpg", alt: "在俄罗斯摩尔曼斯克旅行", place: "俄罗斯摩尔曼斯克", note: "冬天与极夜" },
