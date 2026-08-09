@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { MediaShelf, TravelGallery } from "./interactive-sections";
+import { articles } from "../article-data";
+
+function Arrow() {
+  return <span aria-hidden="true">↗</span>;
+}
 
 export default function MorePage() {
   return (
@@ -52,6 +57,22 @@ export default function MorePage() {
           </div>
         </div>
         <MediaShelf />
+      </section>
+
+      <section className="writing more-writing" id="writing">
+        <div className="section-intro">
+          <p className="kicker">WRITING</p>
+          <h2>博客</h2>
+        </div>
+        <div className="article-list">
+          {articles.map((article) => (
+            <article key={article.title}>
+              <div><span>{article.category}</span><time>{article.date}</time></div>
+              <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
+              <p>{article.excerpt}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="more-ending">

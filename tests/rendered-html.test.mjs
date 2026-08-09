@@ -19,7 +19,10 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /FinalAce/);
   assert.match(html, /ASHLEY XIA|Ashley/);
   assert.match(html, /你好👋/);
-  assert.match(html, /来自广东广州/);
+  assert.match(html, /广东广州/);
+  assert.match(html, /广州市执信中学/);
+  assert.match(html, /2021 — 2024/);
+  assert.match(html, /北京/);
   assert.doesNotMatch(html, /portrait-scan-image/);
   assert.match(html, /Narziss/);
   assert.doesNotMatch(html, /云品册|PathFinder/);
@@ -30,13 +33,14 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /如果还想了解更多/);
   assert.match(html, /进入详情/);
   assert.match(html, /进入详情/);
-  assert.match(html, /AI 探索日记/);
+  assert.match(html, /AI 工作流/);
   assert.match(html, /https:\/\/finalace\.online/);
   assert.match(html, /全栈开发/);
   assert.doesNotMatch(html, /解释 GitHub 项目/);
   assert.match(html, /每日信息搜集/);
   assert.match(html, /OPC 大会/);
-  assert.match(html, /博客/);
+  assert.doesNotMatch(html, /<h2>博客<\/h2>/);
+  assert.doesNotMatch(html, /查看教育背景与能力/);
   assert.doesNotMatch(html, /阅读文章与思考/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
 });
@@ -60,6 +64,8 @@ test("server-renders the personal interests page", async () => {
   assert.match(html, /读书是另一种认识世界的方式/);
   assert.match(html, /回到夏诗淇的主页/);
   assert.match(html, /返回首页/);
+  assert.match(html, /<h2>博客<\/h2>/);
+  assert.match(html, /参加 WAIC 后，我开始更关心使用场景/);
 });
 
 test("server-renders the English profile page", async () => {
