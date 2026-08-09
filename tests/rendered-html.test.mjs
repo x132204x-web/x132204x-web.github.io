@@ -60,6 +60,9 @@ test("server-renders the personal interests page", async () => {
   const response = await render("/more");
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /格鲁吉亚 · 梅斯蒂亚/);
+  assert.match(html, /格鲁吉亚 · 巴统/);
+  assert.match(html, /\/reading-photo\.jpg/);
   assert.match(html, /俄罗斯摩尔曼斯克/);
   assert.match(html, /新疆伊犁/);
   assert.match(html, /读书是另一种认识世界的方式/);
