@@ -18,9 +18,9 @@ export default function MorePage() {
         <p className="kicker">BEYOND WORK</p>
         <h1><span>项目之外，</span><br />我也在认真生活。</h1>
         <p>
-          旅行和读书不是简历上的项目，却一直影响我怎样观察问题、理解别人，也影响我想做怎样的产品。
+          旅行和读书不是简历上的项目，却一直影响我怎么看待这个世界、如何观察问题、如何理解人类。
         </p>
-        <Link className="more-home-link" href="/">← 回到夏诗淇的主页</Link>
+        <Link className="more-home-link" href="/">← 回到主页</Link>
       </section>
 
       <section className="travel-notes">
@@ -78,7 +78,8 @@ export default function MorePage() {
       <section className="more-ending">
         <p>
           我仍然在探索自己适合做什么。项目、旅行和阅读看起来是不同的事情，
-          但它们都在帮助我更具体地理解问题，也更诚实地理解自己。
+          但它们都在帮助我更具体地理解问题，也更诚实地理解自己，
+          让我在技术和时代之外，经常性地感知到自己作为人类的存在。
         </p>
         <Link href="/">返回首页 ↗</Link>
       </section>

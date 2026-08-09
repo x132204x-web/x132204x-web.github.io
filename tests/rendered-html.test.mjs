@@ -61,8 +61,9 @@ test("server-renders the personal interests page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /俄罗斯摩尔曼斯克/);
+  assert.match(html, /新疆伊犁/);
   assert.match(html, /读书是另一种认识世界的方式/);
-  assert.match(html, /回到夏诗淇的主页/);
+  assert.match(html, /回到主页/);
   assert.match(html, /返回首页/);
   assert.match(html, /<h2>博客<\/h2>/);
   assert.match(html, /参加 WAIC 后，我开始更关心使用场景/);
