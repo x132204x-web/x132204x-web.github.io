@@ -69,7 +69,13 @@ test("server-renders the personal interests page", async () => {
   assert.match(html, /回到主页/);
   assert.match(html, /返回首页/);
   assert.match(html, /<h2>博客<\/h2>/);
-  assert.match(html, /参加 WAIC 后，我开始更关心使用场景/);
+  assert.match(html, /五天做出 FinalAce/);
+  assert.match(html, /持续筛选 AI 工具/);
+  assert.match(html, /AI 不能创造人与人之间的相遇/);
+  assert.match(html, /城市怎样影响一个年轻人的选择/);
+  assert.match(html, /42 小时、2250 公里/);
+  assert.match(html, /finalace-home\.png/);
+  assert.match(html, /portrait-xinjiang\.jpg/);
 });
 
 test("server-renders the English profile page", async () => {
@@ -95,9 +101,11 @@ test("server-renders a project detail page", async () => {
 });
 
 test("server-renders a writing detail page", async () => {
-  const response = await render("/articles/waic-observation");
+  const response = await render("/articles/finalace-from-zero-to-one");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /参加 WAIC 后，我开始更关心使用场景/);
-  assert.match(html, /Pebble/);
+  assert.match(html, /五天做出 FinalAce/);
+  assert.match(html, /Beta 1.0/);
+  assert.match(html, /返回博客/);
+  assert.match(html, /finalace-home\.png/);
 });

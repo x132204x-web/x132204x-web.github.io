@@ -69,11 +69,21 @@ export default function MorePage() {
           <h2>博客</h2>
         </div>
         <div className="article-list">
-          {articles.map((article) => (
-            <article key={article.title}>
-              <div><span>{article.category}</span><time>{article.date}</time></div>
-              <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
-              <p>{article.excerpt}</p>
+          {articles.map((article, index) => (
+            <article className={index === 0 ? "article-card article-featured" : "article-card"} key={article.title}>
+              <Link className="article-cover" href={`/articles/${article.slug}`} aria-label={`阅读《${article.title}》`}>
+                <img
+                  src={article.cover}
+                  alt={article.coverAlt}
+                  style={{ objectPosition: article.coverPosition ?? "center" }}
+                />
+              </Link>
+              <div className="article-copy">
+                <div className="article-meta"><span>{article.category}</span><time>{article.date}</time></div>
+                <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
+                <p>{article.excerpt}</p>
+                <Link className="article-read" href={`/articles/${article.slug}`}>阅读全文 <Arrow /></Link>
+              </div>
             </article>
           ))}
         </div>
