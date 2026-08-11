@@ -15,16 +15,23 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     <main className="article-page">
       <header className="site-header">
         <Link className="brand" href="/">夏诗淇</Link>
-        <nav><Link href="/#writing">返回文章</Link><Link href="/#contact">联系</Link></nav>
+        <nav><Link href="/more#writing">返回博客</Link><Link href="/#contact">联系</Link></nav>
       </header>
       <article className="article-detail">
         <p className="kicker">{article.category} · {article.date}</p>
         <h1>{article.title}</h1>
         <p className="article-lede">{article.excerpt}</p>
+        <figure className="article-detail-cover">
+          <img
+            src={article.cover}
+            alt={article.coverAlt}
+            style={{ objectPosition: article.coverPosition ?? "center" }}
+          />
+        </figure>
         <div className="article-body">
           {article.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
-        <Link className="writing-entry" href="/#writing">← 返回我的思考</Link>
+        <Link className="writing-entry" href="/more#writing">← 返回博客</Link>
       </article>
     </main>
   );
