@@ -24,8 +24,8 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /2021 — 2024/);
   assert.match(html, /北京/);
   assert.doesNotMatch(html, /portrait-scan-image/);
-  assert.match(html, /Narziss/);
-  assert.doesNotMatch(html, /云品册|PathFinder/);
+  assert.match(html, /云品册/);
+  assert.doesNotMatch(html, /Narziss|PathFinder/);
   assert.match(html, /我做过的一些尝试/);
   assert.match(html, /我是如何思考与工作的/);
   assert.match(html, /Pinterest/);
@@ -88,18 +88,18 @@ test("server-renders the English profile page", async () => {
   assert.match(html, /Ashley Xia/);
   assert.match(html, /What I have done, and who I am becoming/);
   assert.match(html, /FinalAce/);
-  assert.match(html, /Narziss/);
+  assert.match(html, /云品册/);
   assert.match(html, /Recent Notes/i);
   assert.match(html, /href="\/"/);
 });
 
 test("server-renders a project detail page", async () => {
-  const response = await render("/projects/narziss");
+  const response = await render("/projects/cloud-catalog");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /发现知识缺口/);
-  assert.match(html, /人类知识树/);
-  assert.doesNotMatch(html, /解释 GitHub 项目/);
+  assert.match(html, /商品资料集中管理/);
+  assert.match(html, /企业成员协作/);
+  assert.doesNotMatch(html, /Narziss|知识树/);
   assert.match(html, /我负责的部分/);
 });
 

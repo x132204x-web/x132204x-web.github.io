@@ -135,16 +135,22 @@ export default function EnglishHome() {
               {projects.map((project, index) => (
                 <article className="en-project" key={project.slug}>
                   <Link className="en-project-media" href={`/projects/${project.slug}`}>
-                    <img
-                      src={project.images?.[0] ?? project.image}
-                      alt={`${project.name} product interface`}
-                    />
+                    {project.images?.[0] || project.image ? (
+                      <img
+                        src={project.images?.[0] ?? project.image}
+                        alt={`${project.name} product interface`}
+                      />
+                    ) : (
+                      <div className="en-project-placeholder" aria-label={`${project.name} key features`}>
+                        {project.features.map((feature) => <span key={feature}>{feature}</span>)}
+                      </div>
+                    )}
                     <span>0{index + 1}</span>
                   </Link>
                   <div className="en-project-copy">
                     <div className="en-project-title">
                       <div>
-                        <p>{index === 0 ? "AI LEARNING PRODUCT" : "BROWSER EXTENSION"}</p>
+                        <p>{index === 0 ? "AI LEARNING PRODUCT" : "MERCHANT MINI PROGRAM"}</p>
                         <h3>{project.name}</h3>
                       </div>
                       <span>{index === 0 ? "Live · Iterating" : "Built · Expanding"}</span>
@@ -152,12 +158,12 @@ export default function EnglishHome() {
                     <p>
                       {index === 0
                         ? "An AI study workspace that turns scattered course materials into a clearer review process — from organizing knowledge to practice and reflection."
-                        : "A browser extension that turns isolated AI conversations into a longer learning process by identifying knowledge gaps, suggesting next steps, and building memory over time."}
+                        : "A product catalog and collaboration tool that helps small merchants organize product images, SKUs, prices, specifications, and customer-ready sharing in one place."}
                     </p>
                     <ul>
                       {(index === 0
                         ? ["Product strategy", "Learning flow", "AI workflow", "Frontend"]
-                        : ["Product structure", "AI interaction", "Extension development", "Memory design"]
+                        : ["Experience mapping", "Form design", "Product import", "Team collaboration"]
                       ).map((item) => <li key={item}>{item}</li>)}
                     </ul>
                     <a
