@@ -11,7 +11,7 @@ const routes = [
   "/more",
   "/profile",
   "/projects/finalace",
-  "/projects/narziss",
+  "/projects/cloud-catalog",
   "/updates",
   "/updates/ai-agent-open-source",
   "/updates/ai-coding-tools",
