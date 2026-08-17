@@ -779,6 +779,20 @@ footer {
 .en-project-media img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s ease; }
 .en-project-media:hover img { transform: scale(1.025); }
 .en-project-media > span { position: absolute; top: 14px; left: 14px; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: var(--en-paper); font: 9px ui-monospace, monospace; }
+.en-project-placeholder {
+  min-height: 280px;
+  padding: 64px 28px 28px;
+  display: grid;
+  align-content: end;
+  gap: 1px;
+  background: color-mix(in srgb, var(--wheat) 64%, white);
+}
+.en-project-placeholder span {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, .56);
+  color: #6b655c;
+  font-size: 11px;
+}
 .en-project-copy { padding: 28px; }
 .en-project-title { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 .en-project-title p { margin: 0; color: #78928f; font: 8px ui-monospace, monospace; letter-spacing: .1em; }
