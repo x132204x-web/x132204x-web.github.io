@@ -22,16 +22,16 @@ const explorationNotes = [
     summary: "把零散链接按主题归档，补充试用感受，并记录自己的判断发生了什么变化。",
   },
   {
-    date: "2026.07",
-    icon: "◉",
-    title: "世界人工智能大会 WAIC",
-    summary: "现场体验 AI 软件、Agent、个人服务器与硬件产品，观察它们如何进入真实场景。",
+    date: "EXPERIMENT",
+    icon: "◎",
+    title: "工具试用与筛选",
+    summary: "用同一个真实任务测试不同模型和工具，记录它们的适用场景、限制和成本。",
   },
   {
-    date: "EVENT",
-    icon: "◇",
-    title: "OPC 大会",
-    summary: "从现场分享和产品展示中了解新的工具、开发方式与应用方向。",
+    date: "BUILD",
+    icon: "↗",
+    title: "AI 辅助开发",
+    summary: "用 Cursor 和 Codex 把需求拆成小任务、快速做出原型，再人工检查逻辑、交互和完整流程。",
   },
 ];
 
@@ -241,7 +241,7 @@ export default function Home() {
           <p className="kicker">AI WORKFLOW</p>
           <h2>AI 工作流</h2>
         </div>
-        <div className="update-strip" aria-label="可横向滑动的探索日记">
+        <div className="update-strip" aria-label="可横向滑动的 AI 工作流">
           {explorationNotes.map((entry) => (
             <article key={`${entry.date}-${entry.title}`} tabIndex={0}>
               <time>{entry.date}</time>
