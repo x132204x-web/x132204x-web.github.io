@@ -101,7 +101,25 @@ test("server-renders the English profile page", async () => {
   assert.doesNotMatch(html, /Travel and reading notes/);
   assert.match(html, /Travel is one of the ways I stay curious/);
   assert.match(html, /travel-georgia-mestia\.jpg/);
-  assert.match(html, /href="\/"/);
+  assert.match(html, /href="\/zh\/"/);
+});
+
+test("server-renders the minimalist Chinese profile page", async () => {
+  const response = await render("/zh");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /夏诗淇/);
+  assert.match(html, /在真实项目里学习、判断和动手/);
+  assert.match(html, /中国农业大学/);
+  assert.match(html, /地理信息科学/);
+  assert.match(html, /GPA 3\.56/);
+  assert.match(html, /FinalAce/);
+  assert.match(html, /云品册/);
+  assert.match(html, /边做边学/);
+  assert.match(html, /格鲁吉亚梅斯蒂亚徒步/);
+  assert.match(html, /href="\/en\/"/);
+  assert.doesNotMatch(html, /Narziss|PathFinder/);
+  assert.doesNotMatch(html, /resume-xia-shiqi\.pdf|Reading/);
 });
 
 test("server-renders a project detail page", async () => {

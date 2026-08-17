@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/en/",
     languages: {
-      "zh-CN": "/",
+      "zh-CN": "/zh/",
       en: "/en/",
     },
   },
@@ -57,7 +57,7 @@ export default function EnglishHome() {
           <a href="#education">Education</a>
           <a href="#work">Work</a>
           <a href="#experience">Experience</a>
-          <Link className="en-language" href="/">中文</Link>
+          <Link className="en-language" href="/zh/">中文</Link>
         </nav>
       </header>
 
