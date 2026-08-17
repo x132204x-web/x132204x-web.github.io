@@ -89,7 +89,8 @@ test("server-renders the English profile page", async () => {
   assert.match(html, /What I have done, and who I am becoming/);
   assert.match(html, /FinalAce/);
   assert.match(html, /云品册/);
-  assert.match(html, /Recent Notes/i);
+  assert.match(html, /Travel is one of the ways I stay curious/);
+  assert.match(html, /travel-georgia-mestia\.jpg/);
   assert.match(html, /href="\/"/);
 });
 

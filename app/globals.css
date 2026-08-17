@@ -729,7 +729,7 @@ footer {
   gap: 24px;
   align-items: start;
 }
-.en-profile, .en-news, .en-contact, .en-panel {
+.en-profile, .en-travel-card, .en-contact, .en-panel {
   border: 1px solid var(--en-line);
   background: rgba(255,255,255,.72);
   box-shadow: 0 18px 55px rgba(26,64,69,.055);
@@ -760,7 +760,7 @@ footer {
 .en-profile-links a { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--en-line); font-size: 11px; }
 .en-main-column { min-width: 0; display: grid; gap: 24px; }
 .en-panel, .en-section { padding: clamp(30px, 4.2vw, 58px); }
-.en-about h2, .en-section-heading h2, .en-beyond h2, .en-contact h2 {
+.en-about h2, .en-section-heading h2, .en-travel-card h2, .en-contact h2 {
   margin: 14px 0 0;
   font-weight: 550;
   letter-spacing: -.045em;
@@ -814,25 +814,25 @@ footer {
 .en-experience-list h3 { margin: 0; font-size: 16px; font-weight: 580; }
 .en-experience-list p { margin: 9px 0 0; color: #5a7475; font-size: 11px; line-height: 1.7; }
 .en-side-column { position: sticky; top: 100px; display: grid; gap: 18px; }
-.en-news, .en-contact { padding: 22px; }
-.en-news > div { margin-top: 10px; }
-.en-news article { padding: 18px 0; border-top: 1px solid var(--en-line); }
-.en-news time { color: #74908d; font: 8px ui-monospace, monospace; }
-.en-news h3 { margin: 7px 0 0; font-size: 13px; line-height: 1.4; font-weight: 580; }
-.en-news article p { margin: 8px 0 0; color: #607b7c; font-size: 10px; line-height: 1.6; }
-.en-beyond { display: block; border: 1px solid var(--en-line); background: var(--en-deep); color: white; overflow: hidden; }
-.en-beyond > img { width: 100%; height: 180px; display: block; object-fit: cover; }
-.en-beyond > div { padding: 22px; }
-.en-beyond h2 { font-size: 20px; line-height: 1.25; }
-.en-beyond span { display: inline-block; margin-top: 24px; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 10px; }
+.en-contact { padding: 22px; }
+.en-travel-card { display: block; padding: 22px; color: var(--en-ink); overflow: hidden; }
+.en-travel-copy h2 { font-size: 21px; line-height: 1.24; }
+.en-travel-copy > p:last-child { margin: 14px 0 0; color: #607b7c; font-size: 10px; line-height: 1.7; }
+.en-travel-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.en-travel-grid img { width: 100%; height: 82px; display: block; object-fit: cover; transition: filter .25s ease, transform .25s ease; }
+.en-travel-grid img:first-child { grid-column: 1 / -1; height: 140px; }
+.en-travel-card:hover .en-travel-grid img { filter: saturate(1.08); }
+.en-travel-card:hover .en-travel-grid img:first-child { transform: scale(1.012); }
+.en-travel-card > span { display: inline-block; margin-top: 20px; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 10px; }
 .en-contact h2 { font-size: 19px; line-height: 1.35; }
 .en-contact a { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--en-line); font-size: 10px; }
 .en-footer { padding: 32px 4vw; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--en-line); color: #66817f; font-size: 9px; }
 
 @media (max-width: 1120px) {
   .en-shell { grid-template-columns: 220px minmax(0, 1fr); }
-  .en-side-column { position: static; grid-column: 1 / -1; grid-template-columns: 1fr 1fr 1fr; }
-  .en-beyond > img { height: 165px; }
+  .en-side-column { position: static; grid-column: 1 / -1; grid-template-columns: 2fr 1fr; }
+  .en-travel-grid img { height: 120px; }
+  .en-travel-grid img:first-child { height: 220px; }
 }
 
 @media (max-width: 760px) {

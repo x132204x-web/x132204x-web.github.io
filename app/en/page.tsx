@@ -15,29 +15,6 @@ export const metadata: Metadata = {
   },
 };
 
-const recentNotes = [
-  {
-    date: "Jul 2026",
-    title: "Visited WAIC",
-    body: "Explored AI agents, personal servers, and hardware products in real-world settings.",
-  },
-  {
-    date: "Jul 2026",
-    title: "Started building more seriously",
-    body: "Began moving personal projects into a more structured environment for testing and iteration.",
-  },
-  {
-    date: "Jun 2026",
-    title: "AI-assisted development",
-    body: "Used Cursor and Codex across product research, prototyping, coding, and testing.",
-  },
-  {
-    date: "May 2026",
-    title: "Built FinalAce",
-    body: "Turned a difficult exam-prep experience into a working AI learning product.",
-  },
-];
-
 const experiences = [
   {
     period: "2025 — Present",
@@ -216,26 +193,20 @@ export default function EnglishHome() {
         </div>
 
         <aside className="en-side-column">
-          <section className="en-news">
-            <p className="en-eyebrow">RECENT NOTES</p>
-            <div>
-              {recentNotes.map((note) => (
-                <article key={`${note.date}-${note.title}`}>
-                  <time>{note.date}</time>
-                  <h3>{note.title}</h3>
-                  <p>{note.body}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <Link className="en-beyond" href="/more">
-            <img src="/travel-lake-mountain.jpg" alt="A blue lake and mountains" />
-            <div>
+          <Link className="en-travel-card" href="/more">
+            <div className="en-travel-copy">
               <p className="en-eyebrow">BEYOND WORK</p>
-              <h2>Travel, books, and things I keep noticing.</h2>
-              <span>Explore more <Arrow /></span>
+              <h2>Travel is one of the ways I stay curious.</h2>
+              <p>I enjoy noticing how people live, the colors of unfamiliar places, and the small details that make a journey memorable.</p>
             </div>
+            <div className="en-travel-grid" aria-label="A selection of Ashley's travel photos">
+              <img src="/travel-georgia-mestia.jpg" alt="Hiking in Mestia, Georgia" />
+              <img src="/travel-georgia-batumi.jpg" alt="By the Black Sea in Batumi, Georgia" />
+              <img src="/portrait-st-petersburg-crop.jpg" alt="Visiting a museum in Saint Petersburg" />
+              <img src="/travel-japan.jpg" alt="Walking through a street in Japan" />
+              <img src="/travel-murmansk.jpg" alt="Winter travel in Murmansk" />
+            </div>
+            <span>Travel and reading notes <Arrow /></span>
           </Link>
 
           <section className="en-contact">
