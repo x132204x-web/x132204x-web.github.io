@@ -186,12 +186,18 @@ export default function Home() {
             <span>04</span>
             <h3>寻找视觉方向</h3>
             <p>我会在 Pinterest、Mobbin、Behance 等网站整理参考，也会留意旅行、展览、街道和日常生活里让我停下来的颜色与排版，再把这些感受变成可使用的配色和视觉规范。</p>
-            <div className="process-visual process-moodboard" aria-label="我的视觉参考照片">
-              <img src="/travel-lake-mountain.jpg" alt="湖水与雪山的蓝绿色参考" />
-              <img src="/travel-evergreen.jpg" alt="松针深绿色参考" />
-              <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
-              <img src="/palette-stones.jpg" alt="石头的灰紫、米白和褐色配色参考" />
-            </div>
+            <details className="process-gallery-disclosure">
+              <summary>
+                <span>查看我的视觉参考</span>
+                <i aria-hidden="true">＋</i>
+              </summary>
+              <div className="process-moodboard" aria-label="我的视觉参考照片">
+                <img src="/travel-lake-mountain.jpg" alt="湖水与雪山的蓝绿色参考" />
+                <img src="/travel-evergreen.jpg" alt="松针深绿色参考" />
+                <img src="/travel-lakeside.jpg" alt="湖岸浅蓝色参考" />
+                <img src="/palette-stones.jpg" alt="石头的灰紫、米白和褐色配色参考" />
+              </div>
+            </details>
           </article>
           <article>
             <span>05</span>
