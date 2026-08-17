@@ -92,6 +92,10 @@ test("server-renders the English profile page", async () => {
   assert.match(html, /FinalAce/);
   assert.match(html, /Cloud Catalog/);
   assert.match(html, /Centralized product records/);
+  assert.match(html, /China Agricultural University/);
+  assert.match(html, /Geographic Information Science/);
+  assert.match(html, /GPA 3\.56/);
+  assert.doesNotMatch(html, /Guangzhou Zhixin High School|2021 — 2024/);
   assert.doesNotMatch(html, /云品册|商品资料集中管理|企业成员协作/);
   assert.doesNotMatch(html, /resume-xia-shiqi\.pdf|Résumé/);
   assert.doesNotMatch(html, /Travel and reading notes/);

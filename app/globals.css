@@ -808,6 +808,13 @@ footer {
 .en-process-grid span { color: #75918f; font: 9px ui-monospace, monospace; }
 .en-process-grid h3 { margin: 38px 0 0; font-size: 17px; font-weight: 580; }
 .en-process-grid p { margin: 10px 0 0; color: #5c7778; font-size: 11px; line-height: 1.65; }
+.en-education-list { border-top: 1px solid var(--en-line); }
+.en-education-list article { padding: 26px 0; display: grid; grid-template-columns: 115px 1fr 135px; gap: 22px; align-items: start; border-bottom: 1px solid var(--en-line); }
+.en-education-list article > span, .en-education-meta span { color: #728d8b; font: 9px ui-monospace, monospace; }
+.en-education-list h3 { margin: 0; font-size: 17px; font-weight: 580; }
+.en-education-list p { margin: 9px 0 0; color: #5a7475; font-size: 11px; line-height: 1.7; }
+.en-education-meta { display: grid; justify-items: end; gap: 10px; text-align: right; }
+.en-education-meta strong { font-size: 10px; font-weight: 580; }
 .en-experience-list { border-top: 1px solid var(--en-line); }
 .en-experience-list article { padding: 25px 0; display: grid; grid-template-columns: 125px 1fr; gap: 22px; border-bottom: 1px solid var(--en-line); }
 .en-experience-list article > span { color: #728d8b; font: 9px ui-monospace, monospace; }
@@ -835,7 +842,7 @@ footer {
 @media (max-width: 760px) {
   .en-header { height: 64px; }
   .en-header nav { gap: 16px; }
-  .en-header nav > a:nth-child(1), .en-header nav > a:nth-child(3) { display: none; }
+  .en-header nav > a:nth-child(1), .en-header nav > a:nth-child(2), .en-header nav > a:nth-child(4) { display: none; }
   .en-shell { padding-top: 22px; grid-template-columns: 1fr; }
   .en-profile { position: static; display: grid; grid-template-columns: 150px 1fr; }
   .en-profile-photo { grid-row: 1 / 3; aspect-ratio: auto; min-height: 260px; }
@@ -858,6 +865,8 @@ footer {
   .en-now { grid-template-columns: 1fr; }
   .en-section-heading { align-items: flex-start; flex-direction: column; }
   .en-process-grid { grid-template-columns: 1fr; }
+  .en-education-list article { grid-template-columns: 1fr; gap: 10px; }
+  .en-education-meta { justify-items: start; text-align: left; }
   .en-experience-list article { grid-template-columns: 1fr; gap: 10px; }
   .en-footer { flex-direction: column; }
 }
