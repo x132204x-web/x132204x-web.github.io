@@ -819,11 +819,8 @@ footer {
 .en-travel-copy h2 { font-size: 21px; line-height: 1.24; }
 .en-travel-copy > p:last-child { margin: 14px 0 0; color: #607b7c; font-size: 10px; line-height: 1.7; }
 .en-travel-grid { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
-.en-travel-grid img { width: 100%; height: 82px; display: block; object-fit: cover; transition: filter .25s ease, transform .25s ease; }
+.en-travel-grid img { width: 100%; height: 82px; display: block; object-fit: cover; }
 .en-travel-grid img:first-child { grid-column: 1 / -1; height: 140px; }
-.en-travel-card:hover .en-travel-grid img { filter: saturate(1.08); }
-.en-travel-card:hover .en-travel-grid img:first-child { transform: scale(1.012); }
-.en-travel-card > span { display: inline-block; margin-top: 20px; padding-bottom: 4px; border-bottom: 1px solid currentColor; font-size: 10px; }
 .en-contact h2 { font-size: 19px; line-height: 1.35; }
 .en-contact a { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--en-line); font-size: 10px; }
 .en-footer { padding: 32px 4vw; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--en-line); color: #66817f; font-size: 9px; }
@@ -843,7 +840,7 @@ footer {
   .en-profile { position: static; display: grid; grid-template-columns: 150px 1fr; }
   .en-profile-photo { grid-row: 1 / 3; aspect-ratio: auto; min-height: 260px; }
   .en-profile-facts { grid-column: 2; }
-  .en-profile-links { grid-column: 1 / -1; grid-template-columns: repeat(3, 1fr); }
+  .en-profile-links { grid-column: 1 / -1; grid-template-columns: repeat(2, 1fr); }
   .en-project { grid-template-columns: 1fr; }
   .en-project-media { min-height: 250px; }
   .en-side-column { grid-template-columns: 1fr; }

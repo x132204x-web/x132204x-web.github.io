@@ -88,7 +88,11 @@ test("server-renders the English profile page", async () => {
   assert.match(html, /Ashley Xia/);
   assert.match(html, /What I have done, and who I am becoming/);
   assert.match(html, /FinalAce/);
-  assert.match(html, /云品册/);
+  assert.match(html, /Cloud Catalog/);
+  assert.match(html, /Centralized product records/);
+  assert.doesNotMatch(html, /云品册|商品资料集中管理|企业成员协作/);
+  assert.doesNotMatch(html, /resume-xia-shiqi\.pdf|Résumé/);
+  assert.doesNotMatch(html, /Travel and reading notes/);
   assert.match(html, /Travel is one of the ways I stay curious/);
   assert.match(html, /travel-georgia-mestia\.jpg/);
   assert.match(html, /href="\/"/);
