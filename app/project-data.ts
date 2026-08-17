@@ -31,7 +31,7 @@ export const projects: Project[] = [
     progress: "已经完成多文件上传、课程资料管理、知识整理、智能练习和错题复盘等核心流程。正在做差异化：除了把功能做出来，也让学习流程更贴近真实备考，并通过内容、体验和持续运营让更多学生看见并愿意使用。",
     features: ["多文件上传与管理", "AI 知识结构整理", "智能练习", "学习反馈与复盘"],
     learning: "一个功能能够运行，并不代表它真的对学习有帮助。我还在学习怎样减少使用负担，让反馈更接近学生真实的学习状态。",
-    image: "/finalace-home.png",
+    images: ["/finalace-home.png", "/finalace-study-path.png"],
     publicUrl: "https://finalace.online",
   },
   {

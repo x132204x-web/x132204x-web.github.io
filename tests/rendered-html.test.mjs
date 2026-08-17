@@ -35,6 +35,9 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /进入详情/);
   assert.match(html, /AI 工作流/);
   assert.match(html, /https:\/\/finalace\.online/);
+  assert.match(html, /finalace-study-path\.png/);
+  assert.match(html, /FinalAce 产品界面轮播/);
+  assert.match(html, /查看下一张 FinalAce 界面/);
   assert.match(html, /全栈开发/);
   assert.doesNotMatch(html, /解释 GitHub 项目/);
   assert.match(html, /每日信息搜集/);
