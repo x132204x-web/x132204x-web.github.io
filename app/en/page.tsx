@@ -51,7 +51,7 @@ const experiences = [
   },
   {
     period: "Summer 2025",
-    title: "Documentation Lead · Education Volunteer Program",
+    title: "Lead · Education Volunteer Program",
     body: "Led daily documentation and reflection, and learned how environment, trust, and human connection shape learning.",
   },
 ];
