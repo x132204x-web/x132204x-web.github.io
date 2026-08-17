@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "./project-data";
+import ProjectMediaCarousel from "./project-media-carousel";
 
 const growth = [
   ["2025.09 - 至今", "中国农业大学就业创新办公室 · 学生助管", "负责企业信息审核、招聘会策划执行与数据整理，并对接企业、师生和校内部门。"],
@@ -137,9 +138,7 @@ export default function Home() {
                 ) : null}
               </div>
               {project.images ? (
-                <figure className="project-media project-gallery">
-                  {project.images.map((image, imageIndex) => <img key={image} src={image} alt={`${project.name} 产品界面 ${imageIndex + 1}`} />)}
-                </figure>
+                <ProjectMediaCarousel projectName={project.name} images={project.images} />
               ) : project.image ? (
                 <figure className="project-media">
                   <img src={project.image} alt={`${project.name} 产品界面`} />
