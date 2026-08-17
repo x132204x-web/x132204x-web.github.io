@@ -33,6 +33,16 @@ const experiences = [
   },
 ];
 
+const education = [
+  {
+    period: "2024 — 2028",
+    school: "China Agricultural University",
+    detail: "Undergraduate · Geographic Information Science",
+    location: "Beijing, China",
+    note: "GPA 3.56",
+  },
+];
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -44,6 +54,7 @@ export default function EnglishHome() {
         <Link className="en-brand" href="/en">Ashley Xia</Link>
         <nav aria-label="English navigation">
           <a href="#about">About</a>
+          <a href="#education">Education</a>
           <a href="#work">Work</a>
           <a href="#experience">Experience</a>
           <Link className="en-language" href="/">中文</Link>
@@ -94,6 +105,30 @@ export default function EnglishHome() {
             <div className="en-now">
               <span>Currently</span>
               <strong>Building learning products and exploring AI agents.</strong>
+            </div>
+          </section>
+
+          <section className="en-section en-education" id="education">
+            <div className="en-section-heading">
+              <div>
+                <p className="en-eyebrow">EDUCATION</p>
+                <h2>Where I learned to understand systems</h2>
+              </div>
+            </div>
+            <div className="en-education-list">
+              {education.map((item) => (
+                <article key={item.school}>
+                  <span>{item.period}</span>
+                  <div>
+                    <h3>{item.school}</h3>
+                    <p>{item.detail}</p>
+                  </div>
+                  <div className="en-education-meta">
+                    <span>{item.location}</span>
+                    {item.note && <strong>{item.note}</strong>}
+                  </div>
+                </article>
+              ))}
             </div>
           </section>
 
