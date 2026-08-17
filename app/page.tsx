@@ -153,18 +153,6 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="build-experience">
-          <div>
-            <p className="kicker">BUILD EXPERIENCE</p>
-            <h3>网站与小程序开发经验</h3>
-          </div>
-          <div className="build-experience-list">
-            <article><span>01 / AI 网站</span><strong>FinalAce 学习平台</strong><p>从期末复习中的资料混乱出发，完成学习流程、AI 功能和网站开发，持续优化到可以使用。</p></article>
-            <article><span>02 / 商家小程序</span><strong>商品资料与协作工具</strong><p>参与商品目录、批量导入、企业入驻和成员协作流程，把分散的商品资料整理成便于维护和分享的目录。</p></article>
-            <article><span>03 / 校园小程序</span><strong>3D 打印服务平台</strong><p>参与需求分析、产品设计、开发协同和测试，梳理上传文件、系统处理和打印机连接流程。</p></article>
-            <article><span>04 / 个人网站</span><strong>个人作品与成长记录</strong><p>完成信息架构、页面设计、前端实现、响应式适配和发布，持续整理自己的项目与经历。</p></article>
-          </div>
-        </div>
       </section>
 
       <section className="process" id="process">
