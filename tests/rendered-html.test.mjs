@@ -41,7 +41,9 @@ test("server-renders the personal lab homepage", async () => {
   assert.match(html, /全栈开发/);
   assert.doesNotMatch(html, /解释 GitHub 项目/);
   assert.match(html, /每日信息搜集/);
-  assert.match(html, /OPC 大会/);
+  assert.match(html, /工具试用与筛选/);
+  assert.match(html, /AI 辅助开发/);
+  assert.doesNotMatch(html, /世界人工智能大会 WAIC|OPC 大会/);
   assert.doesNotMatch(html, /<h2>博客<\/h2>/);
   assert.doesNotMatch(html, /查看教育背景与能力/);
   assert.doesNotMatch(html, /阅读文章与思考/);
