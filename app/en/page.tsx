@@ -79,7 +79,6 @@ export default function EnglishHome() {
           <div className="en-profile-links">
             <a href="mailto:x132204x@163.com">Email <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
-            <a href="/resume-xia-shiqi.pdf" target="_blank">Résumé <Arrow /></a>
           </div>
         </aside>
 
@@ -90,7 +89,7 @@ export default function EnglishHome() {
             <p>
               I am Ashley Xia, a Geographic Information Science student at China Agricultural
               University. This archive brings together my education, product projects, work
-              experience, and personal writing.
+              experience, and the way I approach problems.
             </p>
             <div className="en-now">
               <span>Currently</span>
@@ -118,8 +117,8 @@ export default function EnglishHome() {
                         alt={`${project.name} product interface`}
                       />
                     ) : (
-                      <div className="en-project-placeholder" aria-label={`${project.name} key features`}>
-                        {project.features.map((feature) => <span key={feature}>{feature}</span>)}
+                      <div className="en-project-placeholder" aria-label="Cloud Catalog key features">
+                        {["Centralized product records", "Bulk photo and spreadsheet import", "Team collaboration", "Read-only customer sharing"].map((feature) => <span key={feature}>{feature}</span>)}
                       </div>
                     )}
                     <span>0{index + 1}</span>
@@ -128,7 +127,7 @@ export default function EnglishHome() {
                     <div className="en-project-title">
                       <div>
                         <p>{index === 0 ? "AI LEARNING PRODUCT" : "MERCHANT MINI PROGRAM"}</p>
-                        <h3>{project.name}</h3>
+                        <h3>{index === 0 ? project.name : "Cloud Catalog"}</h3>
                       </div>
                       <span>{index === 0 ? "Live · Iterating" : "Built · Expanding"}</span>
                     </div>
@@ -193,7 +192,7 @@ export default function EnglishHome() {
         </div>
 
         <aside className="en-side-column">
-          <Link className="en-travel-card" href="/more">
+          <section className="en-travel-card">
             <div className="en-travel-copy">
               <p className="en-eyebrow">BEYOND WORK</p>
               <h2>Travel is one of the ways I stay curious.</h2>
@@ -206,8 +205,7 @@ export default function EnglishHome() {
               <img src="/travel-japan.jpg" alt="Walking through a street in Japan" />
               <img src="/travel-murmansk.jpg" alt="Winter travel in Murmansk" />
             </div>
-            <span>Travel and reading notes <Arrow /></span>
-          </Link>
+          </section>
 
           <section className="en-contact">
             <p className="en-eyebrow">CONTACT</p>
