@@ -326,22 +326,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .feature-paper div:last-child { border-bottom: 0; }
 .feature-paper span { color: #8b867d; font: 9px ui-monospace, monospace; }
 
-.build-experience {
-  max-width: 1240px;
-  margin: 96px auto 0;
-  padding-top: 50px;
-  display: grid;
-  grid-template-columns: .65fr 1.35fr;
-  gap: 7vw;
-  border-top: 1px solid var(--line);
-}
-.build-experience h3 { margin: 0; font-size: clamp(28px, 3vw, 42px); font-weight: 520; letter-spacing: -.04em; }
-.build-experience-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 34px; }
-.build-experience-list article { min-height: 155px; padding: 22px 0; border-top: 1px solid rgba(65, 64, 58, .2); }
-.build-experience-list span { color: #858076; font: 9px ui-monospace, monospace; text-transform: uppercase; }
-.build-experience-list strong { display: block; margin-top: 34px; font-size: 15px; font-weight: 560; }
-.build-experience-list p { margin: 13px 0 0; color: var(--muted); font-size: 11px; line-height: 1.8; }
-
 .process { max-width: 1240px; margin: auto; padding: 110px 5vw; }
 .process > .section-intro { margin-left: 0; }
 .process-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 72px 5vw; margin-top: 80px; }
@@ -878,8 +862,6 @@ footer {
     grid-row: auto;
   }
   .project-media, .feature-paper { margin-top: 30px; width: 100%; }
-  .build-experience { grid-template-columns: 1fr; }
-  .build-experience-list { grid-template-columns: 1fr 1fr; }
   .process-flow { grid-template-columns: 1fr; gap: 64px; }
   .growth { grid-template-columns: 1fr; }
   .growth-copy { margin-left: 0; }
@@ -919,8 +901,6 @@ footer {
   .project-main blockquote { margin-top: 38px; font-size: 19px; }
   .project-facts { grid-template-columns: 1fr; }
   .feature-paper { min-height: 290px; }
-  .build-experience-list { grid-template-columns: 1fr; }
-  .build-experience-list article { min-height: 160px; }
   .growth-timeline > div { grid-template-columns: 48px 1fr; }
   .growth-timeline p { grid-column: 2; }
   .growth-photos { grid-template-columns: 1fr 1fr; gap: 10px; }
