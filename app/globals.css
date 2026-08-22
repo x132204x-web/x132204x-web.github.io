@@ -46,6 +46,26 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-header nav a { transition: color .2s; }
 .site-header nav a:hover { color: var(--ink); }
 .site-header nav .nav-more { padding: 10px 15px; color: var(--ink); border: 1px solid var(--ink); }
+.view-switcher { position: relative; }
+.view-switcher summary { cursor: pointer; list-style: none; color: var(--ink); }
+.view-switcher summary::-webkit-details-marker { display: none; }
+.view-switcher summary::after { content: "＋"; margin-left: 6px; font-size: 10px; }
+.view-switcher[open] summary::after { content: "−"; }
+.view-switcher > div {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  z-index: 30;
+  width: 176px;
+  padding: 8px;
+  display: grid;
+  gap: 2px;
+  border: 1px solid var(--line);
+  background: rgba(248, 246, 241, .98);
+  box-shadow: 0 16px 36px rgba(42, 38, 33, .11);
+}
+.view-switcher > div a { padding: 10px 11px; color: var(--ink); font-size: 12px; }
+.view-switcher > div a:hover { background: white; }
 
 .kicker {
   margin: 0 0 18px;
@@ -831,6 +851,15 @@ footer {
 .en-contact h2 { font-size: 19px; line-height: 1.35; }
 .en-contact a { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--en-line); font-size: 10px; }
 .en-footer { padding: 32px 4vw; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--en-line); color: #66817f; font-size: 9px; }
+.zh-profile-page .en-profile-copy h1,
+.zh-profile-page .en-about h2,
+.zh-profile-page .en-section-heading h2,
+.zh-profile-page .en-project-title h3 { letter-spacing: -.035em; }
+.zh-profile-page .en-role,
+.zh-profile-page .en-about > p:not(.en-eyebrow),
+.zh-profile-page .en-project-copy > p,
+.zh-profile-page .en-process-grid p,
+.zh-profile-page .en-experience-list p { line-height: 1.85; }
 
 @media (max-width: 1120px) {
   .en-shell { grid-template-columns: 220px minmax(0, 1fr); }
@@ -899,6 +928,8 @@ footer {
 @media (max-width: 600px) {
   .site-header { height: 62px; }
   .site-header nav a:nth-child(3) { display: none; }
+  .site-header nav > a:nth-child(2) { display: none; }
+  .view-switcher > div { position: fixed; top: 62px; right: 12px; }
   .more-page .site-header nav a { display: inline; }
   .hero { min-height: auto; padding: 68px 5vw 82px; gap: 58px; }
   .hero-copy h1 { font-size: 36px; line-height: 1.12; letter-spacing: -.055em; }

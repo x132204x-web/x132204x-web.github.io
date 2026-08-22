@@ -48,7 +48,13 @@ export default function Home() {
           <a href="#about">关于我</a>
           <a href="#projects">做过的事</a>
           <a href="#process">如何工作</a>
-          <a className="lang-link" href="/en">EN</a>
+          <details className="view-switcher">
+            <summary>简历版</summary>
+            <div>
+              <Link href="/zh/">中文简历版</Link>
+              <Link href="/en/">English profile</Link>
+            </div>
+          </details>
           <a className="nav-more" href="/more">了解更多</a>
         </nav>
       </header>
@@ -61,7 +67,7 @@ export default function Home() {
           <div className="hero-links">
             <a className="primary-link" href="#exploration">查看经历 <Arrow /></a>
             <a href="#projects">浏览项目 <Arrow /></a>
-            <Link href="/profile">教育与能力 <Arrow /></Link>
+            <Link href="/zh/">查看简历版 <Arrow /></Link>
           </div>
         </div>
 

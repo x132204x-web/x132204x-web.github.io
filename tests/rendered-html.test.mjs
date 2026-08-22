@@ -109,7 +109,7 @@ test("server-renders the minimalist Chinese profile page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /夏诗淇/);
-  assert.match(html, /在真实项目里学习、判断和动手/);
+  assert.match(html, /把模糊的问题，逐步做成可以交付的结果/);
   assert.match(html, /中国农业大学/);
   assert.match(html, /地理信息科学/);
   assert.match(html, /GPA 3\.56/);
