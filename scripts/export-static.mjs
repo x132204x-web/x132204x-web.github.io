@@ -8,6 +8,7 @@ const outputDir = resolve(projectDir, process.argv[2] ?? "out");
 const routes = [
   "/",
   "/en",
+  "/zh",
   "/more",
   "/profile",
   "/projects/finalace",
