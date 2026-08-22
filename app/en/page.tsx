@@ -57,7 +57,8 @@ export default function EnglishHome() {
           <a href="#education">Education</a>
           <a href="#work">Work</a>
           <a href="#experience">Experience</a>
-          <Link className="en-language" href="/zh/">中文</Link>
+          <Link href="/">Full Chinese site</Link>
+          <Link className="en-language" href="/zh/">中文简历版</Link>
         </nav>
       </header>
 
