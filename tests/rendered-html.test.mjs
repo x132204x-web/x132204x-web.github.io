@@ -109,13 +109,16 @@ test("server-renders the minimalist Chinese profile page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /夏诗淇/);
-  assert.match(html, /把模糊的问题，逐步做成可以交付的结果/);
+  assert.match(html, /个人简介/);
+  assert.match(html, /教育经历/);
+  assert.match(html, /项目实践/);
   assert.match(html, /中国农业大学/);
   assert.match(html, /地理信息科学/);
   assert.match(html, /GPA 3\.56/);
   assert.match(html, /FinalAce/);
   assert.match(html, /云品册/);
-  assert.match(html, /边做边学/);
+  assert.match(html, /工作方式/);
+  assert.doesNotMatch(html, /从空间与系统理解问题|从真实问题开始动手|边做边学，在实践中形成判断/);
   assert.match(html, /格鲁吉亚梅斯蒂亚徒步/);
   assert.match(html, /href="\/en\/"/);
   assert.doesNotMatch(html, /Narziss|PathFinder/);

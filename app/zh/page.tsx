@@ -73,14 +73,13 @@ export default function ChineseProfile() {
 
         <div className="en-main-column">
           <section className="en-panel en-about" id="about">
-            <p className="en-eyebrow">关于我</p>
-            <h2>把模糊的问题，逐步做成可以交付的结果。</h2>
+            <h2 className="zh-resume-title">个人简介</h2>
             <p>我在真实项目中学习新工具、验证判断，并把需求拆成流程、界面和可运行的产品。目前正在推进 AI 创业实践。</p>
             <div className="en-now"><span>现在</span><strong>持续开发学习产品，并探索 AI Agent 的实际应用。</strong></div>
           </section>
 
           <section className="en-section en-education" id="education">
-            <div className="en-section-heading"><div><p className="en-eyebrow">教育背景</p><h2>从空间与系统理解问题</h2></div></div>
+            <div className="en-section-heading"><h2 className="zh-resume-title">教育经历</h2></div>
             <div className="en-education-list">
               <article>
                 <span>2024 — 2028</span>
@@ -92,7 +91,7 @@ export default function ChineseProfile() {
 
           <section className="en-section" id="work">
             <div className="en-section-heading">
-              <div><p className="en-eyebrow">项目实践</p><h2>从真实问题开始动手</h2></div>
+              <h2 className="zh-resume-title">项目实践</h2>
               <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
             </div>
             <div className="en-project-list">
@@ -127,7 +126,7 @@ export default function ChineseProfile() {
           </section>
 
           <section className="en-section en-process">
-            <div className="en-section-heading"><div><p className="en-eyebrow">工作方式</p><h2>边做边学，在实践中形成判断</h2></div></div>
+            <div className="en-section-heading"><h2 className="zh-resume-title">工作方式</h2></div>
             <div className="en-process-grid">
               <article><span>01</span><h3>观察</h3><p>从自己经历过或看到的具体困难开始。</p></article>
               <article><span>02</span><h3>理解</h3><p>梳理真实任务、现有方案与仍未被解决的部分。</p></article>
@@ -137,7 +136,7 @@ export default function ChineseProfile() {
           </section>
 
           <section className="en-section" id="experience">
-            <div className="en-section-heading"><div><p className="en-eyebrow">实践经历</p><h2>独立项目之外的协作与执行</h2></div></div>
+            <div className="en-section-heading"><h2 className="zh-resume-title">实践经历</h2></div>
             <div className="en-experience-list">
               {experiences.map((item) => (
                 <article key={item.title}><span>{item.period}</span><div><h3>{item.title}</h3><p>{item.body}</p></div></article>
