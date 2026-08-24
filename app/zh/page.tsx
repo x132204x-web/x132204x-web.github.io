@@ -52,19 +52,13 @@ export default function ChineseProfile() {
         <aside className="en-profile" aria-label="个人信息">
           <figure className="en-profile-photo">
             <img src="/portrait-xinjiang.jpg" alt="夏诗淇在新疆旅行" />
-            <figcaption>新疆 · 2026</figcaption>
           </figure>
           <div className="en-profile-copy">
-            <p className="en-eyebrow">你好，我是</p>
             <h1>夏诗淇</h1>
             <p className="en-chinese-name">Ashley Xia</p>
             <p className="en-role">用 AI、代码和持续实践，把模糊问题做成可以使用的结果。</p>
           </div>
-          <dl className="en-profile-facts">
-            <div><dt>所在城市</dt><dd>中国 · 北京</dd></div>
-            <div><dt>教育背景</dt><dd>中国农业大学<br />地理信息科学 · 2024—2028</dd></div>
-            <div><dt>关注方向</dt><dd>AI 产品 · 学习工具<br />空间智能</dd></div>
-          </dl>
+          <p className="zh-profile-meta">北京 · 中国农业大学</p>
           <div className="en-profile-links">
             <a href="mailto:x132204x@163.com">邮箱 <Arrow /></a>
             <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
@@ -74,8 +68,7 @@ export default function ChineseProfile() {
         <div className="en-main-column">
           <section className="en-panel en-about" id="about">
             <h2 className="zh-resume-title">个人简介</h2>
-            <p>我在真实项目中学习新工具、验证判断，并把需求拆成流程、界面和可运行的产品。目前正在推进 AI 创业实践。</p>
-            <div className="en-now"><span>现在</span><strong>持续开发学习产品，并探索 AI Agent 的实际应用。</strong></div>
+            <p>我在真实项目中学习新工具、验证判断，并把需求拆成流程、界面和可运行的产品。目前正在推进 AI 创业实践，持续开发学习产品并探索 AI Agent 的实际应用。</p>
           </section>
 
           <section className="en-section en-education" id="education">
@@ -95,7 +88,7 @@ export default function ChineseProfile() {
               <a href="https://github.com/x132204x-web?tab=repositories" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
             </div>
             <div className="en-project-list">
-              {projects.map((project, index) => (
+              {projects.map((project) => (
                 <article className="en-project" key={project.slug}>
                   <Link className="en-project-media" href={`/projects/${project.slug}`}>
                     {project.images?.[0] || project.image ? (
@@ -105,11 +98,10 @@ export default function ChineseProfile() {
                         {project.features.map((feature) => <span key={feature}>{feature}</span>)}
                       </div>
                     )}
-                    <span>0{index + 1}</span>
                   </Link>
                   <div className="en-project-copy">
                     <div className="en-project-title">
-                      <div><p>{project.type}</p><h3>{project.name}</h3></div>
+                      <div><h3>{project.name}</h3></div>
                       <span>{project.status}</span>
                     </div>
                     <p>{project.summary}</p>
@@ -128,10 +120,10 @@ export default function ChineseProfile() {
           <section className="en-section en-process">
             <div className="en-section-heading"><h2 className="zh-resume-title">工作方式</h2></div>
             <div className="en-process-grid">
-              <article><span>01</span><h3>观察</h3><p>从自己经历过或看到的具体困难开始。</p></article>
-              <article><span>02</span><h3>理解</h3><p>梳理真实任务、现有方案与仍未被解决的部分。</p></article>
-              <article><span>03</span><h3>动手</h3><p>快速把想法拆成流程、界面和可运行原型。</p></article>
-              <article><span>04</span><h3>完善</h3><p>放进真实场景使用，让“能用”逐渐变成“可靠”。</p></article>
+              <article><h3>观察</h3><p>从自己经历过或看到的具体困难开始。</p></article>
+              <article><h3>理解</h3><p>梳理真实任务、现有方案与仍未被解决的部分。</p></article>
+              <article><h3>动手</h3><p>快速把想法拆成流程、界面和可运行原型。</p></article>
+              <article><h3>完善</h3><p>放进真实场景使用，让“能用”逐渐变成“可靠”。</p></article>
             </div>
           </section>
 
@@ -147,7 +139,7 @@ export default function ChineseProfile() {
 
         <aside className="en-side-column">
           <section className="en-travel-card">
-            <div className="en-travel-copy"><p className="en-eyebrow">工作之外</p><h2>旅行是我保持好奇的一种方式。</h2><p>我喜欢观察陌生地方的生活、颜色，以及人与人之间偶然发生的连接。</p></div>
+            <div className="en-travel-copy"><h2 className="zh-side-title">旅行</h2></div>
             <div className="en-travel-grid" aria-label="旅行照片">
               <img src="/travel-georgia-mestia.jpg" alt="格鲁吉亚梅斯蒂亚徒步" />
               <img src="/travel-georgia-batumi.jpg" alt="格鲁吉亚巴统黑海边" />
@@ -156,7 +148,7 @@ export default function ChineseProfile() {
               <img src="/travel-murmansk.jpg" alt="俄罗斯摩尔曼斯克" />
             </div>
           </section>
-          <section className="en-contact"><p className="en-eyebrow">联系方式</p><h2>如果想进一步了解我的项目与经历</h2><a href="mailto:x132204x@163.com">x132204x@163.com <Arrow /></a></section>
+          <section className="en-contact"><h2 className="zh-side-title">联系方式</h2><a href="mailto:x132204x@163.com">x132204x@163.com <Arrow /></a></section>
         </aside>
       </div>
 

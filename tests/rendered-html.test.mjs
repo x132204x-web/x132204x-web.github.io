@@ -119,6 +119,9 @@ test("server-renders the minimalist Chinese profile page", async () => {
   assert.match(html, /云品册/);
   assert.match(html, /工作方式/);
   assert.doesNotMatch(html, /从空间与系统理解问题|从真实问题开始动手|边做边学，在实践中形成判断/);
+  assert.doesNotMatch(html, /你好，我是|所在城市|关注方向|新疆 · 2026|工作之外|如果想进一步了解我的项目与经历/);
+  assert.match(html, /北京 · 中国农业大学/);
+  assert.match(html, /目前正在推进 AI 创业实践/);
   assert.match(html, /格鲁吉亚梅斯蒂亚徒步/);
   assert.match(html, /href="\/en\/"/);
   assert.doesNotMatch(html, /Narziss|PathFinder/);

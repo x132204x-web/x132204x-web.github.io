@@ -871,6 +871,24 @@ footer {
 }
 .zh-profile-page .en-about > p:not(.en-eyebrow) { margin-top: 18px; }
 .zh-profile-page .en-section-heading { margin-bottom: 22px; }
+.zh-profile-page .zh-profile-meta {
+  margin: 0 22px;
+  padding: 15px 0;
+  border-top: 1px solid var(--en-line);
+  color: #5f7776;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.zh-profile-page .zh-side-title {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+.zh-profile-page .en-travel-grid { margin-top: 18px; }
+.zh-profile-page .en-contact a { margin-top: 18px; }
+.zh-profile-page .en-project-title h3 { margin-top: 0; }
 
 @media (max-width: 1120px) {
   .en-shell { grid-template-columns: 220px minmax(0, 1fr); }
