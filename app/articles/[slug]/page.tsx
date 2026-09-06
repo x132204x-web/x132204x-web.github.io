@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticle } from "../../article-data";
 
@@ -14,8 +13,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <main className="article-page">
       <header className="site-header">
-        <Link className="brand" href="/">夏诗淇</Link>
-        <nav><Link href="/more#writing">返回博客</Link><Link href="/#contact">联系</Link></nav>
+        <a className="brand" href="/zh/full/">夏诗淇</a>
+        <nav><a href="/more/#writing">返回博客</a><a href="/zh/full/#contact">联系</a></nav>
       </header>
       <article className="article-detail">
         <p className="kicker">{article.category} · {article.date}</p>
@@ -31,7 +30,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div className="article-body">
           {article.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
-        <Link className="writing-entry" href="/more#writing">← 返回博客</Link>
+        <a className="writing-entry" href="/more/#writing">← 返回博客</a>
       </article>
     </main>
   );

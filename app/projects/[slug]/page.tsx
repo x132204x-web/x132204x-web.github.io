@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "../../project-data";
+import ProjectReturnLink from "../../project-return-link";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -14,8 +14,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className={`project-detail-page ${project.tone}`}>
       <header className="site-header">
-        <Link className="brand" href="/">夏诗淇</Link>
-        <nav><Link href="/#projects">返回项目</Link><Link href="/#contact">联系</Link></nav>
+        <a className="brand" href="/zh/full/">夏诗淇</a>
+        <nav><ProjectReturnLink /><a href="/zh/full/#contact">联系</a></nav>
       </header>
 
       <article className="project-detail">
@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         <div className="detail-actions">
           {project.publicUrl && <a href={project.publicUrl} target="_blank" rel="noreferrer">查看公开项目 ↗</a>}
-          <Link href="/#projects">返回全部项目</Link>
+          <ProjectReturnLink />
         </div>
       </article>
     </main>

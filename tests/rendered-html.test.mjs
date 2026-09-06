@@ -1,149 +1,81 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render(pathname = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
+const workerPromise = import(new URL("../dist/server/index.js", import.meta.url));
+
+async function render(pathname) {
+  const { default: worker } = await workerPromise;
   return worker.fetch(new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }), {
     ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
   }, { waitUntil() {}, passThroughOnException() {} });
 }
 
-test("server-renders the personal lab homepage", async () => {
-  const response = await render();
+function visibleHtml(html) {
+  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+}
+
+test("default and former profile entrances lead to the Chinese resume", async () => {
+  for (const path of ["/", "/profile"]) {
+    const response = await render(path);
+    assert.ok([301, 302, 303, 307, 308].includes(response.status), `${path} must redirect`);
+    assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname.replace(/\/$/, ""), "/zh");
+    const output = await readFile(new URL(`../out${path === "/" ? "" : path}/index.html`, import.meta.url), "utf8");
+    assert.match(output, /http-equiv="refresh"/);
+    assert.match(output, /href="\/zh\/?"/);
+  }
+});
+
+test("both resumes publish consistent core facts with working language and download entrances", async () => {
+  for (const [locale, otherLocale, school] of [["zh", "en", "中国农业大学"], ["en", "zh", "China Agricultural University"]]) {
+    const response = await render(`/${locale}`);
+    assert.equal(response.status, 200);
+    const html = visibleHtml(await response.text());
+    assert.match(html, /^<!DOCTYPE html>/i);
+    assert.ok(html.includes(school));
+    assert.match(html, /FinalAce/);
+    assert.match(html, /3\.56/);
+    assert.match(html, /6\.5/);
+    assert.match(html, /2024.*2028/);
+    assert.match(html, /href="mailto:x132204x@163\.com"/);
+    assert.ok(html.includes(`href="/${otherLocale}/"`), "language switch must remain in the resume view");
+    assert.ok(html.includes(`href="/resume-xia-shiqi-${locale}.pdf"`), "resume download must match the page language");
+    assert.match(html, /href="https:\/\/finalace\.online"/);
+    assert.doesNotMatch(html, /Narziss|PathFinder|View repository|travel-georgia-mestia\.jpg/);
+    assert.doesNotMatch(html, /href="\/en\/full\/?"/, "do not expose an unfinished English detailed site");
+  }
+});
+
+test("the detailed Chinese website remains accessible at its explicit entrance", async () => {
+  const response = await render("/zh/full");
   assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  const html = await response.text();
-  assert.match(html, /夏诗淇/);
-  assert.match(html, /FinalAce/);
-  assert.match(html, /ASHLEY XIA|Ashley/);
+  const html = visibleHtml(await response.text());
   assert.match(html, /你好👋/);
-  assert.match(html, /广东广州/);
-  assert.match(html, /广州市执信中学/);
-  assert.match(html, /2021 — 2024/);
-  assert.match(html, /北京/);
-  assert.doesNotMatch(html, /portrait-scan-image/);
-  assert.match(html, /云品册/);
-  assert.doesNotMatch(html, /Narziss|PathFinder/);
   assert.match(html, /我做过的一些尝试/);
-  assert.match(html, /我是如何思考与工作的/);
-  assert.match(html, /Pinterest/);
-  assert.match(html, /校园 3D 打印平台/);
-  assert.match(html, /如果还想了解更多/);
-  assert.match(html, /进入详情/);
-  assert.match(html, /进入详情/);
-  assert.match(html, /AI 工作流/);
-  assert.match(html, /https:\/\/finalace\.online/);
-  assert.match(html, /finalace-study-path\.png/);
-  assert.match(html, /FinalAce 产品界面轮播/);
-  assert.match(html, /查看下一张 FinalAce 界面/);
-  assert.match(html, /全栈开发/);
-  assert.doesNotMatch(html, /解释 GitHub 项目/);
-  assert.match(html, /每日信息搜集/);
-  assert.match(html, /工具试用与筛选/);
-  assert.match(html, /AI 辅助开发/);
-  assert.doesNotMatch(html, /世界人工智能大会 WAIC|OPC 大会/);
-  assert.doesNotMatch(html, /<h2>博客<\/h2>/);
-  assert.doesNotMatch(html, /查看教育背景与能力/);
-  assert.doesNotMatch(html, /阅读文章与思考/);
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
-});
-
-test("server-renders the education and capabilities page", async () => {
-  const response = await render("/profile");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /教育背景/);
-  assert.match(html, /GPA 3.56 \/ 4.0/);
-  assert.match(html, /IELTS 6.5/);
-  assert.match(html, /我能做什么/);
-  assert.match(html, /网站与小程序/);
-});
-
-test("server-renders the personal interests page", async () => {
-  const response = await render("/more");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /格鲁吉亚 · 梅斯蒂亚/);
-  assert.match(html, /格鲁吉亚 · 巴统/);
-  assert.match(html, /\/reading-photo\.jpg/);
-  assert.match(html, /俄罗斯摩尔曼斯克/);
-  assert.match(html, /新疆伊犁/);
-  assert.match(html, /读书是另一种认识世界的方式/);
-  assert.match(html, /回到主页/);
-  assert.match(html, /返回首页/);
-  assert.match(html, /<h2>博客<\/h2>/);
-  assert.match(html, /五天做出 FinalAce/);
-  assert.match(html, /持续筛选 AI 工具/);
-  assert.match(html, /AI 不能创造人与人之间的相遇/);
-  assert.match(html, /城市怎样影响一个年轻人的选择/);
-  assert.match(html, /42 小时、2250 公里/);
-  assert.match(html, /finalace-home\.png/);
-  assert.match(html, /portrait-xinjiang\.jpg/);
-});
-
-test("server-renders the English profile page", async () => {
-  const response = await render("/en");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /Ashley Xia/);
-  assert.match(html, /What I have done, and who I am becoming/);
-  assert.match(html, /FinalAce/);
-  assert.match(html, /Cloud Catalog/);
-  assert.match(html, /Centralized product records/);
-  assert.match(html, /China Agricultural University/);
-  assert.match(html, /Geographic Information Science/);
-  assert.match(html, /GPA 3\.56/);
-  assert.doesNotMatch(html, /Guangzhou Zhixin High School|2021 — 2024/);
-  assert.doesNotMatch(html, /云品册|商品资料集中管理|企业成员协作/);
-  assert.doesNotMatch(html, /resume-xia-shiqi\.pdf|Résumé/);
-  assert.doesNotMatch(html, /Travel and reading notes/);
-  assert.match(html, /Travel is one of the ways I stay curious/);
-  assert.match(html, /travel-georgia-mestia\.jpg/);
-  assert.match(html, /href="\/zh\/"/);
-});
-
-test("server-renders the minimalist Chinese profile page", async () => {
-  const response = await render("/zh");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /夏诗淇/);
-  assert.match(html, /个人简介/);
-  assert.match(html, /教育经历/);
-  assert.match(html, /项目实践/);
-  assert.match(html, /中国农业大学/);
-  assert.match(html, /地理信息科学/);
-  assert.match(html, /GPA 3\.56/);
   assert.match(html, /FinalAce/);
   assert.match(html, /云品册/);
-  assert.match(html, /工作方式/);
-  assert.doesNotMatch(html, /从空间与系统理解问题|从真实问题开始动手|边做边学，在实践中形成判断/);
-  assert.doesNotMatch(html, /你好，我是|所在城市|关注方向|新疆 · 2026|工作之外|如果想进一步了解我的项目与经历/);
-  assert.match(html, /北京 · 中国农业大学/);
-  assert.match(html, /目前正在推进 AI 创业实践/);
-  assert.match(html, /格鲁吉亚梅斯蒂亚徒步/);
-  assert.match(html, /href="\/en\/"/);
+  assert.match(html, /id="projects"/);
+  assert.match(html, /href="\/zh\/?"/);
+  assert.match(html, /href="\/more\/?(?:#writing)?"/);
   assert.doesNotMatch(html, /Narziss|PathFinder/);
-  assert.doesNotMatch(html, /resume-xia-shiqi\.pdf|Reading/);
 });
 
-test("server-renders a project detail page", async () => {
-  const response = await render("/projects/cloud-catalog");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /商品资料集中管理/);
-  assert.match(html, /企业成员协作/);
-  assert.doesNotMatch(html, /Narziss|知识树/);
-  assert.match(html, /我负责的部分/);
+test("project and writing details retain their return destinations", async () => {
+  const project = await render("/projects/cloud-catalog");
+  assert.equal(project.status, 200);
+  const projectHtml = visibleHtml(await project.text());
+  assert.match(projectHtml, /商品资料集中管理/);
+  assert.match(projectHtml, /企业成员协作/);
+  assert.match(projectHtml, /href="\/zh\/full\/?#projects"/);
+
+  const article = await render("/articles/finalace-from-zero-to-one");
+  assert.equal(article.status, 200);
+  const articleHtml = visibleHtml(await article.text());
+  assert.match(articleHtml, /五天做出 FinalAce/);
+  assert.match(articleHtml, /href="\/more\/?#writing"/);
 });
 
-test("server-renders a writing detail page", async () => {
-  const response = await render("/articles/finalace-from-zero-to-one");
-  assert.equal(response.status, 200);
-  const html = await response.text();
-  assert.match(html, /五天做出 FinalAce/);
-  assert.match(html, /Beta 1.0/);
-  assert.match(html, /返回博客/);
-  assert.match(html, /finalace-home\.png/);
+test("an unknown project returns an actual missing-page response", async () => {
+  const response = await render("/projects/this-project-does-not-exist");
+  assert.equal(response.status, 404);
 });

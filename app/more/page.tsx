@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { MediaShelf, TravelGallery } from "./interactive-sections";
 import { articles } from "../article-data";
 
@@ -10,8 +9,8 @@ export default function MorePage() {
   return (
     <main className="more-page">
       <header className="site-header">
-        <Link className="brand" href="/">夏诗淇</Link>
-        <nav><Link href="/">返回首页</Link><Link href="/#contact">联系</Link></nav>
+        <a className="brand" href="/zh/full/">夏诗淇</a>
+        <nav><a href="/zh/full/">返回首页</a><a href="/zh/full/#contact">联系</a></nav>
       </header>
 
       <section className="more-hero">
@@ -20,7 +19,7 @@ export default function MorePage() {
         <p>
           旅行和读书不是简历上的项目，却一直影响我怎么看待这个世界、如何观察问题、如何理解人类。
         </p>
-        <Link className="more-home-link" href="/">← 回到主页</Link>
+        <a className="more-home-link" href="/zh/full/">← 回到主页</a>
       </section>
 
       <section className="travel-notes">
@@ -71,18 +70,18 @@ export default function MorePage() {
         <div className="article-list">
           {articles.map((article, index) => (
             <article className={index === 0 ? "article-card article-featured" : "article-card"} key={article.title}>
-              <Link className="article-cover" href={`/articles/${article.slug}`} aria-label={`阅读《${article.title}》`}>
+              <a className="article-cover" href={`/articles/${article.slug}`} aria-label={`阅读《${article.title}》`}>
                 <img
                   src={article.cover}
                   alt={article.coverAlt}
                   style={{ objectPosition: article.coverPosition ?? "center" }}
                 />
-              </Link>
+              </a>
               <div className="article-copy">
                 <div className="article-meta"><span>{article.category}</span><time>{article.date}</time></div>
-                <h3><Link href={`/articles/${article.slug}`}>{article.title} <Arrow /></Link></h3>
+                <h3><a href={`/articles/${article.slug}`}>{article.title} <Arrow /></a></h3>
                 <p>{article.excerpt}</p>
-                <Link className="article-read" href={`/articles/${article.slug}`}>阅读全文 <Arrow /></Link>
+                <a className="article-read" href={`/articles/${article.slug}`}>阅读全文 <Arrow /></a>
               </div>
             </article>
           ))}
@@ -95,7 +94,7 @@ export default function MorePage() {
           但它们都在帮助我更具体地理解问题，也更诚实地理解自己，
           让我在技术和时代之外，经常性地感知到自己作为人类的存在。
         </p>
-        <Link href="/">返回首页 ↗</Link>
+        <a href="/zh/full/">返回首页 ↗</a>
       </section>
     </main>
   );

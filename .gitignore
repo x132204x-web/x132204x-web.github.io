@@ -40,3 +40,19 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# Static deployment output belongs in out/, never beside app/ sources.
+/assets/
+/index.html
+/en/index.html
+/zh/index.html
+/more/index.html
+/profile/index.html
+/articles/*/index.html
+/projects/*/index.html
+/updates/**/index.html
+/updates/index.html
+
+# Bilingual resumes are generated for the Pages artifact.
+/public/resume-xia-shiqi-zh.pdf
+/public/resume-xia-shiqi-en.pdf

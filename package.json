@@ -8,9 +8,12 @@
   "scripts": {
     "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
     "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "generate:resume": "node scripts/generate-resume-pdfs.mjs",
+    "build:site": "npm run generate:resume && npm run build && npm run export:static && npm run verify:static",
     "export:static": "node scripts/export-static.mjs",
+    "verify:static": "node scripts/verify-static.mjs",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build:site && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
