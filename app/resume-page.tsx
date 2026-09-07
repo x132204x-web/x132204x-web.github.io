@@ -12,12 +12,12 @@ const labels = {
     back: "回到顶部", imageAlt: "夏诗淇在新疆旅行", footer: "夏诗淇 · 个人简历",
   },
   en: {
-    document: "RÉSUMÉ", fullSite: "Full site · 中文", pdf: "Download English résumé PDF",
+    document: "RÉSUMÉ", fullSite: "Full site", pdf: "Download English résumé PDF",
     education: "Education", projects: "Selected projects", experience: "Experience",
     skills: "Skills & tools", contact: "Get in touch", role: "My role",
-    visit: "Visit product", caseStudy: "Case study · Chinese", email: "Email", phone: "Phone / WeChat",
+    visit: "Visit product", caseStudy: "Read the case study", email: "Email", phone: "Phone / WeChat",
     github: "GitHub", skip: "Skip to résumé", nav: "Résumé navigation", languages: "Choose language",
-    more: "Project stories, reflections, and more about me.", moreLink: "Explore the full site · Chinese",
+    more: "Project stories, reflections, and more about me.", moreLink: "Explore the full site",
     back: "Back to top", imageAlt: "Ashley Xia in Xinjiang", footer: "Ashley Xia · Résumé",
   },
 } as const;
@@ -37,7 +37,7 @@ export default function ResumePage({ locale }: { locale: ResumeLocale }) {
             <a href="/zh/" lang="zh-CN" hrefLang="zh-CN" aria-current={locale === "zh" ? "page" : undefined}>中文</a>
             <a href="/en/" lang="en" hrefLang="en" aria-current={locale === "en" ? "page" : undefined}>EN</a>
           </div>
-          <a className="resume-full-link" href="/zh/full/">{copy.fullSite}</a>
+          <a className="resume-full-link" href={`/${locale}/full/`}>{copy.fullSite}</a>
         </nav>
       </header>
 
@@ -90,7 +90,7 @@ export default function ResumePage({ locale }: { locale: ResumeLocale }) {
                 <ul className="resume-highlights">{project.highlights.map((item) => <li key={item}>{item}</li>)}</ul>
                 <div className="resume-project-links">
                   {project.publicUrl && <a className="resume-inline-link" href={project.publicUrl} target="_blank" rel="noreferrer">{copy.visit}</a>}
-                  <a className="resume-inline-link" href={`/projects/${project.slug}/?from=${locale}`}>{copy.caseStudy}</a>
+                  <a className="resume-inline-link" href={`/${locale}/full/projects/${project.slug}/?from=${locale}`}>{copy.caseStudy}</a>
                 </div>
               </article>
             ))}
@@ -125,7 +125,7 @@ export default function ResumePage({ locale }: { locale: ResumeLocale }) {
             <div><dt>{copy.github}</dt><dd><a href={data.contact.github} target="_blank" rel="noreferrer">{data.contact.githubLabel}</a></dd></div>
           </dl>
         </section>
-        <aside className="resume-more"><p>{copy.more}</p><a className="resume-inline-link" href="/zh/full/">{copy.moreLink}</a></aside>
+        <aside className="resume-more"><p>{copy.more}</p><a className="resume-inline-link" href={`/${locale}/full/`}>{copy.moreLink}</a></aside>
       </div>
       <footer className="resume-footer"><span>© 2026 {copy.footer}</span><a href="#top">{copy.back}</a></footer>
     </main>

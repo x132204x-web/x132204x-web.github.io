@@ -2,6 +2,7 @@ import { cp, mkdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { retiredRoutes, routes } from "./static-routes.mjs";
+import { staticNavigationScript } from "./static-navigation.mjs";
 
 const projectDir = resolve(import.meta.dirname, "..");
 const outputDir = resolve(projectDir, process.argv[2] ?? "out");
@@ -24,6 +25,14 @@ function redirectPage(target) {
 }
 
 async function writePage(route, html) {
+  // The shared layout defaults to Chinese; exported English documents need the
+  // language on the root element as well as on their localized content.
+  const language = /^\/en(?:\/|$)/.test(route) ? "en" : "zh-CN";
+  html = html.replace(/<html\b([^>]*)>/i, (_, attributes) => {
+    const cleanAttributes = attributes.replace(/\s+lang=(?:"[^"]*"|'[^']*')/i, "");
+    return `<html${cleanAttributes} lang="${language}">`;
+  });
+  html = html.replace(/<head\b[^>]*>/i, head => `${head}<script>${staticNavigationScript}</script>`);
   const destination = route === "/"
     ? join(outputDir, "index.html")
     : join(outputDir, route.slice(1), "index.html");

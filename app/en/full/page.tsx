@@ -2,8 +2,8 @@ import FullPage from "../../full-page";
 import { personalSummary } from "../../full-content";
 import { fullMetadata } from "../../full-metadata";
 
-export const metadata = fullMetadata("zh", "夏诗淇｜工作与手记", personalSummary.zh);
+export const metadata = fullMetadata("en", "Ashley Xia | Work & notes", personalSummary.en);
 
 export default function Page() {
-  return <FullPage locale="zh" />;
+  return <FullPage locale="en" />;
 }

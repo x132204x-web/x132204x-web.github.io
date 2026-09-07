@@ -29,16 +29,28 @@ npm run lint
 | `/` | Redirect to the Chinese resume |
 | `/zh/` | Chinese resume |
 | `/en/` | English resume |
-| `/zh/full/` | Existing detailed Chinese website |
+| `/zh/full/`, `/en/full/` | Chinese and English work and personal notebook |
+| `/{locale}/full/projects/.../` | Localized project case studies |
+| `/{locale}/full/articles/.../` | Localized essays |
 | `/profile/` | Redirect to the Chinese resume |
-| `/more/` | Travel, reading, and writing |
-| `/projects/.../` | Project case studies |
-| `/articles/.../` | Articles |
-| `/updates/.../` | Earlier updates |
+| `/more/` | Legacy entrance to the integrated Chinese notebook |
+| `/projects/.../` | Legacy project entrance, preserving resume origin |
+| `/articles/.../` | Redirect to the corresponding Chinese essay |
+| `/updates/`, `/updates/.../` | Earlier Chinese updates, retained for existing links |
 
-The Chinese and English resumes use the same bilingual source data. Their downloadable PDFs are generated from that data in the build. The English detailed website is a later phase and has no placeholder route.
+The Chinese and English resumes use the same bilingual source data. Their downloadable PDFs are generated from that data in the build. Both resumes link to their own language's full website and case studies.
+
+The full websites share their page and detail components. `app/full-content.ts` contains the edited bilingual project, essay, travel, reading, and notebook content. Personal records inform these selected summaries; raw private Notion pages are not part of the public site. Keep stable project and article slugs across translations. Basic education, experience, and contact facts continue to come from `app/resume-data.ts`.
+
+The full home pages expose stable `projects`, `collaboration`, `notebook`, `travel`, `reading`, `writing`, and `contact` anchors. The old `/more/` entrance redirects to the notebook, with reading, travel, and writing fragments mapped to the corresponding section. Legacy project entrances choose a language from `?from=zh|en` and preserve that query in a client-side replacement navigation. These aliases deliberately use a visible fallback link instead of a competing fixed meta refresh.
+
+On project details, `from` always identifies the resume the visitor came from, independently of the current content language. Switching a project from English to Chinese preserves `from=en`, so the return link still leads to the English resume. Without a recognized source, the return link leads to the current language's full-site projects section. Articles return to the current language's writing section.
 
 The export manifest in `scripts/static-routes.mjs` includes all published pages and redirects for retired static URLs. Add a new route there when publishing it. Internal cross-page links use full document navigation so GitHub Pages does not need a React server endpoint.
+
+The exporter installs `scripts/static-navigation.mjs` before hydration. It leaves fragment scrolling and history to the browser, preventing the framework's `popstate` handler from requesting unavailable RSC endpoints. A history entry with a different path or query reloads its document. Fragment changes still notify the full site's language and bookmark controls.
+
+`npm test` covers both resume entrances, the bilingual full sites and all localized details, canonical and language links, legacy destination rules, missing details, and exported root language attributes. The static verifier also checks links, fragment targets, assets, and both PDFs. Review motion, touch gestures, keyboard controls, and reduced-motion behavior in a browser against `out/` before publishing visual changes.
 
 ## Production release
 
