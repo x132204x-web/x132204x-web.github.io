@@ -145,7 +145,7 @@ test("unknown localized and legacy details return missing-page responses", async
   }
 });
 
-test("portfolio leads with building, combines work and experiments, and keeps six personal facts", async () => {
+test("portfolio leads with Ashley, combines work and experiments, and keeps six personal facts", async () => {
   for (const locale of ["zh", "en"]) {
     const html = await output(`/${locale}/full`);
     assert.ok(html.indexOf('id="pf-title"') < html.indexOf('id="projects"') && html.indexOf('id="projects"') < html.indexOf('id="about"'));
@@ -165,6 +165,7 @@ test("portfolio leads with building, combines work and experiments, and keeps si
     assert.match(html, locale === "en" ? /instant noodles taste better after a hike/ : /徒步后的一碗方便面/);
     const landing = html.slice(html.indexOf('class="pf-landing '), html.indexOf('id="projects"'));
     assert.doesNotMatch(landing, /pf-landing-projects|A university student trying out ideas|大学生。用 AI/);
+    assert.doesNotMatch(landing, /Build first\.|Polish later\.|先做出来。|再慢慢打磨。/);
     assert.doesNotMatch(html, /Usually making or trying something|Proof I went|确实去过|大学生。爱动手/);
     assert.match(html, locale === "en" ? /Fun Facts/ : /有趣的小事/);
     assert.match(html, locale === "en" ? /I designed and taught geography, cooking, and science lessons/ : /我设计、试讲并教授地理、烹饪和科学课程/);
@@ -173,8 +174,6 @@ test("portfolio leads with building, combines work and experiments, and keeps si
     assert.match(resume, locale === "en" ? /Volunteer Teacher · Documentation Lead/ : /课程导师 · 队记总负责人/);
     if (locale === "en") {
       assert.match(html, /Hi, I’m Ashley/);
-      assert.match(html, /Build first/);
-      assert.match(html, /Polish later/);
       hasLink(html, "mailto:Ashleyx17@proton.me");
       for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later", "joy from giving"]) assert.ok(html.includes(fact));
       assert.match(html, /No published results yet/);

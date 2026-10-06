@@ -176,3 +176,14 @@ Validation: all 10 route/content tests and static export checks pass. Both
 languages reviewed at 320, 846 and 1440px; the portrait renders at the intended
 200, 240 and 288px widths. Both one-page PDFs contain the corrected dates.
 ESLint reports no errors, with the existing 17 static-image advisories.
+
+## Follow-up: greeting without a slogan
+
+Removed both “Build first.” and “Polish later.” from the opening in both
+languages. The existing greeting becomes the main heading, alongside the smaller
+portrait and work link. The build-first habit remains among Ashley’s supplied
+fun facts below.
+
+Validation: all 10 route/content tests and static export checks pass. Both
+languages visually reviewed at mobile, tablet and desktop sizes; the Chinese
+greeting breaks between phrases so the name stays together.

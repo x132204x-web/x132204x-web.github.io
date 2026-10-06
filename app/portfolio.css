@@ -344,3 +344,6 @@
 .pf-main-photo { width: min(100%,288px); }
 @media (min-width:768px) and (max-width:900px) { .pf-main-photo { width: min(100%,240px); } }
 @media (max-width:767px) { .pf-main-photo { width: min(100%,200px); } }
+
+/* The greeting is the main heading, without an extra slogan. */
+.pf-landing-intro h1 { margin-block: 0; max-width: 10ch; }
