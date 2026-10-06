@@ -163,3 +163,16 @@ local links/assets. Both languages pass browser checks at 320, 375, 414, 768 and
 portrait keeps its 4:5 frame, selects the small source on mobile, and retains the
 face and hand. No overflow, broken images or browser errors. Existing disclosures,
 language fragments and old Lab links still work. ESLint reports no errors.
+
+## Follow-up: portrait scale and corrected internship dates
+
+Reduced the opening portrait to 288px on desktop, 240px on tablet, and 200px
+on mobile, preserving its crop. Ashley confirmed the internship dates as
+July–September 2026; shared data updates the homepage, résumé pages and PDFs.
+The Xinjiang heading now reads “A solo adventure in Xinjiang,” with a matching
+Chinese heading emphasizing independent travel and adventure.
+
+Validation: all 10 route/content tests and static export checks pass. Both
+languages reviewed at 320, 846 and 1440px; the portrait renders at the intended
+200, 240 and 288px widths. Both one-page PDFs contain the corrected dates.
+ESLint reports no errors, with the existing 17 static-image advisories.

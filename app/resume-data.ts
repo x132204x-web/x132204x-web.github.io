@@ -109,7 +109,7 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         id: "zhijian-internship",
         organization: "智健启能科技有限公司",
         role: "技术实习生 · AI 健康方向",
-        period: "2026 夏季",
+        period: "2026.07 — 2026.09",
         highlights: ["参与 AI 健康方向的小程序和 App 设计与搭建。"],
       },
       {
@@ -204,7 +204,7 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         id: "zhijian-internship",
         organization: "智健启能科技有限公司",
         role: "Technical Intern · AI Health",
-        period: "Summer 2026",
+        period: "Jul 2026 — Sep 2026",
         highlights: ["Helped design and build mini programs and apps for AI health products."],
       },
       {

@@ -339,3 +339,8 @@
   .pf-main-photo { width: min(100%,320px); justify-self: center; }
   .pf-landing-action { margin-top: var(--space-sm); }
 }
+
+/* The headline leads; the portrait occupies a smaller part of the opening. */
+.pf-main-photo { width: min(100%,288px); }
+@media (min-width:768px) and (max-width:900px) { .pf-main-photo { width: min(100%,240px); } }
+@media (max-width:767px) { .pf-main-photo { width: min(100%,200px); } }

@@ -39,7 +39,7 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
           <div className="pf-landing-top"><div className="pf-landing-intro"><p className="pf-landing-name">{zh ? "你好，我是夏诗淇。" : "Hi, I’m Ashley."}</p>
           <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1>
           <a className="pf-landing-action" href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
-            <figure className="pf-main-photo"><img src="/ashley-main-portrait.jpg" srcSet="/ashley-main-portrait-small.jpg 640w, /ashley-main-portrait.jpg 1151w" sizes="(max-width: 407px) calc(100vw - 88px), (max-width: 767px) 320px, (max-width: 900px) 36vw, 384px" width="1151" height="1440" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
+            <figure className="pf-main-photo"><img src="/ashley-main-portrait.jpg" srcSet="/ashley-main-portrait-small.jpg 640w, /ashley-main-portrait.jpg 1151w" sizes="(max-width: 767px) 200px, (max-width: 900px) 240px, 288px" width="1151" height="1440" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
           </div>
         </section>
 
@@ -69,7 +69,7 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
           <div className="pf-facts"><h2>{zh ? "有趣的小事" : "Fun Facts"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
           <div className="pf-photo-strip">
             <figure id="xinjiang"><img src="/portrait-xinjiang-stage.jpg" width="1255" height="760" alt={zh ? "夏诗淇在新疆的山间" : "Ashley in the mountains of Xinjiang"} loading="lazy" /><figcaption className="pf-photo-story">
-              <h3>{zh ? "一个人开车，边走边改计划。" : "A drive with no fixed route."}</h3>
+              <h3>{zh ? "一场独自出发的新疆冒险。" : "A solo adventure in Xinjiang."}</h3>
               <p className="pf-photo-meta">{zh ? "新疆 · 2026 年 4 月" : "Xinjiang · April 2026"}</p>
               <p>{zh ? "第四次到新疆，终于租车好好逛了一趟。路线临时改，山慢慢爬；徒步后的一碗方便面，也能让我很满足。" : "On my fourth trip to Xinjiang, I rented a car and went exploring alone. I changed plans along the way—and found that instant noodles taste better after a hike."}</p>
             </figcaption></figure>
