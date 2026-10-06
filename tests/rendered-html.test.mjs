@@ -144,19 +144,22 @@ test("unknown localized and legacy details return missing-page responses", async
   }
 });
 
-test("portfolio prioritizes project evidence and marks unfinished experiments honestly", async () => {
+test("portfolio opens with four personal facts and combines work with experiments", async () => {
   for (const locale of ["zh", "en"]) {
     const html = await output(`/${locale}/full`);
-    assert.ok(html.indexOf('id="projects"') < html.indexOf('id="about"'));
-    assert.ok(html.indexOf('id="lab"') < html.indexOf('id="about"'));
-    assert.match(html, /finalace-study-path\.png/);
-    assert.match(html, /class="pb-personal"/);
-    assert.match(html, /pb-experiment/);
+    assert.ok(html.indexOf('id="about"') < html.indexOf('id="projects"'));
+    const work = html.slice(html.indexOf('id="projects"'), html.indexOf('id="notebook"'));
+    assert.match(work, /id="lab"/);
+    assert.match(work, /pf-experiment/);
+    assert.match(work, /finalace-home\.png/);
+    assert.match(html, /pf-personal-notes/);
     if (locale === "en") {
-      assert.match(html, /I build, experiment/);
-      assert.match(html, /no published results here yet/);
-      assert.match(html, /The team built a shared catalog/);
-      assert.doesNotMatch(html, /passionate|visionary|results-driven|aspiring GIS/i);
+      assert.match(html, /Hi, I’m Ashley/);
+      for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard"]) assert.ok(html.includes(fact));
+      assert.match(html, /No published results yet/);
+      const navigation = html.match(/<nav class="fn-header-links"[\s\S]*?<\/nav>/)[0];
+      assert.doesNotMatch(navigation, /#lab/);
+      assert.doesNotMatch(html, /pb-story|Room to experiment|passionate|visionary|results-driven/i);
     }
   }
 });

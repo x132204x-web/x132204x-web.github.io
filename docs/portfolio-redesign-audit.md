@@ -59,3 +59,13 @@ There are two documented case studies. The lab broadens the picture without
 pretending exploratory work has the same evidence as a launched product. Adding
 real screenshots and specific lessons to those experiments remains a useful
 future content update when Ashley has materials to publish.
+
+## Follow-up: shorter and more personal
+
+The opening now contains Ashley’s four supplied fun facts and a real Russian
+travel portrait. The Work and Lab navigation destinations are merged. Homepage
+project stories are reduced to a short introduction with the existing case-study
+links; the five-part story stays on detail pages. Experiment notes are one sentence.
+The long about and collaboration prose no longer appears on the homepage; old
+fragments remain valid. Two writing links are visible, with other writing and
+travel/reading behind native disclosures. Contact and footer copy are minimal.

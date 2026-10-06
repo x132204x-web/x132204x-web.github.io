@@ -290,13 +290,13 @@ export const fieldNotes: Record<FullLocale, FieldNote[]> = {
 export type Experiment = { id: string; name: string; area: string; question: string; status: string; note: string; href?: string };
 export const experiments: Record<FullLocale, Experiment[]> = {
   en: [
-    { id: "ai-visibility", name: "AI visibility", area: "AI / brand analysis", question: "How do AI answers describe a brand?", status: "Exploration", note: "I’ve explored AI visibility and brand analysis products. The question I want to test: what can a business learn from the way AI answers represent it? This is an exploration, with no published results here yet." },
-    { id: "browser-tools", name: "Browser tools", area: "Everyday utilities", question: "Which small browser tasks could be easier?", status: "Exploration", note: "I’ve explored browser tools as small product experiments. I’m interested in the repetitive steps we stop noticing, and whether a focused tool is worth adding to someone’s day." },
-    { id: "3d-printing", name: "Campus 3D printing", area: "Digital → physical", question: "How does an uploaded file become a printed object?", status: "In progress", note: "I contribute to the campus 3D-printing platform’s requirements, product design, development coordination, and testing. The work maps the service from file upload and processing to printer connection. I’m learning how a screen fits into a physical service." },
+    { id: "ai-visibility", name: "AI visibility", area: "AI / brand analysis", question: "How do AI answers describe a brand?", status: "Exploration", note: "Exploring how AI answers describe brands. No published results yet." },
+    { id: "browser-tools", name: "Browser tools", area: "Everyday utilities", question: "Which small browser tasks could be easier?", status: "Exploration", note: "Small browser tools for repetitive tasks. Still figuring out which ones are worth keeping." },
+    { id: "3d-printing", name: "Campus 3D printing", area: "Digital → physical", question: "How does an uploaded file become a printed object?", status: "In progress", note: "Helping connect file uploads to campus printers through product design and testing." },
   ],
   zh: [
-    { id: "ai-visibility", name: "AI 可见度", area: "AI / 品牌分析", question: "AI 的回答会怎样描述一个品牌？", status: "探索中", note: "我探索过 AI 可见度和品牌分析类产品。想验证的问题是：企业能从 AI 如何描述自己这件事中，得到什么有用的信息？还在探索，这里暂时没有可公开的结果。" },
-    { id: "browser-tools", name: "浏览器小工具", area: "日常小问题", question: "浏览器里的哪些重复操作可以省下来？", status: "探索中", note: "我尝试过浏览器工具这类小产品实验。想看看那些已经习以为常的重复步骤，是否值得做一个小工具去解决，以及它会不会真的被留下来。" },
-    { id: "3d-printing", name: "校园 3D 打印", area: "从屏幕到实物", question: "一个上传的文件，怎样变成手里的实物？", status: "正在参与", note: "我参与校园 3D 打印平台的需求、产品设计、开发协调和测试，梳理从文件上传、处理到打印机连接的服务流程。也在学习一个屏幕上的操作怎样接到现实里的服务。" },
+    { id: "ai-visibility", name: "AI 可见度", area: "AI / 品牌分析", question: "AI 的回答会怎样描述一个品牌？", status: "探索中", note: "看看 AI 的回答怎样描述品牌。还在探索，暂时没有公开结果。" },
+    { id: "browser-tools", name: "浏览器小工具", area: "日常小问题", question: "浏览器里的哪些重复操作可以省下来？", status: "探索中", note: "给浏览器里的重复操作做点小工具。还在试哪些值得留下。" },
+    { id: "3d-printing", name: "校园 3D 打印", area: "从屏幕到实物", question: "一个上传的文件，怎样变成手里的实物？", status: "正在参与", note: "参与产品设计和测试，把文件上传接到校园里的打印机。" },
   ],
 };

@@ -186,3 +186,70 @@
 .pb-people, .pb-lab > .pb-wrap { position: relative; }
 .pb-anchor { position: absolute; top: 0; }
 .builder-home[lang="zh-CN"] .pb-hero h1 { line-height: 1.22; letter-spacing: -.05em; }
+
+/* Hallmark · macrostructure: personal letter with combined work index · design-system: design.md */
+/* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V5 */
+.pf-opening { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: var(--space-2xl); padding-block: var(--space-2xl); align-items: start; }
+.pf-hello h1 { font: 600 clamp(2.25rem, 4vw, 3.6rem)/1.15 var(--font-display); letter-spacing: -.05em; }
+.pf-hello > div > p { font-size: var(--text-sm); color: var(--color-ink-2); margin-top: var(--space-sm); }
+.pf-hello figure { margin-top: var(--space-lg); }
+.pf-hello img { width: 164px; height: 216px; object-fit: cover; border-radius: var(--radius-card); }
+.pf-hello figcaption { font-size: var(--text-xs); color: var(--color-ink-2); margin-top: var(--space-xs); }
+.pf-facts h2 { font: 600 var(--text-lg)/1.4 var(--font-display); }
+.pf-facts ol { list-style: none; padding: 0; margin: var(--space-sm) 0; counter-reset: fact; }
+.pf-facts li { counter-increment: fact; display: grid; grid-template-columns: 24px minmax(0,1fr); gap: var(--space-sm); border-top: var(--rule-fine) solid var(--color-rule); padding-block: var(--space-md); font-size: var(--text-md); line-height: 1.6; }
+.pf-facts li::before { content: "0" counter(fact); color: var(--color-accent); font-size: var(--text-xs); padding-top: var(--space-3xs); }
+.pf-work { position: relative; border-top: var(--rule-fine) solid var(--color-rule); padding-block: var(--space-xl) var(--space-2xl); }
+.pf-project-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-xl); }
+.pf-project-image { display: block; background: var(--color-wash); padding: var(--space-lg); border-radius: var(--radius-card); }
+.pf-project-image img { width: 100%; height: auto; aspect-ratio: 1353 / 1070; object-fit: contain; }
+.pf-catalog-flow { aspect-ratio: 1353 / 1070; display: flex; flex-direction: column; justify-content: space-between; }
+.pf-catalog-flow > span { font: 600 var(--text-md)/1.4 var(--font-display); }
+.pf-catalog-flow p { white-space: pre-line; font: 600 clamp(1.3rem, 2.3vw, 2rem)/1.25 var(--font-display); letter-spacing: -.025em; }
+.pf-catalog-flow small { font-size: var(--text-xs); color: var(--color-ink-2); }
+.pf-project-heading { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-sm); margin-top: var(--space-md); }
+.pf-project h3 { font: 600 var(--text-xl)/1.4 var(--font-display); letter-spacing: -.035em; }
+.pf-project-heading > span { font-size: var(--text-xs); color: var(--color-ink-2); }
+.pf-project > p { margin-top: var(--space-xs); font-size: var(--text-sm); color: var(--color-ink-2); max-width: 55ch; }
+.pf-project a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.pf-experiments { display: grid; grid-template-columns: minmax(0,.45fr) minmax(0,1fr); gap: var(--space-xl); margin-top: var(--space-xl); }
+.pf-experiments > h3 { font: 600 var(--text-lg)/1.4 var(--font-display); padding-top: var(--space-sm); }
+.pf-experiment { border-top: var(--rule-fine) solid var(--color-rule); }
+.pf-experiment:last-child { border-bottom: var(--rule-fine) solid var(--color-rule); }
+.pf-experiment summary { list-style: none; display: grid; grid-template-columns: minmax(0,1fr) auto 24px; gap: var(--space-sm); padding-block: var(--space-sm); cursor: pointer; align-items: center; }
+.pf-experiment summary::-webkit-details-marker { display: none; }
+.pf-experiment summary > span:first-child { font-size: var(--text-sm); }
+.pf-experiment summary > small { font-size: var(--text-xs); color: var(--color-ink-2); }
+.pf-experiment > p { font-size: var(--text-sm); color: var(--color-ink-2); padding-bottom: var(--space-md); max-width: 60ch; }
+.pf-experiment[open] .pb-plus { transform: rotate(45deg); }
+.pf-experiment summary:hover > span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+.simpler-home .pb-notes { padding-block: var(--space-xl); }
+.pf-note-row { display: grid; grid-template-columns: minmax(0,1fr) 24px; align-items: baseline; gap: var(--space-md); padding-block: var(--space-md); border-top: var(--rule-fine) solid var(--color-rule); }
+.pf-note-row h3 { font: 600 var(--text-md)/1.5 var(--font-display); }
+.pf-note-row:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+.simpler-home .pf-more-notes { margin-top: 0; border-bottom: 0; }
+.simpler-home .pf-personal-notes { margin-top: 0; }
+.pf-contact { border-top: var(--rule-fine) solid var(--color-rule); display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-lg); padding-block: var(--space-xl); }
+.pf-contact h2 { font: 600 var(--text-xl)/1.4 var(--font-display); margin-right: auto; }
+.pf-contact .pb-email { font-size: var(--text-lg); }
+.full-site .fn-footer .pf-footer-links { margin: 0; gap: var(--space-lg); color: var(--color-ink-2); }
+.pf-footer-links > span { margin-right: auto; font-size: var(--text-xs); }
+@media (max-width:900px) { .pf-opening { gap: var(--space-xl); } .pf-project-grid { gap: var(--space-lg); } .pf-project-heading { flex-wrap: wrap; gap: var(--space-2xs); } }
+@media (max-width:767px) {
+  .pf-opening { grid-template-columns: minmax(0,1fr); padding-block: var(--space-xl); gap: var(--space-lg); }
+  .pf-hello { display: grid; grid-template-columns: minmax(0,1fr) 72px; gap: var(--space-md); align-items: center; }
+  .pf-hello h1 { font-size: clamp(1.9rem, 7.7vw, 2.7rem); }
+  .pf-hello figure { margin: 0; }
+  .pf-hello img { width: 72px; height: 96px; }
+  .pf-hello figcaption { display: none; }
+  .pf-facts li { font-size: var(--text-sm); padding-block: var(--space-sm); gap: var(--space-xs); }
+  .pf-project-grid { grid-template-columns: minmax(0,1fr); gap: var(--space-xl); }
+  .pf-project-image { padding: var(--space-sm); }
+  .pf-project-heading { flex-wrap: nowrap; }
+  .pf-project h3 { font-size: var(--text-lg); }
+  .pf-catalog-flow p { font-size: var(--text-xl); }
+  .pf-experiments { grid-template-columns: minmax(0,1fr); gap: var(--space-sm); }
+  .pf-work { padding-bottom: var(--space-xl); }
+  .pf-contact { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-xs); }
+  .full-site .fn-footer .pf-footer-links { gap: var(--space-xs) var(--space-md); }
+}

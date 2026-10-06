@@ -2,6 +2,13 @@
   {
     "date": "2026-10-06",
     "scope": "app",
+    "macrostructure": "Personal letter with combined work index",
+    "theme": "existing warm-paper system",
+    "brief": "Four fun facts open the portfolio; merge Work and Lab; cut homepage prose"
+  },
+  {
+    "date": "2026-10-06",
+    "scope": "app",
     "genre": "modern-minimal",
     "macrostructure": "Workbench",
     "theme": "warm-paper builder workbench",

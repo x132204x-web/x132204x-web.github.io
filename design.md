@@ -1,16 +1,18 @@
 # Design — Ashley Xia: building & exploring
 
-The bilingual portfolio is a modern, minimal builder’s workbench. Ashley is a
+The bilingual portfolio is a short personal introduction with a combined work index. Ashley is a
 university student exploring through projects. The résumé is a secondary document.
 
 ## Structure
 
-- Home: direct introduction + real product evidence; project stories; experiments;
-  how I think; a writing index; optional travel and reading; contact.
+- Home: name, portrait and four fun facts; one combined project/experiment section;
+  two visible writing links; optional other writing, travel and reading; contact.
+- Homepage copy is brief. Longer project reasoning stays in existing case studies.
 - Project: annotated case study with problem, idea, build, role, decisions, lessons.
 - Article: quiet long document with a readable measure.
-- Navigation: edge-aligned name with Work, Lab, About, Contact and language switch.
-- Footer: compact personal sign-off, email, résumé and return link.
+- Navigation: edge-aligned name with Work, Notes, Contact and language switch.
+  Work and Lab share one section. Old lab/about/collaboration fragments remain.
+- Footer: copyright, résumé and return link.
 - Root entrance: Chinese portfolio. Existing bilingual and legacy routes remain.
 
 ## Visual system
@@ -26,8 +28,8 @@ chrome, invented product UI, gradients, or generated impact claims.
 ## Voice and evidence
 
 First person, short, natural, concrete. Student builder, explorer, problem solver.
-GIS is mentioned in education and as one source of systems thinking, never as
-her defining identity. Name contributions precisely; distinguish team work from
+The opening facts describe Russia, role models, cleanliness and writing with a
+pen. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
 solo work. Experiments disclose their stage. AI visibility and browser-tool
 explorations are user-supplied, without published results or launch claims.
 The 3D-printing contribution is grounded in existing résumé facts.

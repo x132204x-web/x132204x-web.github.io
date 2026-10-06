@@ -20,7 +20,7 @@ export function HomeLanguageLink({ locale }: { locale: Locale }) {
   useEffect(() => {
     const openPersonalNotes = () => {
       if (["#travel", "#reading", "#updates"].includes(window.location.hash)) {
-        const details = document.querySelector<HTMLDetailsElement>(".pb-personal");
+        const details = document.querySelector<HTMLDetailsElement>(".pf-personal-notes");
         if (details) { details.open = true; const targetId = window.location.hash.slice(1); requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView()); }
       }
     };
