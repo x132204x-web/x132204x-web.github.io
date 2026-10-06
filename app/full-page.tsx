@@ -26,18 +26,23 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
   const zh = locale === "zh";
   const data = resumeData[locale];
   const projects = fullProjects[locale];
+  const internship = data.experiences.find(item => item.id === "zhijian-internship");
   const articles = fullArticles[locale];
   const base = `/${locale}/full/`;
   return (
     <main className="full-site full-home builder-home simpler-home" lang={zh ? "zh-CN" : "en"}>
       <FullHeader locale={locale} />
       <div id="main-content" tabIndex={-1}>
-        <section className="pf-opening pb-wrap" id="about" aria-labelledby="pf-title">
-          <div className="pf-hello">
-            <div><h1 id="pf-title">{zh ? <>你好，<br />我是夏诗淇。</> : "Hi, I’m Ashley."}</h1><p>{zh ? "大学生。爱动手，也爱到处看看。" : "A student. Usually making or trying something."}</p></div>
-            <figure><img src="/portrait-st-petersburg-crop.jpg" width="920" height="1260" alt={zh ? "夏诗淇在圣彼得堡冬宫" : "Ashley at the Hermitage in St. Petersburg"} fetchPriority="high" /><figcaption>{zh ? "圣彼得堡。确实去过。" : "St. Petersburg. Proof I went."}</figcaption></figure>
+        <section className="pf-landing pb-wrap" aria-labelledby="pf-title">
+          <p className="pf-landing-name">{zh ? "你好，我是夏诗淇。" : "Hi, I’m Ashley."}</p>
+          <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1>
+          <div className="pf-landing-bottom">
+            <div><p>{zh ? "大学生。用 AI、代码和一支笔，试试脑子里的想法。" : "A university student trying out ideas with AI, code, and a pen."}</p><a href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
+            <div className="pf-landing-projects" aria-label={zh ? "项目速览" : "A quick look at my projects"}>
+              <a href={`${base}projects/finalace/`}><span>FinalAce ↗</span><small>{zh ? "AI 复习工具" : "An AI study tool"}</small></a>
+              <a href={`${base}projects/cloud-catalog/`}><span>{zh ? "云品册" : "Cloud Catalog"} ↗</span><small>{zh ? "商家的共享商品目录" : "A shared product catalog"}</small></a>
+            </div>
           </div>
-          <div className="pf-facts"><h2>{zh ? "关于我的几件小事" : "A few things about me"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol><a className="fn-text-link" href="#projects">{zh ? "再看看我做的东西" : "And a few things I’ve made"} ↓</a></div>
         </section>
 
         <section className="pf-work pb-wrap" id="projects" aria-labelledby="pf-work-title">
@@ -52,6 +57,18 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
             <p>{project.slug === "finalace" ? (zh ? "期末资料越堆越多，我就做了一个 AI 复习工具。上传、整理、练习，再看看哪里还没学会。" : "My lecture slides were piling up, so I built an AI study tool. Upload, organize, practice, and find what needs another look.") : (zh ? "帮商家把商品资料放在一起。我参与表单、批量导入和团队协作流程。" : "A shared product catalog for small merchants. I worked on forms, bulk import, and team flows.")}</p>
           </article>)}</div>
           <div className="pf-experiments"><h3>{zh ? "还在试这些" : "Also trying"}</h3><div>{experiments[locale].map(item => <details className="pf-experiment" key={item.id}><summary><span>{item.name}</span><small>{item.status}</small><span className="pb-plus" aria-hidden="true">＋</span></summary><p>{item.note}</p></details>)}</div></div>
+          {internship ? <aside className="pf-internship" id="internship" aria-labelledby="pf-internship-title">
+            <h3 id="pf-internship-title">{zh ? "实习" : "Internship"}</h3>
+            <div><h4>{internship.organization}</h4><p className="pf-internship-role">{internship.role} <span>· {internship.period}</span></p><p>{internship.highlights[0]}</p></div>
+          </aside> : null}
+        </section>
+
+        <section className="pf-opening pb-wrap" id="about" aria-labelledby="pf-about-title">
+          <div className="pf-hello">
+            <div><h2 id="pf-about-title">{zh ? "不只是在电脑前。" : "Away from the screen."}</h2><p>{zh ? "大学生。爱动手，也爱到处看看。" : "A student. Usually making or trying something."}</p></div>
+            <figure><img src="/portrait-st-petersburg-crop.jpg" width="920" height="1260" alt={zh ? "夏诗淇在圣彼得堡冬宫" : "Ashley at the Hermitage in St. Petersburg"} loading="lazy" /><figcaption>{zh ? "圣彼得堡。确实去过。" : "St. Petersburg. Proof I went."}</figcaption></figure>
+          </div>
+          <div className="pf-facts"><h2>{zh ? "关于我的几件小事" : "A few things about me"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
         </section>
 
         <section className="pb-notes pb-wrap" id="notebook" aria-labelledby="pb-notes-title">

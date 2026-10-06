@@ -47,9 +47,10 @@ export type ResumeData = {
 };
 
 // Both resume pages and their print views use this module. Facts come from the
-// existing home/profile pages and project-data.ts; no impact metrics are added.
+// existing home/profile pages, project-data.ts, and Ashley’s confirmed internship;
+// no impact metrics are added.
 const contact: ResumeData["contact"] = {
-  email: "x132204x@163.com",
+  email: "Ashleyx17@proton.me",
   phone: "13725293628",
   wechat: "13725293628",
   github: "https://github.com/x132204x-web",
@@ -105,6 +106,13 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
     ],
     experiences: [
       {
+        id: "zhijian-internship",
+        organization: "智健启能科技有限公司",
+        role: "技术实习生 · AI 健康方向",
+        period: "2026 夏季",
+        highlights: ["参与 AI 健康方向的小程序和 App 设计与搭建。"],
+      },
+      {
         id: "campus-3d-printing",
         organization: "校园 3D 打印平台",
         role: "产品与开发",
@@ -153,7 +161,7 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
     alternateName: "夏诗淇",
     title: "Student builder · Product & technology explorer",
     summary:
-      "I’m an undergraduate at China Agricultural University. I learn by building: an AI study tool, merchant collaboration flows, and a campus 3D-printing platform. I like taking a specific problem and working out a version people can try.",
+      "I’m a student at China Agricultural University. I build AI tools and small products, and learn by making something people can try.",
     location: "Beijing, China",
     education: [
       {
@@ -171,10 +179,10 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         category: "AI study workspace for university students",
         status: "Live · Iterating",
         summary: "Turns scattered course materials into a study flow for organizing knowledge, practicing, and reviewing mistakes.",
-        role: "Product definition and requirements · PRD and interaction flows · AI workflow · Full-stack development",
+        role: "Product definition · PRDs and user flows · AI workflows · Full-stack development",
         highlights: [
-          "Defined requirements, product positioning, and user flows around exam preparation, then built and launched the product.",
-          "Implemented multi-file upload, course material management, AI knowledge organization, practice, and mistake review; continue to refine learning feedback and usability.",
+          "Defined the exam-prep flow, wrote the PRD, and built and launched the tool.",
+          "Built file uploads, course management, AI study notes, practice, and mistake review. I’m still refining the feedback and usability.",
         ],
         publicUrl: finalAceUrl,
       },
@@ -187,11 +195,18 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         role: "Requirements and experience mapping · Product forms · Bulk import and team collaboration flows",
         highlights: [
           "Contributed to product forms, save interactions, bulk import, business onboarding, and member invitation flows in the mini program.",
-          "The product supports catalogs, bulk import, member collaboration, and read-only customer sharing, with ongoing improvements to data entry and collaboration.",
+          "The catalog supports bulk import, team editing, and read-only customer sharing. I’m still improving data entry and collaboration.",
         ],
       },
     ],
     experiences: [
+      {
+        id: "zhijian-internship",
+        organization: "智健启能科技有限公司",
+        role: "Technical Intern · AI Health",
+        period: "Summer 2026",
+        highlights: ["Helped design and build mini programs and apps for AI health products."],
+      },
       {
         id: "campus-3d-printing",
         organization: "Campus 3D Printing Platform",
@@ -207,7 +222,7 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         role: "Student Assistant",
         period: "Sep 2025 — Present",
         highlights: [
-          "Review company information, plan and support recruitment events, organize data, and coordinate with companies, students, faculty, and campus departments.",
+          "Review company information, help run recruitment events, organize data, and coordinate with employers and campus teams.",
         ],
       },
       {
@@ -216,7 +231,7 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
         role: "Documentation Lead",
         period: "Apr 2025 — Aug 2025",
         highlights: [
-          "Coordinated activity documentation, data organization, and the final report; facilitated daily team reflections and helped resolve issues with the team.",
+          "Led activity records, data organization, and the final report. Ran daily team reflections and helped resolve issues.",
         ],
       },
     ],

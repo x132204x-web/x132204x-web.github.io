@@ -72,3 +72,23 @@ travel/reading behind native disclosures. Contact and footer copy are minimal.
 
 The opening now includes a fifth fact: “build first, polish later.” Header branding
 was removed at Ashley’s request; navigation and language switching remain.
+
+## Follow-up: a distinct landing
+
+The first screen now leads with Ashley’s own “Build first. Polish later.” habit,
+a short student introduction, and two direct case-study links. Oversized, staggered
+type on charcoal uses the existing ink and paper tokens. The portrait and five
+facts sit after the combined work section. Header branding remains removed.
+Shared contact data now uses Ashleyx17@proton.me, including both generated PDFs.
+
+Validation: all 10 route/content tests, 37-page export and link/PDF checks pass.
+Both languages checked at 320, 375, 414, 768 and 1440px: no overflow, broken
+visible images or browser errors. Native disclosures and old fragments still work.
+ESLint reports no errors and 14 existing static-image advisories.
+
+The work section also includes a compact internship entry for 智健启能科技有限公司,
+with the same entry in both résumé pages and generated PDFs. Company, technical
+intern role, AI health focus and design/build contributions were confirmed directly
+by Ashley. “Summer 2026” reflects the confirmed July–August Notion context without
+claiming exact employment start or end dates. No English company name, product
+screenshots, technical stack, metrics or outcomes were invented.

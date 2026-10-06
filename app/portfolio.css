@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Workbench · design-system: design.md · designed-as-app */
+/* Hallmark · genre: modern-minimal · macrostructure: Typographic statement with work index · design-system: design.md · designed-as-app */
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
 .full-site .fn-header { min-height: 88px; width: min(100% - 96px, 1200px); }
 .full-site .fn-brand { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: -.03em; }
@@ -257,3 +257,44 @@
 /* The introduction carries the name; the header only carries navigation. */
 .full-site .fn-header-minimal { justify-content: flex-end; min-height: 72px; }
 @media (max-width:767px) { .full-site .fn-header-minimal { min-height: 64px; } }
+
+/* The landing uses Ashley’s own working habit as the main statement. */
+.pf-landing { background: var(--color-ink); color: var(--color-paper); padding: var(--space-xl); margin-block: var(--space-sm) var(--space-xl); }
+.pf-landing-name { font-size: var(--text-md); }
+.pf-landing h1 { font: 600 var(--text-landing)/1.04 var(--font-display); letter-spacing: -.065em; margin-block: var(--space-lg) var(--space-xl); }
+.pf-landing h1 > span { display: block; }
+.pf-landing h1 > span:last-child { padding-left: var(--space-2xl); }
+.pf-landing-bottom { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.75fr); gap: var(--space-xl); align-items: end; }
+.pf-landing-bottom > div > p { max-width: 32ch; font-size: var(--text-sm); }
+.pf-landing-bottom > div > a { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--space-xs); text-decoration: underline; text-underline-offset: 2px; font-size: var(--text-sm); }
+.pf-landing-projects > a { border-top: var(--rule-fine) solid var(--color-caption); display: flex !important; justify-content: space-between; gap: var(--space-md); margin: 0 !important; padding-block: var(--space-xs); text-decoration: none !important; }
+.pf-landing-projects > a > span { white-space: nowrap; }
+.pf-landing-projects small { font-size: var(--text-xs); align-self: center; }
+.pf-landing-projects > a:hover > span { text-decoration: underline; text-underline-offset: 2px; }
+.pf-landing a:focus-visible { outline-color: var(--color-paper); }
+.pf-opening { border-block: var(--rule-fine) solid var(--color-rule); }
+.pf-hello h2 { font: 600 var(--text-section)/1.2 var(--font-display); letter-spacing: -.04em; }
+@media (max-width:900px) {
+  .pf-landing { padding: var(--space-lg); }
+  .pf-landing h1 > span:last-child { padding-left: var(--space-lg); }
+  .pf-landing-bottom { gap: var(--space-lg); }
+  .pf-landing-projects > a { flex-direction: column; gap: var(--space-3xs); }
+  .pf-landing-projects small { align-self: start; }
+}
+@media (max-width:767px) {
+  .pf-landing { padding: var(--space-md); margin-bottom: var(--space-lg); }
+  .pf-landing h1 { margin-block: var(--space-lg); }
+  .pf-landing h1 > span:last-child { padding-left: 0; }
+  .pf-landing-bottom { grid-template-columns: minmax(0,1fr); gap: var(--space-md); }
+  .pf-landing-projects > a { flex-direction: row; gap: var(--space-xs); }
+  .pf-landing-projects small { align-self: center; }
+  .pf-hello h2 { font-size: var(--text-xl); }
+}
+
+.pf-internship { display: grid; grid-template-columns: minmax(0,.45fr) minmax(0,1fr); gap: var(--space-xl); border-top: var(--rule-fine) solid var(--color-rule); padding-top: var(--space-lg); margin-top: var(--space-xl); }
+.pf-internship h3 { font: 600 var(--text-lg)/1.4 var(--font-display); }
+.pf-internship h4 { font: 600 var(--text-lg)/1.4 var(--font-display); }
+.pf-internship p { font-size: var(--text-sm); margin-top: var(--space-xs); }
+.pf-internship .pf-internship-role { color: var(--color-ink-2); font-size: var(--text-xs); margin-top: var(--space-2xs); }
+.pf-internship-role span { display: inline-block; }
+@media (max-width:767px) { .pf-internship { grid-template-columns: minmax(0,1fr); gap: var(--space-sm); } }

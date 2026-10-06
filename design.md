@@ -1,11 +1,13 @@
 # Design — Ashley Xia: building & exploring
 
-The bilingual portfolio is a short personal introduction with a combined work index. Ashley is a
+The bilingual portfolio is a typographic personal landing with a combined work index. Ashley is a
 university student exploring through projects. The résumé is a secondary document.
 
 ## Structure
 
-- Home: name, portrait and five fun facts; one combined project/experiment section;
+- Home: a bold “Build first. Polish later.” opening with name and project links;
+  one combined project/experiment section with a compact internship entry;
+  portrait and five fun facts;
   two visible writing links; optional other writing, travel and reading; contact.
 - Homepage copy is brief. Longer project reasoning stays in existing case studies.
 - Project: annotated case study with problem, idea, build, role, decisions, lessons.
@@ -19,6 +21,7 @@ university student exploring through projects. The résumé is a secondary docum
 
 All shared values live in `tokens.css`, scoped to `.full-site`.
 Warm off-white paper, charcoal ink, vermilion accent on small signals.
+The opening reverses the same paper and ink colors for a charcoal typographic panel.
 Display: locally hosted Space Grotesk 600. Body: locally hosted IBM Plex Sans 400.
 Chinese text uses PingFang SC / Microsoft YaHei. Headings stay upright.
 The existing named 4-point spacing scale remains. Layouts use asymmetric grids
@@ -28,7 +31,7 @@ chrome, invented product UI, gradients, or generated impact claims.
 ## Voice and evidence
 
 First person, short, natural, concrete. Student builder, explorer, problem solver.
-The opening facts describe Russia, role models, cleanliness and writing with a
+The personal facts describe Russia, role models, cleanliness and writing with a
 pen, plus a build-first habit. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
 solo work. Experiments disclose their stage. AI visibility and browser-tool
 explorations are user-supplied, without published results or launch claims.

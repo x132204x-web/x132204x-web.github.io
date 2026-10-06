@@ -46,7 +46,8 @@ test("both resumes retain their facts, matching PDFs and language-specific full-
     assert.match(html, /3\.56/);
     assert.match(html, /6\.5/);
     assert.match(html, /2024.*2028/);
-    hasLink(html, "mailto:x132204x@163.com");
+    hasLink(html, "mailto:Ashleyx17@proton.me");
+    assert.match(html, /智健启能科技有限公司/);
     hasLink(html, `/${otherLocale}/`);
     hasLink(html, `/${locale}/full/`);
     hasLink(html, `/resume-xia-shiqi-${locale}.pdf`);
@@ -144,17 +145,23 @@ test("unknown localized and legacy details return missing-page responses", async
   }
 });
 
-test("portfolio opens with five personal facts and combines work with experiments", async () => {
+test("portfolio leads with building, combines work and experiments, and keeps five personal facts", async () => {
   for (const locale of ["zh", "en"]) {
     const html = await output(`/${locale}/full`);
-    assert.ok(html.indexOf('id="about"') < html.indexOf('id="projects"'));
+    assert.ok(html.indexOf('id="pf-title"') < html.indexOf('id="projects"') && html.indexOf('id="projects"') < html.indexOf('id="about"'));
     const work = html.slice(html.indexOf('id="projects"'), html.indexOf('id="notebook"'));
     assert.match(work, /id="lab"/);
     assert.match(work, /pf-experiment/);
+    assert.match(work, /id="internship"/);
+    assert.match(work, /智健启能科技有限公司/);
+    assert.match(work, locale === "en" ? /Technical Intern · AI Health/ : /技术实习生 · AI 健康方向/);
     assert.match(work, /finalace-home\.png/);
     assert.match(html, /pf-personal-notes/);
     if (locale === "en") {
       assert.match(html, /Hi, I’m Ashley/);
+      assert.match(html, /Build first/);
+      assert.match(html, /Polish later/);
+      hasLink(html, "mailto:Ashleyx17@proton.me");
       for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later"]) assert.ok(html.includes(fact));
       assert.match(html, /No published results yet/);
       const navigation = html.match(/<nav class="fn-header-links"[\s\S]*?<\/nav>/)[0];
