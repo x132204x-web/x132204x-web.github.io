@@ -145,7 +145,7 @@ test("unknown localized and legacy details return missing-page responses", async
   }
 });
 
-test("portfolio leads with building, combines work and experiments, and keeps five personal facts", async () => {
+test("portfolio leads with building, combines work and experiments, and keeps six personal facts", async () => {
   for (const locale of ["zh", "en"]) {
     const html = await output(`/${locale}/full`);
     assert.ok(html.indexOf('id="pf-title"') < html.indexOf('id="projects"') && html.indexOf('id="projects"') < html.indexOf('id="about"'));
@@ -160,12 +160,17 @@ test("portfolio leads with building, combines work and experiments, and keeps fi
     assert.match(html, /ashley-main\.jpg/);
     assert.match(html, /portrait-xinjiang-stage\.jpg/);
     assert.match(html, /teaching-workshop\.jpg/);
+    assert.match(html, /id="volunteering"/);
+    assert.match(html, locale === "en" ? /I designed and taught geography, cooking, and science lessons/ : /我设计、试讲并教授地理、烹饪和科学课程/);
+    assert.match(html, locale === "en" ? /I get more joy from giving than receiving/ : /比起得到，我更享受付出带来的快乐/);
+    const resume = await output(`/${locale}`);
+    assert.match(resume, locale === "en" ? /Volunteer Teacher · Documentation Lead/ : /课程导师 · 队记总负责人/);
     if (locale === "en") {
       assert.match(html, /Hi, I’m Ashley/);
       assert.match(html, /Build first/);
       assert.match(html, /Polish later/);
       hasLink(html, "mailto:Ashleyx17@proton.me");
-      for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later"]) assert.ok(html.includes(fact));
+      for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later", "joy from giving"]) assert.ok(html.includes(fact));
       assert.match(html, /No published results yet/);
       const navigation = html.match(/<nav class="fn-header-links"[\s\S]*?<\/nav>/)[0];
       assert.doesNotMatch(navigation, /#lab/);

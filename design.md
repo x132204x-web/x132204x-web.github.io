@@ -8,7 +8,7 @@ university student exploring through projects. The résumé is a secondary docum
 - Home: a bold “Build first. Polish later.” opening with Ashley’s supplied main photo,
   name and project links;
   one combined project/experiment section with a compact internship entry;
-  portrait, five fun facts and a two-photo personal strip;
+  portrait, six fun facts and a two-photo personal strip with a short volunteer teaching story;
   two visible writing links; optional other writing, travel and reading; contact.
 - Homepage copy is brief. Longer project reasoning stays in existing case studies.
 - Project: annotated case study with problem, idea, build, role, decisions, lessons.

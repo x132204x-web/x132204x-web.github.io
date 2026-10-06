@@ -317,3 +317,9 @@
   .pf-photo-strip { grid-template-columns: minmax(0,1fr); gap: var(--space-lg); }
   .pf-opening .pf-hello img { width: 72px; height: 96px; object-fit: cover; }
 }
+
+/* A short teaching story stays with the camp photo. */
+.pf-photo-strip .pf-volunteer-story { margin-top: var(--space-sm); font-size: var(--text-sm); }
+.pf-volunteer-story h3 { color: var(--color-ink); font: 600 var(--text-lg)/1.3 var(--font-display); letter-spacing: -.025em; }
+.pf-volunteer-story p { max-width: 55ch; margin-top: var(--space-xs); }
+.pf-volunteer-story .pf-volunteer-meta { font-size: var(--text-xs); }

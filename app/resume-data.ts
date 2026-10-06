@@ -133,10 +133,10 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
       {
         id: "summer-camp",
         organization: "种太阳公益夏令营",
-        role: "队记总负责人",
-        period: "2025.04 — 2025.08",
+        role: "课程导师 · 队记总负责人",
+        period: "2025.04 — 2025.07",
         highlights: [
-          "统筹全程活动记录、数据整理和结项报告，每日组织团队复盘，参与问题处理与团队协作。",
+          "设计并教授地理、烹饪和科学课程；统筹活动记录与结项报告，组织每日团队复盘。",
         ],
       },
     ],
@@ -228,10 +228,10 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
       {
         id: "summer-camp",
         organization: "Zhong Taiyang Volunteer Summer Camp",
-        role: "Documentation Lead",
-        period: "Apr 2025 — Aug 2025",
+        role: "Volunteer Teacher · Documentation Lead",
+        period: "Apr 2025 — Jul 2025",
         highlights: [
-          "Led activity records, data organization, and the final report. Ran daily team reflections and helped resolve issues.",
+          "Designed and taught geography, cooking, and science lessons. Led camp records, daily team reflections, and the final report.",
         ],
       },
     ],

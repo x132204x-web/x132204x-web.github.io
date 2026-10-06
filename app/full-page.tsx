@@ -12,6 +12,7 @@ const funFacts = {
     "I’m a little obsessed with cleanliness. A messy space can distract me.",
     "I still prefer a pen to a keyboard. Putting thoughts on paper helps me think.",
     "I’m a “build first, polish later” person.",
+    "I get more joy from giving than receiving.",
   ],
   zh: [
     "去过一趟俄罗斯，平安回来了。一路上的低效率……也很难忘。",
@@ -19,6 +20,7 @@ const funFacts = {
     "有一点洁癖。空间一乱，我的注意力也容易跟着乱。",
     "比起打字，还是更喜欢用笔。想法落在纸上，反而更容易想清楚。",
     "我是个「先做出来，再慢慢打磨」的人。",
+    "比起得到，我更享受付出带来的快乐。",
   ],
 };
 
@@ -73,7 +75,12 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
           <div className="pf-facts"><h2>{zh ? "关于我的几件小事" : "A few things about me"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
           <div className="pf-photo-strip">
             <figure><img src="/portrait-xinjiang-stage.jpg" width="1255" height="760" alt={zh ? "夏诗淇在新疆的山间" : "Ashley in the mountains of Xinjiang"} loading="lazy" /><figcaption>{zh ? "新疆。换个地方看看。" : "Xinjiang. A change of scenery."}</figcaption></figure>
-            <figure><img src="/teaching-workshop.jpg" width="1400" height="933" alt={zh ? "夏令营期间，在课桌旁一起准备活动" : "Preparing activities together at summer camp"} loading="lazy" /><figcaption>{zh ? "夏令营。一起动手。" : "Summer camp. Making things together."}</figcaption></figure>
+            <figure id="volunteering"><img src="/teaching-workshop.jpg" width="1400" height="933" alt={zh ? "夏令营期间，在课桌旁一起准备活动" : "Preparing activities together at summer camp"} loading="lazy" /><figcaption className="pf-volunteer-story">
+              <h3>{zh ? "当了一回支教老师。" : "A summer on the other side of the classroom."}</h3>
+              <p className="pf-volunteer-meta">{zh ? "种太阳公益夏令营 · 2025" : "Zhong Taiyang Volunteer Summer Camp · 2025"}</p>
+              <p>{zh ? "我设计、试讲并教授地理、烹饪和科学课程，也负责活动记录、每日团队复盘和结项报告。" : "I designed and taught geography, cooking, and science lessons. I also led camp records, daily team reflections, and the final report."}</p>
+              <p>{zh ? "孩子们让我更有耐心，也更愿意把感谢说出口。" : "The children taught me patience—and to say thank you out loud."}</p>
+            </figcaption></figure>
           </div>
         </section>
 

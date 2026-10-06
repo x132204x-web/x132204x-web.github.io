@@ -106,3 +106,26 @@ face remain visible, personal photos load correctly, and page widths stay within
 the viewport. A smaller responsive main-image asset reduces mobile transfer size.
 The static export/link checks and all 10 route/content tests pass. ESLint has no
 errors; 17 advisory img warnings reflect the static-export image approach.
+
+## Follow-up: volunteer teaching
+
+The camp photo now includes a short teaching story drawn from Ashley’s Notion
+notes: geography, cooking and science lessons, camp records, daily team
+reflections, and the final report. A personal lesson about patience and expressing
+thanks comes from her camp reflection. The sixth fun fact uses Ashley’s supplied
+sentence: “I get more joy from giving than receiving.” Both languages are updated.
+
+The shared résumé now names both course mentor/volunteer teacher and documentation
+lead roles. Its dates are aligned with the explicit April–July 2025 range in
+Notion’s résumé page, replacing the earlier April–August range.
+
+Sources: Notion “职业资料｜简历” (31f9ea35-8725-82f6-a595-81900d188599),
+“支教夏令营” (3689ea35-8725-80a3-9e20-d45de01e80bb), “工作成果”
+(3689ea35-8725-806e-af8a-e70e8c17be95), and “支教总结——我变得更加完整和美好”
+(3689ea35-8725-8040-95dd-c4390913c50b). No student counts or impact metrics added.
+
+Validation: all 10 content/route tests pass; static checks cover 37 pages and 616
+local links/assets. Both languages pass browser checks at 320–1440px without
+overflow or browser errors. Camp-story screenshots reviewed at mobile and desktop
+widths. Both regenerated résumé PDFs remain one A4 page, with the teaching role
+visible and no clipping. ESLint has no errors and the existing 17 image advisories.
