@@ -253,3 +253,7 @@
   .pf-contact { display: grid; grid-template-columns: minmax(0,1fr); gap: var(--space-xs); }
   .full-site .fn-footer .pf-footer-links { gap: var(--space-xs) var(--space-md); }
 }
+
+/* The introduction carries the name; the header only carries navigation. */
+.full-site .fn-header-minimal { justify-content: flex-end; min-height: 72px; }
+@media (max-width:767px) { .full-site .fn-header-minimal { min-height: 64px; } }

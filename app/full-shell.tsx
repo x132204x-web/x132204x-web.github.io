@@ -8,11 +8,8 @@ export function FullHeader({ locale, page = "home", slug }: { locale: Locale; pa
   const base = `/${locale}/full/`;
   const other = zh ? "en" : "zh";
   return (
-    <header className="fn-header" id="top">
+    <header className="fn-header fn-header-minimal" id="top">
       <a className="fn-skip" href="#main-content">{zh ? "跳到正文" : "Skip to content"}</a>
-      <a className="fn-brand" href={base} aria-label={zh ? "夏诗淇的项目与探索" : "Ashley Xia — builder & explorer"}>
-        <span className="fn-monogram" aria-hidden="true">a.</span><span>ASHLEY XIA</span>
-      </a>
       <nav className="fn-header-links" aria-label={zh ? "网站导航" : "Site navigation"}>
         <a href={`${base}#projects`}>{zh ? "项目" : "Work"}</a>
         <a href={`${base}#notebook`}>{zh ? "随手记" : "Notes"}</a>

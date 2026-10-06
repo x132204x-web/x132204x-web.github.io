@@ -69,3 +69,6 @@ links; the five-part story stays on detail pages. Experiment notes are one sente
 The long about and collaboration prose no longer appears on the homepage; old
 fragments remain valid. Two writing links are visible, with other writing and
 travel/reading behind native disclosures. Contact and footer copy are minimal.
+
+The opening now includes a fifth fact: “build first, polish later.” Header branding
+was removed at Ashley’s request; navigation and language switching remain.

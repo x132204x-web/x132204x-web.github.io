@@ -11,12 +11,14 @@ const funFacts = {
     "I’m good at finding role models. People I admire have nudged me out of my comfort zone more than once.",
     "I’m a little obsessed with cleanliness. A messy space can distract me.",
     "I still prefer a pen to a keyboard. Putting thoughts on paper helps me think.",
+    "I’m a “build first, polish later” person.",
   ],
   zh: [
     "去过一趟俄罗斯，平安回来了。一路上的低效率……也很难忘。",
     "我很会给自己找榜样。看到欣赏的人做一件事，常常会让我也走出舒适区试一试。",
     "有一点洁癖。空间一乱，我的注意力也容易跟着乱。",
     "比起打字，还是更喜欢用笔。想法落在纸上，反而更容易想清楚。",
+    "我是个「先做出来，再慢慢打磨」的人。",
   ],
 };
 

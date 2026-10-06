@@ -5,12 +5,12 @@ university student exploring through projects. The résumé is a secondary docum
 
 ## Structure
 
-- Home: name, portrait and four fun facts; one combined project/experiment section;
+- Home: name, portrait and five fun facts; one combined project/experiment section;
   two visible writing links; optional other writing, travel and reading; contact.
 - Homepage copy is brief. Longer project reasoning stays in existing case studies.
 - Project: annotated case study with problem, idea, build, role, decisions, lessons.
 - Article: quiet long document with a readable measure.
-- Navigation: edge-aligned name with Work, Notes, Contact and language switch.
+- Navigation: Work, Notes, Contact and language switch; no header branding.
   Work and Lab share one section. Old lab/about/collaboration fragments remain.
 - Footer: copyright, résumé and return link.
 - Root entrance: Chinese portfolio. Existing bilingual and legacy routes remain.
@@ -29,7 +29,7 @@ chrome, invented product UI, gradients, or generated impact claims.
 
 First person, short, natural, concrete. Student builder, explorer, problem solver.
 The opening facts describe Russia, role models, cleanliness and writing with a
-pen. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
+pen, plus a build-first habit. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
 solo work. Experiments disclose their stage. AI visibility and browser-tool
 explorations are user-supplied, without published results or launch claims.
 The 3D-printing contribution is grounded in existing résumé facts.

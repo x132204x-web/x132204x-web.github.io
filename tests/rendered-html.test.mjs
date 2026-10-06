@@ -144,7 +144,7 @@ test("unknown localized and legacy details return missing-page responses", async
   }
 });
 
-test("portfolio opens with four personal facts and combines work with experiments", async () => {
+test("portfolio opens with five personal facts and combines work with experiments", async () => {
   for (const locale of ["zh", "en"]) {
     const html = await output(`/${locale}/full`);
     assert.ok(html.indexOf('id="about"') < html.indexOf('id="projects"'));
@@ -155,7 +155,7 @@ test("portfolio opens with four personal facts and combines work with experiment
     assert.match(html, /pf-personal-notes/);
     if (locale === "en") {
       assert.match(html, /Hi, I’m Ashley/);
-      for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard"]) assert.ok(html.includes(fact));
+      for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later"]) assert.ok(html.includes(fact));
       assert.match(html, /No published results yet/);
       const navigation = html.match(/<nav class="fn-header-links"[\s\S]*?<\/nav>/)[0];
       assert.doesNotMatch(navigation, /#lab/);
