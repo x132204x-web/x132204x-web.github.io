@@ -34,8 +34,10 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
       <FullHeader locale={locale} />
       <div id="main-content" tabIndex={-1}>
         <section className="pf-landing pb-wrap" aria-labelledby="pf-title">
-          <p className="pf-landing-name">{zh ? "你好，我是夏诗淇。" : "Hi, I’m Ashley."}</p>
-          <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1>
+          <div className="pf-landing-top"><div className="pf-landing-intro"><p className="pf-landing-name">{zh ? "你好，我是夏诗淇。" : "Hi, I’m Ashley."}</p>
+          <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1></div>
+            <figure className="pf-main-photo"><img src="/ashley-main.jpg" srcSet="/ashley-main-small.jpg 960w, /ashley-main.jpg 2304w" sizes="(max-width: 767px) calc(100vw - 88px), (max-width: 900px) 55vw, 640px" width="2304" height="1728" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
+          </div>
           <div className="pf-landing-bottom">
             <div><p>{zh ? "大学生。用 AI、代码和一支笔，试试脑子里的想法。" : "A university student trying out ideas with AI, code, and a pen."}</p><a href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
             <div className="pf-landing-projects" aria-label={zh ? "项目速览" : "A quick look at my projects"}>
@@ -69,6 +71,10 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
             <figure><img src="/portrait-st-petersburg-crop.jpg" width="920" height="1260" alt={zh ? "夏诗淇在圣彼得堡冬宫" : "Ashley at the Hermitage in St. Petersburg"} loading="lazy" /><figcaption>{zh ? "圣彼得堡。确实去过。" : "St. Petersburg. Proof I went."}</figcaption></figure>
           </div>
           <div className="pf-facts"><h2>{zh ? "关于我的几件小事" : "A few things about me"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
+          <div className="pf-photo-strip">
+            <figure><img src="/portrait-xinjiang-stage.jpg" width="1255" height="760" alt={zh ? "夏诗淇在新疆的山间" : "Ashley in the mountains of Xinjiang"} loading="lazy" /><figcaption>{zh ? "新疆。换个地方看看。" : "Xinjiang. A change of scenery."}</figcaption></figure>
+            <figure><img src="/teaching-workshop.jpg" width="1400" height="933" alt={zh ? "夏令营期间，在课桌旁一起准备活动" : "Preparing activities together at summer camp"} loading="lazy" /><figcaption>{zh ? "夏令营。一起动手。" : "Summer camp. Making things together."}</figcaption></figure>
+          </div>
         </section>
 
         <section className="pb-notes pb-wrap" id="notebook" aria-labelledby="pb-notes-title">

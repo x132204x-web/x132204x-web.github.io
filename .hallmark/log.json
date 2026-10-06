@@ -2,6 +2,14 @@
   {
     "date": "2026-10-06",
     "scope": "app",
+    "macrostructure": "Photographic statement with work index",
+    "theme": "existing warm-paper system with inverse opening",
+    "enrichment": "Ashley’s supplied main portrait plus existing personal photographs",
+    "brief": "Make the homepage more vivid with a main portrait and a personal photo strip"
+  },
+  {
+    "date": "2026-10-06",
+    "scope": "app",
     "macrostructure": "Typographic statement with work index",
     "theme": "existing warm-paper system with inverse opening",
     "enrichment": "real product screens in work section",

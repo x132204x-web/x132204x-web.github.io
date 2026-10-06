@@ -157,6 +157,9 @@ test("portfolio leads with building, combines work and experiments, and keeps fi
     assert.match(work, locale === "en" ? /Technical Intern · AI Health/ : /技术实习生 · AI 健康方向/);
     assert.match(work, /finalace-home\.png/);
     assert.match(html, /pf-personal-notes/);
+    assert.match(html, /ashley-main\.jpg/);
+    assert.match(html, /portrait-xinjiang-stage\.jpg/);
+    assert.match(html, /teaching-workshop\.jpg/);
     if (locale === "en") {
       assert.match(html, /Hi, I’m Ashley/);
       assert.match(html, /Build first/);

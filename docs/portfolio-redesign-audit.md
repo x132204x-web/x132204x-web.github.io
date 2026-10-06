@@ -92,3 +92,17 @@ intern role, AI health focus and design/build contributions were confirmed direc
 by Ashley. “Summer 2026” reflects the confirmed July–August Notion context without
 claiming exact employment start or end dates. No English company name, product
 screenshots, technical stack, metrics or outcomes were invented.
+
+## Follow-up: personal photography
+
+Ashley’s supplied street portrait is the main homepage image, alongside the
+working-habit headline. A JPEG web copy keeps its full composition and visible
+watermark. Existing Xinjiang and summer-camp photos add a personal strip after
+the facts, and the St. Petersburg portrait is larger on desktop. The main image
+has explicit dimensions and high fetch priority; lower photos load lazily.
+
+Photo pass: both languages checked at 320–1440px; main-image composition and
+face remain visible, personal photos load correctly, and page widths stay within
+the viewport. A smaller responsive main-image asset reduces mobile transfer size.
+The static export/link checks and all 10 route/content tests pass. ESLint has no
+errors; 17 advisory img warnings reflect the static-export image approach.

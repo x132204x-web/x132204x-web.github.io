@@ -1,4 +1,4 @@
-/* Hallmark · genre: modern-minimal · macrostructure: Typographic statement with work index · design-system: design.md · designed-as-app */
+/* Hallmark · genre: modern-minimal · macrostructure: Photographic statement with work index · design-system: design.md · designed-as-app */
 /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
 .full-site .fn-header { min-height: 88px; width: min(100% - 96px, 1200px); }
 .full-site .fn-brand { font-family: var(--font-display); font-size: var(--text-sm); letter-spacing: -.03em; }
@@ -278,7 +278,7 @@
   .pf-landing { padding: var(--space-lg); }
   .pf-landing h1 > span:last-child { padding-left: var(--space-lg); }
   .pf-landing-bottom { gap: var(--space-lg); }
-  .pf-landing-projects > a { flex-direction: column; gap: var(--space-3xs); }
+  .pf-landing-projects > a { flex-direction: column; align-items: flex-start; gap: var(--space-3xs); }
   .pf-landing-projects small { align-self: start; }
 }
 @media (max-width:767px) {
@@ -286,7 +286,7 @@
   .pf-landing h1 { margin-block: var(--space-lg); }
   .pf-landing h1 > span:last-child { padding-left: 0; }
   .pf-landing-bottom { grid-template-columns: minmax(0,1fr); gap: var(--space-md); }
-  .pf-landing-projects > a { flex-direction: row; gap: var(--space-xs); }
+  .pf-landing-projects > a { flex-direction: row; align-items: center; gap: var(--space-xs); }
   .pf-landing-projects small { align-self: center; }
   .pf-hello h2 { font-size: var(--text-xl); }
 }
@@ -298,3 +298,22 @@
 .pf-internship .pf-internship-role { color: var(--color-ink-2); font-size: var(--text-xs); margin-top: var(--space-2xs); }
 .pf-internship-role span { display: inline-block; }
 @media (max-width:767px) { .pf-internship { grid-template-columns: minmax(0,1fr); gap: var(--space-sm); } }
+
+/* Ashley’s supplied main image adds a photographic counterweight to the statement. */
+.pf-landing-top { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: var(--space-lg); align-items: center; }
+.pf-landing h1 { font-size: var(--text-photo-landing); margin-block: var(--space-lg) 0; }
+.pf-landing h1 > span:last-child { padding-left: 0; }
+.pf-main-photo { margin: 0; }
+.pf-main-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; }
+.pf-landing-bottom { margin-top: var(--space-lg); }
+.pf-opening .pf-hello img { width: min(100%, 264px); height: auto; }
+.pf-photo-strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-lg); }
+.pf-photo-strip figure { margin: 0; }
+.pf-photo-strip img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+.pf-photo-strip figcaption { color: var(--color-ink-2); font-size: var(--text-xs); margin-top: var(--space-xs); }
+@media (max-width:767px) {
+  .pf-landing-top { grid-template-columns: minmax(0,1fr); gap: var(--space-md); }
+  .pf-landing h1 { margin-block: var(--space-md) 0; font-size: var(--text-photo-landing-mobile); }
+  .pf-photo-strip { grid-template-columns: minmax(0,1fr); gap: var(--space-lg); }
+  .pf-opening .pf-hello img { width: 72px; height: 96px; object-fit: cover; }
+}
