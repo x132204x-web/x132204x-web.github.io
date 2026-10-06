@@ -15,8 +15,19 @@ function subscribeHash(callback: () => void) {
 
 export function HomeLanguageLink({ locale }: { locale: Locale }) {
   const hash = useSyncExternalStore(subscribeHash, () => window.location.hash, () => "");
-  const allowed = ["top", "about", "projects", "collaboration", "exploration", "process", "notebook", "travel", "reading", "writing", "updates", "contact"];
+  const allowed = ["top", "about", "lab", "projects", "collaboration", "exploration", "process", "notebook", "travel", "reading", "writing", "updates", "contact"];
   const safeHash = allowed.includes(hash.slice(1)) ? hash : "";
+  useEffect(() => {
+    const openPersonalNotes = () => {
+      if (["#travel", "#reading", "#updates"].includes(window.location.hash)) {
+        const details = document.querySelector<HTMLDetailsElement>(".pb-personal");
+        if (details) { details.open = true; const targetId = window.location.hash.slice(1); requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView()); }
+      }
+    };
+    openPersonalNotes();
+    window.addEventListener("hashchange", openPersonalNotes);
+    return () => window.removeEventListener("hashchange", openPersonalNotes);
+  }, []);
   return <a href={`/${locale === "zh" ? "en" : "zh"}/full/${safeHash}`} hrefLang={locale === "zh" ? "en" : "zh-CN"}>{locale === "zh" ? "EN" : "中文"}</a>;
 }
 

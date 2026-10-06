@@ -8,8 +8,8 @@ export type ReadingEntry = { id: string; title: string; author?: string; note: s
 export type FieldNote = { id: string; label: string; title: string; body: string };
 
 export const personalSummary: Record<FullLocale, string> = {
-  zh: "我是夏诗淇。做产品、写文字，也喜欢独自出发，记录路上的人和风景。",
-  en: "I’m Ashley Xia. I build products, write, and travel on my own, collecting stories of people and places along the way.",
+  zh: "我喜欢把想法做成能试用的东西。目前在 AI、产品、数据和创意技术之间探索，遇到不会的，就边做边学。",
+  en: "I like turning ideas into things people can try. I’m exploring AI, product, data, and creative technology, learning the next piece as I build.",
 };
 
 // Project facts follow the shared résumé and existing project records.
@@ -22,7 +22,7 @@ export const fullProjects: Record<FullLocale, FullProject[]> = {
       status: "已上线，持续迭代",
       tone: "blue",
       question: "资料都在，下一步该复习什么？",
-      summary: "从自己的期末复习出发，把课程资料、练习和错题复盘放进一条连贯的学习路径。",
+      summary: "我从自己的期末复习出发，做了一个上传资料、整理知识、练习和复盘错题的工作台。",
       solution: "复习时，我会整理课程 PPT 和笔记，再集中做题。但资料多起来之后，很难判断哪些已经掌握、哪些还需要回头看。我从这段具体的使用经历开始做 FinalAce：上传课程资料，整理知识结构，生成练习，再把答题反馈留给下一轮复习。",
       role: ["产品定位与需求分析", "PRD 与交互流程", "AI Workflow", "全栈开发", "测试与版本迭代"],
       progress: "已上线多文件上传、课程资料管理、知识整理、智能练习与错题复盘等核心流程，并邀请朋友试用。接下来继续检查学习反馈是否清楚、备考流程是否顺手，以及集中在期末的需求怎样持续被满足。",
@@ -43,7 +43,7 @@ export const fullProjects: Record<FullLocale, FullProject[]> = {
       status: "持续迭代",
       tone: "wheat",
       question: "客户要资料时，还要翻多少聊天记录？",
-      summary: "把商品图片、SKU、价格和规格收进同一个目录，方便团队维护，也方便发给客户。",
+      summary: "团队做了一个管理商品图片、SKU、价格和规格的共享目录。我参与表单、导入和协作流程的梳理。",
       solution: "商家的商品资料往往散落在相册、聊天和表格里，修改和分享都需要反复整理。云品册将这些信息集中到一个目录，由团队共同维护，并生成客户可以直接查看的分享页面。我参与梳理小程序里的商品表单、保存操作、批量导入、企业入驻和成员邀请流程。",
       role: ["需求与体验梳理", "商品表单设计", "保存操作", "批量导入流程", "企业协作流程"],
       progress: "产品已完成商品目录、批量导入、企业入驻、成员邀请和客户只读分享等主要流程，继续优化资料录入与团队协作体验。",
@@ -64,9 +64,9 @@ export const fullProjects: Record<FullLocale, FullProject[]> = {
       status: "Live · Iterating",
       tone: "blue",
       question: "All the material is here. What should I study next?",
-      summary: "Built from my own exam preparation, bringing course material, practice, and mistake review into one study path.",
+      summary: "I built a workspace to upload course files, organize topics, practice, and revisit mistakes. It started with my own exam preparation.",
       solution: "My exam routine involved sorting lecture slides and notes, then working through questions. As the material grew, it became harder to tell what I understood and what needed another look. I built FinalAce around that experience: upload course files, organize the topics, generate practice, and carry the feedback into the next study session.",
-      role: ["Product definition and requirements", "PRD and interaction flows", "AI workflow", "Full-stack development", "Testing and iteration"],
+      role: ["Product idea and requirements", "User flows and interface design", "AI workflow", "Full-stack development", "Testing and iteration"],
       progress: "The live product includes multi-file upload, course material management, knowledge organization, practice, and mistake review. I have invited friends to try it and continue to refine the feedback and study flow, while examining how to serve a need that peaks around exams.",
       features: ["Multi-file upload and management", "AI knowledge organization", "Practice questions", "Mistake review and feedback"],
       learning: "At first, I wanted to know whether I could build it. After the first version, I had different questions: how many people face this problem, how often, and what are they willing to give to solve it?",
@@ -85,9 +85,9 @@ export const fullProjects: Record<FullLocale, FullProject[]> = {
       status: "Iterating",
       tone: "wheat",
       question: "How many chats do you search before sending a customer a product?",
-      summary: "A shared home for product images, SKUs, prices, and specifications, ready for a team to maintain and customers to view.",
+      summary: "The team built a shared catalog for images, SKUs, prices, and specifications. I worked on the forms, import, and collaboration flows.",
       solution: "A merchant’s product information can be scattered across photo albums, chats, and spreadsheets. Updating or sharing it means assembling it again. Cloud Catalog brings that material into a shared catalog with customer-facing pages. I contributed to the mini program’s product forms, save interactions, bulk import, business onboarding, and member invitations.",
-      role: ["Requirements and experience mapping", "Product forms", "Save interactions", "Bulk import flows", "Team collaboration flows"],
+      role: ["Requirements and user flows", "Product forms", "Save interactions", "Bulk import flows", "Team collaboration flows"],
       progress: "The product supports catalogs, bulk import, business onboarding, member invitations, and read-only customer sharing. Work continues on making data entry and team maintenance easier.",
       features: ["Centralized product information", "Photo and spreadsheet import", "Team collaboration", "Read-only customer sharing"],
       learning: "The work brought my attention to small operations: entering, saving, changing, and sending a product’s details. Those steps become one experience when a customer asks to see something right away.",
@@ -283,5 +283,20 @@ export const fieldNotes: Record<FullLocale, FieldNote[]> = {
     { id: "basket", label: "An observation at work", title: "When to offer a shopping basket", body: "People were more likely to take a basket once they were already holding products, and often declined while still browsing. Some wanted space; others wanted an explanation. I began watching first, then deciding when to approach." },
     { id: "worth-solving", label: "August 19 · A note", title: "First, is this problem worth solving?", body: "Before starting, ask how many people face it, how often, and what they would give to solve it. Then act quickly enough for reality to test the judgment. FinalAce keeps me thinking about a need concentrated around exams." },
     { id: "cloudy-lake", label: "April · Xinjiang", title: "Sayram Lake was lovely under clouds, too", body: "Tired from driving, I let the sunrise go. Sitting beside the misty lake was enough. A guard at the ticket office worried I might miss the entrance and offered to take a video call if I got lost. I kept a note of that kindness too." },
+  ],
+};
+
+// Explorations supplied by Ashley; no launch, traction, or implementation claims.
+export type Experiment = { id: string; name: string; area: string; question: string; status: string; note: string; href?: string };
+export const experiments: Record<FullLocale, Experiment[]> = {
+  en: [
+    { id: "ai-visibility", name: "AI visibility", area: "AI / brand analysis", question: "How do AI answers describe a brand?", status: "Exploration", note: "I’ve explored AI visibility and brand analysis products. The question I want to test: what can a business learn from the way AI answers represent it? This is an exploration, with no published results here yet." },
+    { id: "browser-tools", name: "Browser tools", area: "Everyday utilities", question: "Which small browser tasks could be easier?", status: "Exploration", note: "I’ve explored browser tools as small product experiments. I’m interested in the repetitive steps we stop noticing, and whether a focused tool is worth adding to someone’s day." },
+    { id: "3d-printing", name: "Campus 3D printing", area: "Digital → physical", question: "How does an uploaded file become a printed object?", status: "In progress", note: "I contribute to the campus 3D-printing platform’s requirements, product design, development coordination, and testing. The work maps the service from file upload and processing to printer connection. I’m learning how a screen fits into a physical service." },
+  ],
+  zh: [
+    { id: "ai-visibility", name: "AI 可见度", area: "AI / 品牌分析", question: "AI 的回答会怎样描述一个品牌？", status: "探索中", note: "我探索过 AI 可见度和品牌分析类产品。想验证的问题是：企业能从 AI 如何描述自己这件事中，得到什么有用的信息？还在探索，这里暂时没有可公开的结果。" },
+    { id: "browser-tools", name: "浏览器小工具", area: "日常小问题", question: "浏览器里的哪些重复操作可以省下来？", status: "探索中", note: "我尝试过浏览器工具这类小产品实验。想看看那些已经习以为常的重复步骤，是否值得做一个小工具去解决，以及它会不会真的被留下来。" },
+    { id: "3d-printing", name: "校园 3D 打印", area: "从屏幕到实物", question: "一个上传的文件，怎样变成手里的实物？", status: "正在参与", note: "我参与校园 3D 打印平台的需求、产品设计、开发协调和测试，梳理从文件上传、处理到打印机连接的服务流程。也在学习一个屏幕上的操作怎样接到现实里的服务。" },
   ],
 };

@@ -25,14 +25,14 @@ function hasLink(html, destination, message = destination) {
   assert.ok(html.includes(`href="${destination}"`), `Missing link: ${message}`);
 }
 
-test("default and former profile entrances lead to the Chinese resume", async () => {
+test("default entrance leads to the portfolio and former profile retains the resume", async () => {
   for (const path of ["/", "/profile"]) {
     const response = await render(path);
     assert.ok([301, 302, 303, 307, 308].includes(response.status), `${path} must redirect`);
-    assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname.replace(/\/$/, ""), "/zh");
+    assert.equal(new URL(response.headers.get("location"), "http://localhost").pathname.replace(/\/$/, ""), path === "/" ? "/zh/full" : "/zh");
     const html = await output(path === "/" ? "" : path);
     assert.match(html, /http-equiv="refresh"/);
-    assert.match(html, /href="\/zh\/?"/);
+    hasLink(html, path === "/" ? "/zh/full/" : "/zh/");
   }
 });
 
@@ -141,5 +141,22 @@ test("legacy more bookmarks map to the integrated notebook", () => {
 test("unknown localized and legacy details return missing-page responses", async () => {
   for (const route of ["/projects/missing", "/articles/missing", "/zh/full/projects/missing", "/en/full/projects/missing", "/zh/full/articles/missing", "/en/full/articles/missing"]) {
     assert.equal((await render(route)).status, 404, route);
+  }
+});
+
+test("portfolio prioritizes project evidence and marks unfinished experiments honestly", async () => {
+  for (const locale of ["zh", "en"]) {
+    const html = await output(`/${locale}/full`);
+    assert.ok(html.indexOf('id="projects"') < html.indexOf('id="about"'));
+    assert.ok(html.indexOf('id="lab"') < html.indexOf('id="about"'));
+    assert.match(html, /finalace-study-path\.png/);
+    assert.match(html, /class="pb-personal"/);
+    assert.match(html, /pb-experiment/);
+    if (locale === "en") {
+      assert.match(html, /I build, experiment/);
+      assert.match(html, /no published results here yet/);
+      assert.match(html, /The team built a shared catalog/);
+      assert.doesNotMatch(html, /passionate|visionary|results-driven|aspiring GIS/i);
+    }
   }
 });

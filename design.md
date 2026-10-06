@@ -1,50 +1,53 @@
-# Design — Ashley Xia's work & notes
+# Design — Ashley Xia: building & exploring
 
-The complete bilingual website is an editorial personal notebook, designed for
-potential collaborators and employers. Read this before changing its pages.
-The concise résumé has a separate visual system.
+The bilingual portfolio is a modern, minimal builder’s workbench. Ashley is a
+university student exploring through projects. The résumé is a secondary document.
 
 ## Structure
 
-- Home: an open notebook with a photographic opening, project dossiers,
-  collaboration notes, a travel album, reading annotations and an article index.
-- Project: an annotated case study; real materials accompany decisions.
-- Article: a long document with a quiet reading measure.
-- Navigation: edge-aligned name and language links, then chapter bookmarks.
-- Footer: a personal letter close, contact and résumé links.
+- Home: direct introduction + real product evidence; project stories; experiments;
+  how I think; a writing index; optional travel and reading; contact.
+- Project: annotated case study with problem, idea, build, role, decisions, lessons.
+- Article: quiet long document with a readable measure.
+- Navigation: edge-aligned name with Work, Lab, About, Contact and language switch.
+- Footer: compact personal sign-off, email, résumé and return link.
+- Root entrance: Chinese portfolio. Existing bilingual and legacy routes remain.
 
 ## Visual system
 
-All full-site colours, typography and shared motion live in `tokens.css`, scoped
-to `.full-site`. Warm paper, forest ink, muted green; no generic icon-card grid,
-fake application chrome, invented screenshots or generated impact metrics.
-Chinese headings use Songti-style serif, English headings Georgia. Body text
-uses locally available sans serif. Headings are upright. Lines stay readable and
-photos retain their own aspect ratio or a deliberate documented crop.
-
-## Motion
-
-One short opening sequence spreads two personal photos and a project image.
-An album exchanges photos in ~300ms. Reading annotations open in 260ms.
-Chapter markers follow the active section in 180ms. Motion uses CSS transforms
-and opacity, with native disclosure for annotations and React for album state.
-No scroll interception or animation queues. Text and navigation are visible
-before hydration. Reduced motion presents the final state immediately.
-
-## Responsive behaviour
-
-At 320–767px the notebook reads as one column. Notes follow their associated
-content. All actions work on touch and keyboard, not just hover or gestures.
-Both languages share layouts, stable content IDs and image assets.
+All shared values live in `tokens.css`, scoped to `.full-site`.
+Warm off-white paper, charcoal ink, vermilion accent on small signals.
+Display: locally hosted Space Grotesk 600. Body: locally hosted IBM Plex Sans 400.
+Chinese text uses PingFang SC / Microsoft YaHei. Headings stay upright.
+The existing named 4-point spacing scale remains. Layouts use asymmetric grids
+and plain rules. Product screenshots retain their aspect ratio. No fake browser
+chrome, invented product UI, gradients, or generated impact claims.
 
 ## Voice and evidence
 
-First person, short and specific. Describe what Ashley did and observed, with
-space for uncertainty. Public content is curated from existing project facts
-and selected personal notes; private records, private URLs and unsupported
-claims are not shipped. The approved short summary is the source of truth.
+First person, short, natural, concrete. Student builder, explorer, problem solver.
+GIS is mentioned in education and as one source of systems thinking, never as
+her defining identity. Name contributions precisely; distinguish team work from
+solo work. Experiments disclose their stage. AI visibility and browser-tool
+explorations are user-supplied, without published results or launch claims.
+The 3D-printing contribution is grounded in existing résumé facts.
+
+## Motion and accessibility
+
+All text and evidence visible before hydration. No hero sequence or scroll reveal.
+Native disclosure for experiment notes, books and the optional personal notebook.
+Travel album keeps explicit touch and keyboard controls and loading/error states.
+Language switching preserves safe fragments. Old personal-note fragments open
+the notebook. Focus rings are immediate. Reduced motion removes spatial motion.
+
+## Responsive behaviour
+
+At 320–767px, sections become one column. Navigation remains visible and wraps
+by row, not within a link. Clickable prose and article titles can wrap naturally;
+short action labels remain on one line. Images use minmax(0, 1fr) grid tracks.
+Root overflow-x uses clip. Test 320, 375, 414, 768 and desktop widths in both languages.
 
 ## Exports
 
-`tokens.css` is the implementation export. Existing Tailwind and résumé tokens
-are not replaced. Additional design values extend this scoped token set.
+`tokens.css` is the implementation export, with complete palette, font, spacing,
+type and motion tokens. Existing Tailwind and résumé entry styles stay intact.

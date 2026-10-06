@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import { updateEntries } from "../update-data";
+import { FullHeader, FullFooter } from "../full-shell";
+import "../full.css";
+import "../full-detail.css";
+import "../portfolio.css";
 
-export const metadata: Metadata = {
-  title: "成长日志｜夏诗淇",
-  description: "夏诗淇的项目进展、AI 探索和个人经历记录。",
-};
+export const metadata: Metadata = { title: "尝试记录｜夏诗淇", description: "做项目、试工具，以及从中学到的事。" };
 
 export default function UpdatesPage() {
-  return (
-    <main className="archive-page">
-      <header className="site-header"><a className="brand" href="/zh/full/">夏诗淇</a><nav className="nav archive-nav"><a href="/zh/full/">返回首页</a><a className="nav-contact" href="/updates">成长日志 <span className="arrow">↗</span></a></nav></header>
-      <section className="archive-hero section"><p className="eyebrow">PERSONAL ARCHIVE / LATEST UPDATES</p><h1>最近，<em>正在发生。</em></h1><p>项目进展、AI 探索和人生节点。<br />把正在发生的事情留下来，方便以后回看。</p></section>
-      <section className="updates-full section-wide"><div className="update-timeline">{updateEntries.map((entry) => <a className="update-item" href={`/updates/${entry.slug}`} key={entry.slug}><time>{entry.date}</time><span className="update-icon">{entry.icon}</span><div><h3>{entry.title}</h3><p>{entry.summary}</p><small>{entry.tags.join(" · ")}</small></div><span className="arrow">↗</span></a>)}</div></section>
-      <footer><span>© 2026 夏诗淇</span><a href="/zh/full/">回到首页 ↑</a></footer>
-    </main>
-  );
+  return <main className="full-site full-detail" lang="zh-CN"><FullHeader locale="zh" /><section className="fd-wrap pb-update-index" id="main-content"><a className="fn-text-link" href="/zh/full/#notebook">← 返回手记</a><h1>一些尝试，记下来。</h1><p>做了什么，试了什么，以及接下来想弄明白什么。</p><div>{[...updateEntries].reverse().map(entry => <a className="pb-update-row" href={`/updates/${entry.slug}/`} key={entry.slug}><time>{entry.date}</time><div><h2>{entry.title}</h2><p>{entry.summary}</p></div><span aria-hidden="true">↗</span></a>)}</div></section><FullFooter locale="zh" /></main>;
 }

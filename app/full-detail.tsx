@@ -4,6 +4,7 @@ import { ReturnToCollection } from "./full-interactions";
 import { FullFooter, FullHeader } from "./full-shell";
 import "./full.css";
 import "./full-detail.css";
+import "./portfolio.css";
 
 type Locale = "zh" | "en";
 type DetailProps = { locale: Locale; slug: string };
@@ -29,7 +30,7 @@ const words = {
     features: "功能与流程",
     materials: "项目里的真实界面",
     viewImage: "查看大图",
-    learning: "留给下一次的提醒",
+    learning: "我学到的",
     visit: "打开项目",
     newTab: "（在新标签页打开）",
     nextProject: "下一份项目手记",
@@ -37,7 +38,7 @@ const words = {
     author: "夏诗淇",
     writtenBy: "写于",
     notes: "手记选页",
-    imageCaptions: ["FinalAce 产品首页", "首页中的复习流程"],
+    imageCaptions: ["FinalAce 产品首页", "首页中的复习流程", "文件上传与课程创建", "练习题与答题反馈"],
   },
   en: {
     case: "Project notes",
@@ -49,20 +50,20 @@ const words = {
     features: "Features & flow",
     materials: "Screens from the project",
     viewImage: "View full image",
-    learning: "A note for next time",
+    learning: "What I learned",
     visit: "Visit the project",
     newTab: " (opens in a new tab)",
-    nextProject: "The next project",
-    nextArticle: "Turn to another page",
+    nextProject: "Another project",
+    nextArticle: "Read another note",
     author: "Shiqi Xia",
-    writtenBy: "Written in",
+    writtenBy: "Noted in",
     notes: "Notebook",
-    imageCaptions: ["The FinalAce homepage", "The revision flow on the homepage"],
+    imageCaptions: ["The FinalAce homepage", "The study path", "File upload and course creation", "Practice questions and answer feedback"],
   },
 } as const;
 
-function SectionHeading({ number, children }: { number: string; children: React.ReactNode }) {
-  return <div className="fd-section-heading"><span aria-hidden="true">{number}</span><h2>{children}</h2></div>;
+function SectionHeading({ children }: { number: string; children: React.ReactNode }) {
+  return <div className="fd-section-heading"><h2>{children}</h2></div>;
 }
 
 export function FullProjectPage({ locale, slug }: DetailProps) {

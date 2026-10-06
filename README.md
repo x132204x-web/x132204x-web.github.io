@@ -26,7 +26,7 @@ npm run lint
 
 | Address | Purpose |
 | --- | --- |
-| `/` | Redirect to the Chinese resume |
+| `/` | Redirect to the Chinese builder portfolio |
 | `/zh/` | Chinese resume |
 | `/en/` | English resume |
 | `/zh/full/`, `/en/full/` | Chinese and English work and personal notebook |
@@ -42,7 +42,7 @@ The Chinese and English resumes use the same bilingual source data. Their downlo
 
 The full websites share their page and detail components. `app/full-content.ts` contains the edited bilingual project, essay, travel, reading, and notebook content. Personal records inform these selected summaries; raw private Notion pages are not part of the public site. Keep stable project and article slugs across translations. Basic education, experience, and contact facts continue to come from `app/resume-data.ts`.
 
-The full home pages expose stable `projects`, `collaboration`, `notebook`, `travel`, `reading`, `writing`, and `contact` anchors. The old `/more/` entrance redirects to the notebook, with reading, travel, and writing fragments mapped to the corresponding section. Legacy project entrances choose a language from `?from=zh|en` and preserve that query in a client-side replacement navigation. These aliases deliberately use a visible fallback link instead of a competing fixed meta refresh.
+The portfolio leads with project evidence, compact problem-to-learning stories, an experiments lab, and an explanation of how I work. Travel and reading live in an optional disclosure; their legacy fragment links open it automatically. The full home pages expose stable `projects`, `collaboration`, `notebook`, `travel`, `reading`, `writing`, and `contact` anchors. The old `/more/` entrance redirects to the notebook, with reading, travel, and writing fragments mapped to the corresponding section. Legacy project entrances choose a language from `?from=zh|en` and preserve that query in a client-side replacement navigation. These aliases deliberately use a visible fallback link instead of a competing fixed meta refresh.
 
 On project details, `from` always identifies the resume the visitor came from, independently of the current content language. Switching a project from English to Chinese preserves `from=en`, so the return link still leads to the English resume. Without a recognized source, the return link leads to the current language's full-site projects section. Articles return to the current language's writing section.
 

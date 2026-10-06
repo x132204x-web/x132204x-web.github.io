@@ -18,8 +18,8 @@ export function fullMetadata(locale: ResumeLocale, title: string, description: s
       locale: locale === "zh" ? "zh_CN" : "en_US",
       alternateLocale: locale === "zh" ? "en_US" : "zh_CN",
       type: "website",
-      images: ["/og.png"],
+      images: ["/og-builder.png"],
     },
-    twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/og-builder.png"] },
   };
 }

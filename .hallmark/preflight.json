@@ -1,1 +1,8 @@
-{"scope":"full-site","framework":"Next.js App Router via vinext static export","fonts":"system Chinese sans serif","palette":"warm paper; full-site scoped green notebook palette approved","motion":"CSS and React; no animation library","existingDesignSystem":false}
+{
+  "scope": "full-site",
+  "framework": "Next.js App Router via vinext static export",
+  "fonts": "Space Grotesk 600 + IBM Plex Sans 400, locally hosted",
+  "palette": "warm off-white, charcoal, vermilion",
+  "motion": "native disclosure and existing travel album; no animation library",
+  "existingDesignSystem": true
+}

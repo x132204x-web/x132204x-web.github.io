@@ -63,9 +63,9 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
   zh: {
     name: "夏诗淇",
     alternateName: "Ashley Xia",
-    title: "产品实践 · AI 应用 · 全栈开发",
+    title: "学生 · 产品与技术探索",
     summary:
-      "中国农业大学地理信息科学本科生。围绕学习工具和商家协作开展产品实践，把需求拆成用户流程、界面和可运行的产品；使用 AI 辅助开发，并持续测试、迭代。",
+      "我在中国农业大学读本科，喜欢通过项目学习。做过 AI 复习工具，参与过商家协作和校园 3D 打印项目。遇到一个具体问题，就试着把它拆成流程、界面和能运行的版本。",
     location: "北京，中国",
     education: [
       {
@@ -151,9 +151,9 @@ export const resumeData: Record<ResumeLocale, ResumeData> = {
   en: {
     name: "Ashley Xia",
     alternateName: "夏诗淇",
-    title: "Product development · AI applications · Full-stack development",
+    title: "Student builder · Product & technology explorer",
     summary:
-      "Geographic Information Science undergraduate at China Agricultural University. I build learning tools and merchant collaboration products, turning requirements into user flows, interfaces, and working software with AI-assisted development, testing, and iteration.",
+      "I’m an undergraduate at China Agricultural University. I learn by building: an AI study tool, merchant collaboration flows, and a campus 3D-printing platform. I like taking a specific problem and working out a version people can try.",
     location: "Beijing, China",
     education: [
       {

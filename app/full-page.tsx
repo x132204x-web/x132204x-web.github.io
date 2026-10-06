@@ -1,8 +1,9 @@
-import { fullArticles, fullProjects, personalSummary, fieldNotes, travelEntries, readingEntries } from "./full-content";
+import { fullArticles, fullProjects, personalSummary, travelEntries, readingEntries, experiments } from "./full-content";
 import { resumeData, type ResumeLocale } from "./resume-data";
 import { FullHeader, FullFooter } from "./full-shell";
-import { HeroNotebook, ChapterBookmarks, NotebookAlbum, ReadingAnnotations } from "./full-interactions";
+import { NotebookAlbum, ReadingAnnotations } from "./full-interactions";
 import "./full.css";
+import "./portfolio.css";
 
 export default function FullPage({ locale }: { locale: ResumeLocale }) {
   const zh = locale === "zh";
@@ -10,48 +11,67 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
   const projects = fullProjects[locale];
   const articles = fullArticles[locale];
   const base = `/${locale}/full/`;
-  const experiences = ["career-office", "summer-camp", "campus-3d-printing"].map(id => data.experiences.find(item => item.id === id)!).filter(Boolean);
   return (
-    <main className="full-site full-home" lang={zh ? "zh-CN" : "en"}>
+    <main className="full-site full-home builder-home" lang={zh ? "zh-CN" : "en"}>
       <FullHeader locale={locale} />
-      <div id="main-content">
-        <section className="fn-opening" aria-labelledby="fn-title" id="about">
-          <div className="fn-opening-copy">
-            <p className="fn-eyebrow">A PERSONAL NOTEBOOK <span>— 2026</span></p>
-            <h1 id="fn-title">{zh ? <>夏诗淇的<br /><span>工作与手记</span></> : <>Ashley Xia.<br /><span>Work & notes.</span></>}</h1>
-            <p className="fn-introduction">{personalSummary[locale]}</p>
-            <p className="fn-education">{data.education[0].school}<br />{data.education[0].degree} <span>· {data.education[0].period}</span></p>
-            <div className="fn-opening-links"><a className="fn-button" href="#projects">{zh ? "从项目开始" : "Start with the work"} <span aria-hidden="true">↗</span></a><a className="fn-text-link" href={`/${locale}/`}>{zh ? "查看简历" : "Read my résumé"} ↗</a></div>
+      <div id="main-content" tabIndex={-1}>
+        <section className="pb-hero pb-wrap" aria-labelledby="pb-title">
+          <div className="pb-hero-copy">
+            <p className="pb-intro">{zh ? "你好，我是夏诗淇。大学生，也喜欢动手做点东西。" : "Hi, I’m Ashley. A university student who makes things."}</p>
+            <h1 id="pb-title">{zh ? <>把想法<span>做出来。</span><br />边做，边探索。</> : <>I build, experiment,<br />and figure<br /><span>things out.</span></>}</h1>
+            <p className="pb-summary">{personalSummary[locale]}</p>
+            <div className="pb-actions"><a className="fn-button" href="#projects">{zh ? "看看我做了什么" : "See what I’ve built"}<span aria-hidden="true">↓</span></a><a className="fn-text-link" href="#about">{zh ? "我是怎么想的" : "How I think"} ↗</a></div>
           </div>
-          <HeroNotebook locale={locale} />
-          <p className="fn-opening-foot"><span>{zh ? "几件做过的事，和一些路上的观察。" : "Things I have worked on. Things I have noticed."}</span><a href="#projects">{zh ? "往下翻" : "Keep reading"} ↓</a></p>
+          <a className="pb-hero-evidence" href={`${base}projects/finalace/`}>
+            <div className="pb-evidence-label"><span>FinalAce</span><span>{zh ? "从期末复习到 AI 学习工具" : "From exam stress to a study tool"} ↗</span></div>
+            <figure><img src="/finalace-study-path.png" width="2480" height="1494" alt={zh ? "我做的 FinalAce：从课程资料到练习与复盘的学习路径" : "FinalAce study path: course materials, practice, and review"} fetchPriority="high" /><figcaption>{zh ? "上传资料 → 整理知识 → 练习 → 再试一次" : "Upload → make sense of it → practice → try again"}</figcaption></figure>
+            <p className="pb-evidence-note"><span aria-hidden="true">↳</span> {zh ? "我想知道：AI 能不能帮我找到下一步该学什么？" : "I wanted to know: can AI help me decide what to study next?"}</p>
+          </a>
+          <div className="pb-interests"><span>{zh ? "好奇心目前在这里" : "Following my curiosity through"}</span><p>AI / {zh ? "产品 / 数据 / 创意技术" : "products / data / creative technology"}</p><a href="#lab">{zh ? "还有几个小实验" : "A few experiments, too"} ↘</a></div>
         </section>
-        <ChapterBookmarks locale={locale} />
 
-        <section className="fn-section fn-work" id="projects">
-          <div className="fn-section-heading"><p className="fn-eyebrow">01 / SELECTED WORK</p><h2>{zh ? "从一个问题开始" : "It starts with a question."}</h2><p>{zh ? "两份项目手记，记录我做了什么，以及为什么这样做。" : "Two project notebooks: what I worked on, and the decisions behind it."}</p></div>
-          {projects.map((project, index) => <article className={`fn-project fn-project-${index + 1}`} key={project.slug}>
-            <div className="fn-project-copy"><div className="fn-project-meta"><span>0{index + 1}</span><span>{project.type}</span></div><h3><a href={`${base}projects/${project.slug}/`}>{project.name}<span aria-hidden="true"> ↗</span></a></h3><p className="fn-project-question">{project.question}</p><p className="fn-project-summary">{project.summary}</p><dl><div><dt>{zh ? "我参与的部分" : "My contribution"}</dt><dd>{project.role.join(zh ? " · " : " / ")}</dd></div><div><dt>{zh ? "进展" : "Status"}</dt><dd>{project.status}</dd></div></dl><a className="fn-text-link" href={`${base}projects/${project.slug}/`}>{zh ? "翻开项目手记" : "Open the project notes"} ↗</a></div>
-            {project.images?.length ? <a className="fn-project-visual" href={`${base}projects/${project.slug}/`} aria-label={zh ? "查看 FinalAce 项目" : "Read the FinalAce case study"}><figure><img src="/finalace-home.png" alt={zh ? "FinalAce 产品首页：复习资料、知识整理与练习入口" : "FinalAce homepage with course materials, knowledge organization and practice"} width="1353" height="1070" loading="lazy" /><figcaption><span>FINALACE / WEB APP</span><span>{zh ? "真实产品界面" : "From the live product"}</span></figcaption></figure></a>
-              : <div className="fn-catalog-note"><span className="fn-eyebrow">CLOUD CATALOG / FLOW NOTES</span><p>{zh ? <>资料有了归处，<br />协作才接得上。</> : <>A place for product details.<br />A clearer way to share them.</>}</p><ol>{project.features.map((feature, i) => <li key={feature}><span>0{i + 1}</span>{feature}<span aria-hidden="true">{i === project.features.length - 1 ? "✓" : "↓"}</span></li>)}</ol><small>{zh ? "商品资料 → 团队维护 → 客户查看" : "Product details → team updates → customer view"}</small></div>}
+        <section className="pb-work pb-wrap" id="projects" aria-labelledby="pb-work-title">
+          <div className="pb-section-head"><h2 id="pb-work-title">{zh ? "想法，做出来之后。" : "Ideas, made real."}</h2><p>{zh ? "遇到什么问题，试了什么办法，还有哪里没想明白。" : "The problem, the attempt, and what I’m still figuring out."}</p></div>
+          {projects.map((project, index) => <article className="pb-project" key={project.slug}>
+            <div className="pb-project-visual">
+              {project.images?.length ? <a href={`${base}projects/${project.slug}/`}><figure><img src="/finalace-home.png" alt={zh ? "FinalAce 首页的资料管理、练习与复习功能" : "FinalAce homepage with materials, practice, and review"} width="1353" height="1070" loading="lazy" /><figcaption>{zh ? "真实产品界面 · FinalAce" : "Actual product screen · FinalAce"} ↗</figcaption></figure></a>
+                : <figure className="pb-flow"><figcaption>{zh ? "云品册 · 工作流程示意" : "Cloud Catalog · workflow diagram"}</figcaption><p>{zh ? "资料在一个地方。\n少找几次，多用几次。" : "One place for the details.\nLess searching. More sharing."}</p><ol>{project.features.map((feature, i) => <li key={feature}><span>{String(i + 1).padStart(2, "0")}</span>{feature}<span aria-hidden="true">{i === project.features.length - 1 ? "↗" : "↓"}</span></li>)}</ol><small>{zh ? "示意图，非产品截图" : "A flow sketch, not a product screenshot"}</small></figure>}
+            </div>
+            <div className="pb-project-story">
+              <div className="pb-project-top"><span>{String(index + 1).padStart(2, "0")} / {project.name}</span><span className="pb-status">{project.status}</span></div>
+              <h3><a href={`${base}projects/${project.slug}/`}>{project.name}<span aria-hidden="true">↗</span></a></h3>
+              <p className="pb-project-type">{project.type}</p>
+              <dl className="pb-story">
+                <div><dt>{zh ? "问题" : "Problem"}</dt><dd>{project.question}</dd></div>
+                <div><dt>{zh ? "想法" : "Idea"}</dt><dd>{project.decisions[0].body}</dd></div>
+                <div><dt>{zh ? "做了什么" : "Built"}</dt><dd>{project.summary}</dd></div>
+                <div><dt>{zh ? "我的部分" : "My part"}</dt><dd>{project.role.join(zh ? "、" : ", ")}</dd></div>
+                <div className="pb-lesson"><dt>{zh ? "学到的" : "Learned"}</dt><dd>{project.learning}</dd></div>
+              </dl>
+              <a className="fn-text-link" href={`${base}projects/${project.slug}/`}>{zh ? "看过程与取舍" : "See the decisions & process"} ↗</a>
+            </div>
           </article>)}
         </section>
 
-        <section className="fn-section fn-collaboration" id="collaboration">
-          <span className="fn-anchor" id="exploration" /><span className="fn-anchor" id="process" />
-          <div className="fn-section-heading"><p className="fn-eyebrow">02 / WORKING WITH PEOPLE</p><h2>{zh ? "把人与事接起来" : "Connecting people and the work."}</h2><p>{zh ? "有些工作留下了产品，有些留下了清楚的信息和顺畅的协作。" : "Some work becomes a product. Some becomes clearer information and better coordination."}</p></div>
-          <div className="fn-collaboration-layout"><div className="fn-experiences">{experiences.map((item, index) => <article key={item.id}><span className="fn-eyebrow">{String(index + 1).padStart(2, "0")} / {item.period}</span><h3>{item.organization}</h3><p className="fn-experience-role">{item.role}</p><p>{item.highlights.join(" ")}</p></article>)}</div><figure className="fn-field-photo"><img src="/teaching-workshop.jpg" width="1400" height="933" alt={zh ? "公益夏令营中的团队活动" : "A group activity at the volunteer summer camp"} loading="lazy" /><figcaption>{zh ? "一份记录，也是一种参与。" : "Taking notes is a way of taking part."}<span>{zh ? "种太阳公益夏令营 · 2025" : "Volunteer summer camp · 2025"}</span></figcaption></figure></div>
+        <section className="pb-lab" id="lab" aria-labelledby="pb-lab-title"><div className="pb-wrap">
+          <span id="exploration" className="pb-anchor" />
+          <div className="pb-section-head"><h2 id="pb-lab-title">{zh ? "实验还在继续。" : "Room to experiment."}<span className="pb-asterisk" aria-hidden="true">✳</span></h2><p>{zh ? "有些在做，有些只是探索。先试一试，再决定要不要继续。" : "Some in progress. Some just explorations. A way to test what’s worth taking further."}</p></div>
+          <div className="pb-experiment-list">{experiments[locale].map(item => <details className="pb-experiment" key={item.id}><summary><span className="pb-experiment-name">{item.name}<small>{item.area}</small></span><span className="pb-experiment-question">{item.question}</span><span className="pb-experiment-state">{item.status}</span><span className="pb-plus" aria-hidden="true">＋</span></summary><div className="pb-experiment-note"><p>{item.note}</p>{item.href && <a className="fn-text-link" href={item.href}>{zh ? "看开发记录" : "Explore the build notes"} ↗</a>}</div></details>)}</div>
+        </div></section>
+
+        <section className="pb-about pb-wrap" id="about" aria-labelledby="pb-about-title">
+          <div className="pb-about-title"><img src="/portrait-xinjiang-crop.jpg" width="148" height="184" alt={zh ? "在新疆旅行的夏诗淇" : "Ashley traveling in Xinjiang"} loading="lazy" /><h2 id="pb-about-title">{zh ? "兴趣不同，\n做事的方式很像。" : "Different interests.\nA familiar pattern."}</h2></div>
+          <div className="pb-about-copy"><p>{zh ? "我常常从一个小问题开始：这一步为什么这么麻烦？这个工具还能怎么用？然后去理解它，画一条流程，做个原型，找人试一试。" : "I tend to start with a small question. Why is this step so awkward? What else could this tool do? Then I try to understand it, sketch a flow, build a version, and let someone try it."}</p><p>{zh ? "我在中国农业大学读地理信息科学。它让我习惯从数据、空间和系统之间的关系看问题。做项目时，我也会碰到代码、设计、产品和商业上的问题，碰到哪一块，就学哪一块。" : "I study Geographic Information Science at China Agricultural University. It gives me a way to think about data, space, and connected systems. Projects bring me into code, design, product, and business. I learn the next piece when the work needs it."}</p><p>{zh ? "我还没有给自己选定一个职业标签。现在更想做的是，多做几个真实的尝试，看看什么值得继续，也看看自己能走到哪里。" : "I haven’t picked a single career label yet. I’m using projects to find out which problems I want to keep working on. Useful, interesting, or just a little easier for someone: that’s a good place to start."}</p><a className="fn-text-link" href={`/${locale}/`}>{zh ? "教育与经历，放在简历里" : "Education & experience, in my résumé"} ↗</a></div>
+          <div className="pb-people" id="collaboration"><span id="process" className="pb-anchor" /><h3>{zh ? "也在现实里学。" : "Learning away from the screen, too."}</h3><p>{zh ? "在学校就业与创业办公室帮忙核对企业信息、安排招聘活动。在公益夏令营记录活动、整理报告、和团队一起复盘。事情能不能顺利发生，常常取决于信息是否清楚，人是否接得上。" : "At the campus career office, I help check company information and organize recruitment events. At a volunteer summer camp, I documented activities and helped the team reflect on each day. Both taught me to notice how information moves between people."}</p></div>
         </section>
 
-        <section className="fn-notebook" id="notebook">
-          <div className="fn-section fn-notebook-opening"><p className="fn-eyebrow">03 / NOTES FROM LIFE</p><h2>{zh ? <>留几页，<br />给生活。</> : <>A few pages<br />for life.</>}</h2><p>{zh ? "路上的风景、书页里的句子，还有当时没想明白的事。" : "Places along the way, lines in a book, and questions I am still sitting with."}</p><a className="fn-text-link" href="#writing">{zh ? "直接翻到文章" : "Go to the writing"} ↓</a><span className="fn-notebook-stamp" aria-hidden="true">LIFE<br />IN THE<br />MARGINS</span></div>
-          <div className="fn-section fn-album-section" id="travel"><div className="fn-subheading"><h3>{zh ? "在路上" : "On the road"}</h3><span>{zh ? "一些停下来的时刻" : "A few moments to stay with"}</span></div><NotebookAlbum locale={locale} entries={travelEntries[locale]} /></div>
-          <div className="fn-section fn-fieldnotes" id="updates"><div className="fn-subheading"><h3>{zh ? "随手记下" : "In the margins"}</h3><span>{zh ? "从记录中选出的三个片段" : "Three fragments from my notes"}</span></div><div className="fn-notes-grid">{fieldNotes[locale].map((note, index) => <article key={note.id}><span className="fn-eyebrow">{note.label}</span><h4>{note.title}</h4><p>{note.body}</p><small aria-hidden="true">{String(index + 1).padStart(2, "0")} —</small></article>)}</div></div>
-          <div className="fn-section fn-reading-section" id="reading"><div className="fn-subheading"><h3>{zh ? "书页旁的批注" : "Notes in the margins of books"}</h3><span>{zh ? "点开一本，看看我记住了什么" : "Open a title to see what stayed with me"}</span></div><ReadingAnnotations locale={locale} entries={readingEntries[locale]} /></div>
-          <section className="fn-section fn-writing" id="writing"><div className="fn-subheading"><h3>{zh ? "写长一点" : "A little more to say"}</h3><span>ESSAYS / {String(articles.length).padStart(2, "0")}</span></div><div>{articles.map((article, index) => <a className="fn-article-row" href={`${base}articles/${article.slug}/`} key={article.slug}><span className="fn-article-number">0{index + 1}</span><div><span className="fn-eyebrow">{article.category} · {article.date}</span><h4>{article.title}</h4><p>{article.excerpt}</p></div><span className="fn-article-arrow" aria-hidden="true">↗</span></a>)}</div></section>
+        <section className="pb-notes pb-wrap" id="notebook" aria-labelledby="pb-notes-title">
+          <div className="pb-section-head"><h2 id="pb-notes-title">{zh ? "边做边记。" : "Notes along the way."}</h2><p>{zh ? "产品之外，还有书、旅行，以及没想明白的事。" : "Building notes, books, places, and questions that stick around."}</p></div>
+          <div id="writing">{articles.map(article => <a className="pb-writing-row" href={`${base}articles/${article.slug}/`} key={article.slug}><span>{article.category}</span><h3>{article.title}</h3><span aria-hidden="true">↗</span></a>)}</div>
+          <details className="pb-personal"><summary>{zh ? "离开屏幕：旅行和书页" : "Away from the screen: places & pages"}<span aria-hidden="true">＋</span></summary><div className="pb-personal-content"><section id="travel"><h3>{zh ? "在路上" : "On the road"}</h3><NotebookAlbum locale={locale} entries={travelEntries[locale]} /></section><section id="reading"><h3>{zh ? "读过之后留下的" : "What stayed with me"}</h3><ReadingAnnotations locale={locale} entries={readingEntries[locale]} /></section><a id="updates" className="fn-text-link" href="/updates/">{zh ? "更早的项目记录" : "Earlier notes (Chinese)"} ↗</a></div></details>
         </section>
 
-        <section className="fn-section fn-contact" id="contact"><div><p className="fn-eyebrow">04 / LET’S TALK</p><h2>{zh ? <>有件想做的事？<br />聊聊看。</> : <>Something in mind?<br />Let’s talk.</>}</h2><p>{zh ? "产品梳理、AI 应用实现、内容整理或项目协作，都可以从一次具体的交流开始。" : "Product thinking, AI applications, writing or project coordination — a concrete conversation is a good place to start."}</p><a className="fn-contact-email" href={`mailto:${data.contact.email}`}>{data.contact.email}<span aria-hidden="true"> ↗</span></a></div><div className="fn-contact-note"><p>{zh ? "先认识一下我的工作" : "A quick introduction to my work"}</p><a href={`/${locale}/`}>{zh ? "查看简历版" : "Read my résumé"} ↗</a><a href={`/resume-xia-shiqi-${locale}.pdf`} download>{zh ? "下载中文简历 PDF" : "Download résumé PDF"} ↓</a><a href={data.contact.github} target="_blank" rel="noreferrer">GitHub ↗</a></div></section>
+        <section className="pb-contact pb-wrap" id="contact"><div><h2>{zh ? "有个想法？\n说来听听。" : "Something on your mind?\nI’d like to hear it."}</h2><p>{zh ? "一个想解决的问题、一个小实验，或是想一起做点什么。写封邮件，我们从具体的事开始。" : "A problem you’ve noticed, a small experiment, or something we could build together. Send me a note."}</p><a className="pb-email" href={`mailto:${data.contact.email}`}>{data.contact.email} <span aria-hidden="true">↗</span></a></div><div className="pb-contact-links"><a href={data.contact.github} target="_blank" rel="noopener noreferrer">GitHub ↗<span className="fd-sr-only">{zh ? "（在新标签页打开）" : " (opens in a new tab)"}</span></a><a href={`/${locale}/`}>{zh ? "简历" : "Résumé"} ↗</a><a href={`/resume-xia-shiqi-${locale}.pdf`} download>{zh ? "简历 PDF" : "Résumé PDF"} ↓</a></div></section>
       </div>
       <FullFooter locale={locale} />
     </main>

@@ -1,1 +1,23 @@
-[{"date":"2026-09-07","scope":"app","genre":"editorial","macrostructure":"Long Document with photographic notebook opening","theme":"approved warm-paper notebook","nav":"N9 edge-aligned with chapter bookmarks","footer":"Ft6 letter close","brief":"Bilingual work and personal notes, four purposeful interactions"}]
+[
+  {
+    "date": "2026-10-06",
+    "scope": "app",
+    "genre": "modern-minimal",
+    "macrostructure": "Workbench",
+    "theme": "warm-paper builder workbench",
+    "nav": "N9 edge-aligned project navigation",
+    "footer": "Ft2 compact personal close",
+    "enrichment": "real product screens",
+    "brief": "Student builder portfolio: project evidence, honest experiments, exploratory identity"
+  },
+  {
+    "date": "2026-09-07",
+    "scope": "app",
+    "genre": "editorial",
+    "macrostructure": "Long Document with photographic notebook opening",
+    "theme": "approved warm-paper notebook",
+    "nav": "N9 edge-aligned with chapter bookmarks",
+    "footer": "Ft6 letter close",
+    "brief": "Bilingual work and personal notes, four purposeful interactions"
+  }
+]
