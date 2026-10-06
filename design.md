@@ -6,9 +6,9 @@ university student exploring through projects. The résumé is a secondary docum
 ## Structure
 
 - Home: a bold “Build first. Polish later.” opening with Ashley’s supplied main photo,
-  name and project links;
+  name and one link to work;
   one combined project/experiment section with a compact internship entry;
-  portrait, six fun facts and a two-photo personal strip with a short volunteer teaching story;
+  portrait, six fun facts and a two-photo personal strip with brief travel and volunteer teaching stories;
   two visible writing links; optional other writing, travel and reading; contact.
 - Homepage copy is brief. Longer project reasoning stays in existing case studies.
 - Project: annotated case study with problem, idea, build, role, decisions, lessons.
@@ -33,7 +33,7 @@ chrome, invented product UI, gradients, or generated impact claims.
 
 First person, short, natural, concrete. Student builder, explorer, problem solver.
 The personal facts describe Russia, role models, cleanliness and writing with a
-pen, plus a build-first habit. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
+pen, a build-first habit and the joy of giving. GIS stays in the résumé education details, not the homepage introduction. Name contributions precisely; distinguish team work from
 solo work. Experiments disclose their stage. AI visibility and browser-tool
 explorations are user-supplied, without published results or launch claims.
 The 3D-printing contribution is grounded in existing résumé facts.

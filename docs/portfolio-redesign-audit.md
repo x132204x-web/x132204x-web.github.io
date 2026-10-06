@@ -129,3 +129,37 @@ local links/assets. Both languages pass browser checks at 320–1440px without
 overflow or browser errors. Camp-story screenshots reviewed at mobile and desktop
 widths. Both regenerated résumé PDFs remain one A4 page, with the teaching role
 visible and no clipping. ESLint has no errors and the existing 17 image advisories.
+
+## Follow-up: annotated homepage refinements
+
+Removed the opening student sentence and duplicate project teasers, retaining
+one work link beside the headline. Removed the repeated student sentence from
+About, renamed the English heading “Fun Facts,” and shortened the Russia caption
+to its location. Projects remain in the combined work section.
+
+Xinjiang now has a brief account of solo driving, changing routes and enjoying
+instant noodles after hiking. Source: Notion “风物”
+(38b9ea35-8725-81e0-a1d8-d33f2e127ed1), dated April 21–28, 2026.
+The fictional “柏安” page was excluded as personal-history evidence.
+
+Main-photo composition pass: the broad empty pavement and red advertisement
+competed with Ashley’s face. A 4:5 crop removes about 40% from the left, retaining
+her cap, face, snack, hand, street context and original attribution. Two JPEG
+sizes (1151×1440 and 640×800) keep the image crisp without stretching it.
+The original file remains intact. The photo-composition skill was applied to
+the website asset; the requested website format takes precedence over its
+default DOCX report.
+
+Built-in image edit was tried with this brief: “Conservative vertical 4:5 crop;
+trim empty pavement and the red advertisement from the left; preserve exact
+identity, expression, clothing, snack, street details, lighting, colors and
+original attribution; no beautification or invented content.” Its result changed
+some retained details, so it was rejected. The final asset uses a precise sips
+crop and resize of the original, as the composition skill’s fallback directs.
+
+Validation: 10 route/content tests pass, with 37 exported pages and 612 checked
+local links/assets. Both languages pass browser checks at 320, 375, 414, 768 and
+1440px. Opening and Xinjiang screenshots reviewed at 320, 846 and 1440px; the
+portrait keeps its 4:5 frame, selects the small source on mobile, and retains the
+face and hand. No overflow, broken images or browser errors. Existing disclosures,
+language fragments and old Lab links still work. ESLint reports no errors.

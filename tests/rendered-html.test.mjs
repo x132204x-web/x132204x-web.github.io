@@ -157,10 +157,16 @@ test("portfolio leads with building, combines work and experiments, and keeps si
     assert.match(work, locale === "en" ? /Technical Intern · AI Health/ : /技术实习生 · AI 健康方向/);
     assert.match(work, /finalace-home\.png/);
     assert.match(html, /pf-personal-notes/);
-    assert.match(html, /ashley-main\.jpg/);
+    assert.match(html, /ashley-main-portrait\.jpg/);
     assert.match(html, /portrait-xinjiang-stage\.jpg/);
     assert.match(html, /teaching-workshop\.jpg/);
     assert.match(html, /id="volunteering"/);
+    assert.match(html, /id="xinjiang"/);
+    assert.match(html, locale === "en" ? /instant noodles taste better after a hike/ : /徒步后的一碗方便面/);
+    const landing = html.slice(html.indexOf('class="pf-landing '), html.indexOf('id="projects"'));
+    assert.doesNotMatch(landing, /pf-landing-projects|A university student trying out ideas|大学生。用 AI/);
+    assert.doesNotMatch(html, /Usually making or trying something|Proof I went|确实去过|大学生。爱动手/);
+    assert.match(html, locale === "en" ? /Fun Facts/ : /有趣的小事/);
     assert.match(html, locale === "en" ? /I designed and taught geography, cooking, and science lessons/ : /我设计、试讲并教授地理、烹饪和科学课程/);
     assert.match(html, locale === "en" ? /I get more joy from giving than receiving/ : /比起得到，我更享受付出带来的快乐/);
     const resume = await output(`/${locale}`);

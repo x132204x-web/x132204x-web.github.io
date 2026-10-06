@@ -323,3 +323,19 @@
 .pf-volunteer-story h3 { color: var(--color-ink); font: 600 var(--text-lg)/1.3 var(--font-display); letter-spacing: -.025em; }
 .pf-volunteer-story p { max-width: 55ch; margin-top: var(--space-xs); }
 .pf-volunteer-story .pf-volunteer-meta { font-size: var(--text-xs); }
+
+/* A tighter portrait and one action keep the opening brief. */
+.pf-landing-top { grid-template-columns: minmax(0,1fr) minmax(0,.85fr); gap: var(--space-xl); }
+.pf-main-photo { width: min(100%,384px); justify-self: end; }
+.pf-main-photo img { aspect-ratio: 4 / 5; object-fit: cover; }
+.pf-landing-action { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--space-lg); font-size: var(--text-sm); text-decoration: underline; text-underline-offset: 3px; }
+.pf-photo-strip .pf-photo-story { margin-top: var(--space-sm); font-size: var(--text-sm); }
+.pf-photo-story h3 { color: var(--color-ink); font: 600 var(--text-lg)/1.3 var(--font-display); letter-spacing: -.025em; }
+.pf-photo-story p { max-width: 55ch; margin-top: var(--space-xs); }
+.pf-photo-story .pf-photo-meta { font-size: var(--text-xs); }
+@media (max-width:900px) { .pf-landing-top { gap: var(--space-lg); } }
+@media (max-width:767px) {
+  .pf-landing-top { grid-template-columns: minmax(0,1fr); gap: var(--space-md); }
+  .pf-main-photo { width: min(100%,320px); justify-self: center; }
+  .pf-landing-action { margin-top: var(--space-sm); }
+}

@@ -37,15 +37,9 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
       <div id="main-content" tabIndex={-1}>
         <section className="pf-landing pb-wrap" aria-labelledby="pf-title">
           <div className="pf-landing-top"><div className="pf-landing-intro"><p className="pf-landing-name">{zh ? "你好，我是夏诗淇。" : "Hi, I’m Ashley."}</p>
-          <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1></div>
-            <figure className="pf-main-photo"><img src="/ashley-main.jpg" srcSet="/ashley-main-small.jpg 960w, /ashley-main.jpg 2304w" sizes="(max-width: 767px) calc(100vw - 88px), (max-width: 900px) 55vw, 640px" width="2304" height="1728" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
-          </div>
-          <div className="pf-landing-bottom">
-            <div><p>{zh ? "大学生。用 AI、代码和一支笔，试试脑子里的想法。" : "A university student trying out ideas with AI, code, and a pen."}</p><a href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
-            <div className="pf-landing-projects" aria-label={zh ? "项目速览" : "A quick look at my projects"}>
-              <a href={`${base}projects/finalace/`}><span>FinalAce ↗</span><small>{zh ? "AI 复习工具" : "An AI study tool"}</small></a>
-              <a href={`${base}projects/cloud-catalog/`}><span>{zh ? "云品册" : "Cloud Catalog"} ↗</span><small>{zh ? "商家的共享商品目录" : "A shared product catalog"}</small></a>
-            </div>
+          <h1 id="pf-title"><span>{zh ? "先做出来。" : "Build first."}</span><span>{zh ? "再慢慢打磨。" : "Polish later."}</span></h1>
+          <a className="pf-landing-action" href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
+            <figure className="pf-main-photo"><img src="/ashley-main-portrait.jpg" srcSet="/ashley-main-portrait-small.jpg 640w, /ashley-main-portrait.jpg 1151w" sizes="(max-width: 407px) calc(100vw - 88px), (max-width: 767px) 320px, (max-width: 900px) 36vw, 384px" width="1151" height="1440" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
           </div>
         </section>
 
@@ -69,12 +63,16 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
 
         <section className="pf-opening pb-wrap" id="about" aria-labelledby="pf-about-title">
           <div className="pf-hello">
-            <div><h2 id="pf-about-title">{zh ? "不只是在电脑前。" : "Away from the screen."}</h2><p>{zh ? "大学生。爱动手，也爱到处看看。" : "A student. Usually making or trying something."}</p></div>
-            <figure><img src="/portrait-st-petersburg-crop.jpg" width="920" height="1260" alt={zh ? "夏诗淇在圣彼得堡冬宫" : "Ashley at the Hermitage in St. Petersburg"} loading="lazy" /><figcaption>{zh ? "圣彼得堡。确实去过。" : "St. Petersburg. Proof I went."}</figcaption></figure>
+            <div><h2 id="pf-about-title">{zh ? "不只是在电脑前。" : "Away from the screen."}</h2></div>
+            <figure><img src="/portrait-st-petersburg-crop.jpg" width="920" height="1260" alt={zh ? "夏诗淇在圣彼得堡冬宫" : "Ashley at the Hermitage in St. Petersburg"} loading="lazy" /><figcaption>{zh ? "圣彼得堡。" : "St. Petersburg."}</figcaption></figure>
           </div>
-          <div className="pf-facts"><h2>{zh ? "关于我的几件小事" : "A few things about me"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
+          <div className="pf-facts"><h2>{zh ? "有趣的小事" : "Fun Facts"}</h2><ol>{funFacts[locale].map(fact => <li key={fact}>{fact}</li>)}</ol></div>
           <div className="pf-photo-strip">
-            <figure><img src="/portrait-xinjiang-stage.jpg" width="1255" height="760" alt={zh ? "夏诗淇在新疆的山间" : "Ashley in the mountains of Xinjiang"} loading="lazy" /><figcaption>{zh ? "新疆。换个地方看看。" : "Xinjiang. A change of scenery."}</figcaption></figure>
+            <figure id="xinjiang"><img src="/portrait-xinjiang-stage.jpg" width="1255" height="760" alt={zh ? "夏诗淇在新疆的山间" : "Ashley in the mountains of Xinjiang"} loading="lazy" /><figcaption className="pf-photo-story">
+              <h3>{zh ? "一个人开车，边走边改计划。" : "A drive with no fixed route."}</h3>
+              <p className="pf-photo-meta">{zh ? "新疆 · 2026 年 4 月" : "Xinjiang · April 2026"}</p>
+              <p>{zh ? "第四次到新疆，终于租车好好逛了一趟。路线临时改，山慢慢爬；徒步后的一碗方便面，也能让我很满足。" : "On my fourth trip to Xinjiang, I rented a car and went exploring alone. I changed plans along the way—and found that instant noodles taste better after a hike."}</p>
+            </figcaption></figure>
             <figure id="volunteering"><img src="/teaching-workshop.jpg" width="1400" height="933" alt={zh ? "夏令营期间，在课桌旁一起准备活动" : "Preparing activities together at summer camp"} loading="lazy" /><figcaption className="pf-volunteer-story">
               <h3>{zh ? "当了一回支教老师。" : "A summer on the other side of the classroom."}</h3>
               <p className="pf-volunteer-meta">{zh ? "种太阳公益夏令营 · 2025" : "Zhong Taiyang Volunteer Summer Camp · 2025"}</p>
