@@ -6,7 +6,7 @@ university student exploring through projects. The résumé is a secondary docum
 ## Structure
 
 - Home: a simple “Hi, I’m Ashley.” opening with Ashley’s supplied main photo
-  and one link to work;
+  and compact links to work and Fun Facts;
   one combined project/experiment section with a compact internship entry;
   portrait, six fun facts and a two-photo personal strip with brief travel and volunteer teaching stories;
   two visible writing links; optional other writing, travel and reading; contact.

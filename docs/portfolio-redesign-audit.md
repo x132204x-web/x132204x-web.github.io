@@ -204,3 +204,17 @@ Validation: pixel comparison of the lossless composite confirms zero RGB change
 outside the corner before JPEG encoding. Full image and close-up reviewed; no
 watermark remains. Both web sizes are exported. All 10 route/content tests and
 static checks for 37 pages and 612 local links/assets pass.
+
+## Follow-up: a fuller opening
+
+The greeting now breaks into two lines with a larger English name. The grid
+fits the portrait’s actual width, reducing unused space between text and photo.
+Less vertical padding keeps work closer to the first screen. A small ruled index
+links to work and Fun Facts, adding useful content without restoring deleted
+slogans, student introductions or duplicate project teasers. The smaller,
+watermark-free portrait remains unchanged.
+
+Validation: all 10 route/content tests pass; 37 pages and 614 local links/assets
+verified. Both languages reviewed at 320, 846 and 1440px and checked for overflow
+at 320–1440px. No broken images or browser errors; existing disclosures and
+fragment navigation still work. ESLint reports no errors and 17 image advisories.

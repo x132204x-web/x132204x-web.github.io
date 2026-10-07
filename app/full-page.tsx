@@ -37,8 +37,11 @@ export default function FullPage({ locale }: { locale: ResumeLocale }) {
       <div id="main-content" tabIndex={-1}>
         <section className="pf-landing pb-wrap" aria-labelledby="pf-title">
           <div className="pf-landing-top"><div className="pf-landing-intro">
-          <h1 id="pf-title">{zh ? <><span>你好，</span><span>我是夏诗淇。</span></> : "Hi, I’m Ashley."}</h1>
-          <a className="pf-landing-action" href="#projects">{zh ? "看看我做的东西" : "Things I’ve made"} ↓</a></div>
+          <h1 id="pf-title">{zh ? <><span>你好，</span><span>我是夏诗淇。</span></> : <><span>Hi, I’m </span><span>Ashley.</span></>}</h1>
+          <nav className="pf-landing-links" aria-label={zh ? "从这里开始" : "Start here"}>
+            <a href="#projects">{zh ? "我做的东西" : "Things I’ve made"} ↘</a>
+            <a href="#about">{zh ? "有趣的小事" : "Fun Facts"} ↘</a>
+          </nav></div>
             <figure className="pf-main-photo"><img src="/ashley-main-clean.jpg" srcSet="/ashley-main-clean-small.jpg 640w, /ashley-main-clean.jpg 1151w" sizes="(max-width: 767px) 200px, (max-width: 900px) 240px, 288px" width="1151" height="1440" alt={zh ? "夏诗淇戴着绿色帽子，在街上拿着一块面包" : "Ashley in a green cap, holding a snack on a city street"} fetchPriority="high" /></figure>
           </div>
         </section>

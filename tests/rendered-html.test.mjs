@@ -173,7 +173,7 @@ test("portfolio leads with Ashley, combines work and experiments, and keeps six 
     const resume = await output(`/${locale}`);
     assert.match(resume, locale === "en" ? /Volunteer Teacher · Documentation Lead/ : /课程导师 · 队记总负责人/);
     if (locale === "en") {
-      assert.match(html, /Hi, I’m Ashley/);
+      assert.match(html.replace(/<[^>]+>/g, ""), /Hi, I’m Ashley/);
       hasLink(html, "mailto:Ashleyx17@proton.me");
       for (const fact of ["Russia", "role models", "cleanliness", "pen to a keyboard", "build first, polish later", "joy from giving"]) assert.ok(html.includes(fact));
       assert.match(html, /No published results yet/);
