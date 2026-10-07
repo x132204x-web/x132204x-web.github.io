@@ -187,3 +187,20 @@ fun facts below.
 Validation: all 10 route/content tests and static export checks pass. Both
 languages visually reviewed at mobile, tablet and desktop sizes; the Chinese
 greeting breaks between phrases so the name stays together.
+
+## Follow-up: main-photo watermark cleanup
+
+Removed the lower-right “豆包AI生成” watermark at Ashley’s request. Built-in
+image editing supplied clean shirt fabric, then a feathered corner mask applied
+only that small region to the original portrait. The original face, cap, hand,
+snack, background, crop and display size are retained. Original source assets
+remain intact; new clean JPEG filenames avoid stale image caches.
+
+Edit brief: “Remove only the pale Chinese watermark and its shadow in the extreme
+bottom-right corner; reconstruct the white cotton T-shirt to match its folds,
+light and grain; preserve framing and every other detail; no beautification.”
+
+Validation: pixel comparison of the lossless composite confirms zero RGB change
+outside the corner before JPEG encoding. Full image and close-up reviewed; no
+watermark remains. Both web sizes are exported. All 10 route/content tests and
+static checks for 37 pages and 612 local links/assets pass.

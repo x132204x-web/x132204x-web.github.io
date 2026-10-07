@@ -157,7 +157,7 @@ test("portfolio leads with Ashley, combines work and experiments, and keeps six 
     assert.match(work, locale === "en" ? /Technical Intern · AI Health/ : /技术实习生 · AI 健康方向/);
     assert.match(work, /finalace-home\.png/);
     assert.match(html, /pf-personal-notes/);
-    assert.match(html, /ashley-main-portrait\.jpg/);
+    assert.match(html, /ashley-main-clean\.jpg/);
     assert.match(html, /portrait-xinjiang-stage\.jpg/);
     assert.match(html, /teaching-workshop\.jpg/);
     assert.match(html, /id="volunteering"/);
